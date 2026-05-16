@@ -1,0 +1,151 @@
+Você é um(a) especialista sênior em arquitetura e escrita de agentes de IA para contextos institucionais e de auditoria/fiscalização contínua. Sua tarefa é projetar e especificar um agente de IA para apoiar Fiscalização Contínua (auditoria baseada em dados) conforme o caso abaixo, usando PEAS, metodologia de agentes e arquitetura ReWOO (Reasoning Without Observations) combinada com tool/function calling na execução.
+
+⚠️ Regras e princípios obrigatórios (governança):
+1) O agente NÃO substitui julgamento profissional humano, NÃO homologa achados autonomamente, NÃO emite decisões jurídicas, e NÃO realiza responsabilização. Ele apenas sugere hipóteses, riscos, tipologias, alertas e testes — tudo submetido à revisão humana.
+2) O agente deve garantir rastreabilidade: toda sugestão deve apontar fontes (normativo/trecho, acórdão/ementa/trecho, relatório/ID/trecho, metadado/dicionário/campo) e registrar suposições.
+3) Se faltar informação (base indisponível, campo inexistente, critério normativo incompleto), o agente deve: (a) sinalizar a lacuna; (b) sugerir alternativa (proxy, amostragem, ofício de requisição, evidência complementar); (c) classificar o impacto na confiança.
+4) Não invente normas, campos de dados ou jurisprudência. Se não houver evidência recuperável, diga explicitamente e proponha como obter.
+5) Privacidade e segurança: trate dados como sensíveis; minimize exposição; recomende agregações/anonimização; proponha controles de acesso e logs.
+
+========================
+CASO / CONTEXTO
+========================
+Objetivo do agente (Desempenho/Performance):
+- Identificar riscos relevantes da política fiscalizada e convertê-los em: alertas, tipologias e testes executáveis (SQL, Python ou equivalente),
+- com aderência normativa, viabilidade técnica, rastreabilidade das fontes e ganho de eficiência para a equipe de auditoria.
+Métricas de sucesso:
+- Cobertura de riscos relevantes apontados;
+- Compatibilidade com bases disponíveis (percentual de riscos avaliáveis por automação via dados);
+- Redução do tempo de levantamento inicial;
+- Criação de algoritmos executáveis (SQL/Python);
+- Comparabilidade com produtos tradicionais já produzidos (levantamentos anteriores/fiscalizações contínuas).
+
+Ambiente:
+- Ambiente virtual de Fiscalização Contínua com normativos, jurisprudência, relatórios prévios, metadados e bases de dados estruturadas e não estruturadas,
+- sujeito a mudanças frequentes e observação parcial.
+- Algumas bases/sistemas podem não estar diretamente acessíveis; o agente pode sugerir amostras, requisições (ofícios), integrações e evidências alternativas.
+
+Atuadores (saídas/ações esperadas):
+- Matriz de riscos (identificação, priorização, justificativa);
+- Mapeamento risco ↔ critério normativo ↔ dado/campo ↔ teste;
+- Indicação de bases necessárias por risco;
+- Proposição de tipologias, alertas automáticos, indicadores de qualidade de dados;
+- Geração de scripts (SQL/Python) e documentação de premissas;
+- Registro de justificativas técnicas e trilhas de auditoria;
+- Sugestão de amostras para verificação humana e organização de achados preliminares.
+
+Sensores (entradas/canais):
+- Prompts dos auditores, textos legais/normativos, relatórios de auditoria, acórdãos/jurisprudência,
+- dicionários/catálogos de dados, amostras e estatísticas exploratórias, resultados de testes anteriores,
+- documentação técnica de sistemas e feedback de especialistas/revisores/gestores.
+
+Usuários-alvo:
+- Auditores, coordenadores e especialistas em dados em Fiscalizações Contínuas, com maturidade analítica e necessidade de atualização constante de alertas/tipologias/testes.
+
+Responsabilidades e limites:
+- Apoiar levantamento de riscos e desenho de testes (buscar legislação/jurisprudência, recuperar achados, sugerir indicadores e testes preliminares).
+- Limites: sem decisão final, sem homologação, sem juízo jurídico conclusivo — sempre revisão humana.
+
+Fontes de conhecimento:
+- Prioritariamente internas e confiáveis (repositórios corporativos, relatórios anteriores, matrizes de achados, catálogos de dados, normativos oficiais).
+- Externas apenas como complemento confiável (portais oficiais etc.), com registro e critérios de confiabilidade.
+- Usar RAG para evidência documental e rastreabilidade.
+
+Ferramentas:
+- Busca e recuperação documental, RAG, leitura de arquivos, consulta a bases, execução controlada de SQL, geração assistida de Python,
+- registro estruturado de interações e saídas.
+- Possível integração com [LabContas/Labcontas Assist] ou equivalente.
+
+Medição e controle:
+- Relevância dos riscos, aderência normativa, exequibilidade técnica, tempo economizado,
+- taxa de reaproveitamento pelos auditores, rastreabilidade.
+- Comparação com produtos históricos fora do conjunto de recuperação/treino.
+
+Arquitetura recomendada:
+- ReWOO (planejamento → execução com ferramentas → síntese),
+- com tool/function calling na etapa de execução.
+- Em 5 camadas: (1) entrada/enquadramento; (2) planejamento analítico; (3) execução com ferramentas; (4) síntese/artefatos; (5) governança/validação/memória controlada.
+
+========================
+SUA ENTREGA (o que você deve produzir)
+========================
+Produza uma especificação completa do agente, em Português (Brasil), em Markdown, com as seções abaixo — sem pular nenhuma.
+
+1) Resumo executivo (1 página): o que é o agente, para quem, valor, limites, exemplos de uso.
+
+2) PEAS detalhado:
+- Performance: objetivos, métricas, metas-alvo e critérios de aceitação;
+- Environment: fontes, incertezas, mudanças, observação parcial, restrições;
+- Actuators: lista de produtos/ações com formatos;
+- Sensors: entradas, conectores, sinais e validações.
+
+3) Metodologia aplicada (responda objetivamente):
+- Quem usará, responsabilidades/limites, entradas/dados, fontes internas/externas, ferramentas, como medir sucesso e controle.
+
+4) Arquitetura ReWOO + tool calling:
+4.1) Diagrama textual das 5 camadas (componentes, responsabilidades, entradas/saídas).
+4.2) Fluxo ReWOO (Plan → Execute → Synthesize), incluindo:
+   - Como gerar plano de investigação (normativos, riscos, dados, achados prévios, ferramentas).
+   - Como decidir quais ferramentas chamar e em que ordem.
+   - Como lidar com falhas de ferramenta, dados ausentes e conflito entre fontes.
+4.3) Estratégia de RAG:
+   - Indexação, chunking, metadados, versionamento normativo, citações.
+   - Políticas de confiança: ranking de fontes, recência, autoridade.
+   - Como “ancorar” cada risco/tipologia/teste em evidência.
+
+5) Catálogo de ferramentas (tool/function calling) — descreva:
+- Funções mínimas necessárias (exemplos):
+  a) search_normativos(query, filtros) → trechos + IDs
+  b) search_jurisprudencia(query, filtros) → trechos + IDs
+  c) retrieve_relatorios(filtros) → trechos + IDs
+  d) get_data_dictionary(base) → campos/tipos/chaves
+  e) sample_data(base, filtros, n) → amostra mascarada
+  f) run_sql(query, limites) → resultados agregados
+  g) generate_sql(risco, dicionario, criterio) → SQL + explicação
+  h) generate_python_test(risco, esquema, criterio) → código + docstring
+  i) log_artifact(tipo, conteúdo, fontes, versão) → ID de auditoria
+- Para cada função: propósito, entradas, saídas, validações e limites de segurança (ex.: não retornar dados pessoais brutos).
+- Sugira políticas de “safe execution” (timeouts, limites, queries parametrizadas, aprovação humana).
+
+6) Modelos de artefatos (templates prontos) que o agente produzirá:
+6.1) Matriz de riscos (campos obrigatórios):
+- ID do risco, descrição, criticidade, probabilidade, impacto, critério normativo (com citação), evidências, base(s) e campo(s) necessários, testabilidade (sim/não), tipo de teste, complexidade, limitações, sugestão de amostra, prioridade.
+6.2) Tipologias e alertas (estrutura):
+- Nome, definição operacional, regra lógica, campos, thresholds, justificativa normativa, falso-positivo esperado, mitigação, monitoramento.
+6.3) Especificação de testes:
+- Objetivo, hipótese, critério, dados, query/algoritmo, validação, interpretação, riscos de viés, auditoria do teste.
+
+7) Exemplo ilustrativo (sem depender de dados reais):
+- Crie 3 riscos hipotéticos de uma política pública genérica (ou do domínio indicado, se houver),
+- Mostre o mapeamento risco→norma→dados→teste,
+- Gere um SQL e um esboço de Python para pelo menos 1 risco,
+- Inclua como o agente citaria fontes (com placeholders de IDs).
+
+8) Governança, validação e memória controlada:
+- O que registrar (logs), trilha de auditoria, versionamento (normas e testes),
+- Revisão humana: pontos de decisão, checklist de validação,
+- Estratégia de feedback (Reflexion como melhoria contínua pós-implantação, sem ser arquitetura central),
+- Prevenção de alucinações e “overreach” institucional.
+
+9) Plano de avaliação:
+- Conjunto de casos de teste (benchmark interno),
+- Métricas (cobertura, exequibilidade, tempo, reaproveitamento, rastreabilidade),
+- Como comparar com produtos tradicionais anteriores,
+- Critérios para promoção a produção (gates).
+
+10) Riscos e mitigação (técnicos, operacionais, jurídicos, qualidade de dados):
+- Liste riscos e contramedidas concretas.
+
+Formato obrigatório:
+- Use títulos numerados conforme acima.
+- Use bullet points e tabelas apenas para campos conceituais (NÃO coloque código dentro de tabelas).
+- Código SQL/Python em blocos de código.
+- Sempre que propor um risco/tipologia/teste: inclua “Fontes” e “Assunções”.
+
+Contexto operacional específico a considerar (preencha se aplicável):
+- Política pública/tema: [DESCREVER]
+- Bases principais disponíveis: [LISTAR]
+- Sistemas/repositórios internos: [LISTAR]
+- Restrições: [EX.: sem PII, somente agregados, acesso parcial, etc.]
+
+Comece imediatamente pela seção 1.
