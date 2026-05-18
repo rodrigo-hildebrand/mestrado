@@ -1,0 +1,234 @@
+## Avaliação preliminar de auditoria — Política pública “Seguro-Defeso”
+
+**Escopo:** avaliação baseada em riscos, controles e testabilidade por dados. Não substitui julgamento profissional, não conclui irregularidade individual e não emite juízo jurídico final. Segue diretrizes de Fiscalização Contínua: riscos, tipologias, alertas e testes devem ser rastreáveis, revisáveis por humanos e baseados em fontes documentadas. 
+
+### 1. Enquadramento da política
+
+O **Seguro-Defeso** é benefício pago ao pescador artesanal durante o período em que a pesca é proibida para proteger a reprodução das espécies. Pelas regras de serviço público, o público elegível deve exercer pesca artesanal de forma ininterrupta, estar inscrito no RGP há pelo menos um ano, comprovar contribuição previdenciária ligada à comercialização da produção, não receber benefício incompatível e não ter outra fonte de renda. ([Serviços e Informações do Brasil][1])
+
+Em 2025–2026 houve mudança relevante de governança: a gestão do benefício passou do INSS para o MTE para defesos iniciados a partir de 1º de novembro de 2025, com novas exigências como biometria, CadÚnico, REAP, validações e maior transparência. ([Serviços e Informações do Brasil][2])
+
+---
+
+## 2. Síntese avaliativa neutra
+
+| Dimensão                    | Evidência observada                                                                                                                                                               | Leitura de auditoria                                                                                                                              |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Relevância social**       | Benefício substitui renda de pescadores artesanais no período de proibição da pesca.                                                                                              | Política tem objetivo social e ambiental claro: renda temporária e respeito ao defeso.                                                            |
+| **Focalização**             | Requisitos exigem RGP, atividade exclusiva/ininterrupta, ausência de outra renda e comprovação documental.                                                                        | Principal risco: benefício alcançar pessoas sem dependência exclusiva da pesca ou excluir pescadores legítimos por falhas cadastrais/documentais. |
+| **Governança de dados**     | TCU apontou fragilidade de informações, normas de defeso antigas e falta de avaliação periódica estruturada da eficácia do defeso. ([Portal TCU][3])                              | Alto potencial para Fiscalização Contínua com cruzamento de RGP, REAP, CNIS, CadÚnico, pagamentos e normas de defeso.                             |
+| **Integridade e controles** | CGU identificou, em auditoria anterior, vulnerabilidades no RGP, ausência de fiscalização e pagamentos indevidos em amostra entrevistada. ([Serviços e Informações do Brasil][4]) | Controles preventivos e detectivos são críticos; novas exigências de biometria, CadÚnico e REAP devem ser testadas.                               |
+| **Materialidade**           | Em março de 2026, o MTE informou R$ 616,3 milhões já destinados ao benefício e 1.198.473 requerimentos entre 1º/11/2025 e 14/03/2026. ([Serviços e Informações do Brasil][5])     | Volume financeiro e número de requerimentos justificam monitoramento contínuo.                                                                    |
+| **Transparência**           | Lei 15.399/2026 prevê divulgação mensal da lista de beneficiários com nome, município e número de registro, preservados dados sensíveis. ([Portal da Câmara dos Deputados][6])    | É necessário equilibrar controle social com LGPD e minimização de dados.                                                                          |
+
+---
+
+## 3. Matriz de riscos de auditoria
+
+| ID | Risco                                                                  | Critério normativo/evidência                                                                                                                                             | Bases necessárias                                                                              | Teste sugerido                                                                                | Limitação                                                        | Prioridade preliminar |
+| -- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | --------------------- |
+| R1 | Pagamento a pessoa com outra fonte de renda ou vínculo incompatível    | Requisito de não possuir outra fonte de renda; exclusão por vínculo, aposentadoria, BPC e outros critérios. ([Serviços e Informações do Brasil][1])                      | Seguro-Defeso, CNIS, RAIS/eSocial, benefícios INSS, CadÚnico                                   | Cruzar beneficiários com vínculos ativos, benefícios incompatíveis e renda declarada          | Bases podem ter defasagem temporal                               | Alta                  |
+| R2 | Beneficiário sem RGP válido ou com registro cancelado                  | Exigência de RGP ativo e mínimo de um ano. ([Serviços e Informações do Brasil][1])                                                                                       | RGP/PesqBrasil, pagamentos, histórico cadastral                                                | Verificar status do RGP na data do requerimento e do pagamento                                | Histórico do status precisa estar preservado                     | Alta                  |
+| R3 | Comprovação insuficiente de atividade pesqueira                        | REAP, notas fiscais e contribuições previdenciárias são critérios atuais de habilitação. ([Serviços e Informações do Brasil][7])                                         | REAP, NF-e/NFA-e, GFIP/eSocial/DAE, dados de comercialização                                   | Identificar beneficiários sem REAP válido, sem nota fiscal ou sem contribuição no período     | Pesca de subsistência e informalidade podem gerar falso positivo | Alta                  |
+| R4 | Beneficiário fora de município abrangido pelo defeso                   | Critério de residência em município abrangido pelo defeso. ([Serviços e Informações do Brasil][5])                                                                       | Endereço CadÚnico/gov.br/RGP, portarias de defeso, municípios limítrofes                       | Cruzar município de residência com lista de municípios e espécies abrangidas pelo defeso      | Endereço pode estar desatualizado                                | Média/Alta            |
+| R5 | Duplicidade ou múltiplos benefícios no mesmo ano por defesos distintos | Decreto 8.424/2015 veda mais de um benefício no mesmo ano por defesos relativos a espécies distintas. ([Portal da Câmara dos Deputados][8])                              | Pagamentos, requerimentos, períodos de defeso, CPF/NIS/RGP                                     | Detectar CPF/NIS/RGP com mais de um benefício anual incompatível                              | Exceções precisam de validação normativa específica              | Média                 |
+| R6 | Inefetividade ambiental do defeso associado ao benefício               | TCU apontou que a avaliação da eficácia da medida de defeso não teria sido implementada de forma estruturada e periódica. ([Portal TCU][3])                              | Portarias de defeso, dados de estoque pesqueiro, fiscalização ambiental, desembarque pesqueiro | Comparar séries de captura/estoque antes e depois do defeso                                   | Dados ambientais podem ser escassos ou fragmentados              | Média                 |
+| R7 | Fragilidade cadastral ou uso indevido do cadastro                      | CGU apontou vulnerabilidades no SisRGP e ausência de fiscalização periódica. ([Serviços e Informações do Brasil][4])                                                     | Logs RGP, histórico de alterações, usuários, lotes de inclusão, geografia                      | Detectar picos anômalos de cadastro, alterações em massa e usuários com comportamento atípico | Requer acesso a logs administrativos                             | Alta                  |
+| R8 | Barreiras indevidas de acesso para pescadores legítimos                | Novas exigências de biometria, CadÚnico, REAP e validações podem melhorar controle, mas também gerar risco de exclusão por dificuldade documental. ([Senado Federal][9]) | Indeferimentos, revisões, perfil territorial, atendimento presencial/remoto                    | Analisar taxas de indeferimento por município, causa e perfil socioeconômico                  | Requer dados de pedidos negados, não só pagos                    | Média                 |
+
+---
+
+## 4. Tipologias e alertas automáticos
+
+### Tipologia T1 — “Beneficiário com renda/vínculo incompatível”
+
+**Regra lógica:** beneficiário pago no mês X com vínculo empregatício ativo, benefício previdenciário/assistencial incompatível ou indício de outra renda no período de defeso.
+**Campos:** CPF/NIS, data_pagamento, competência, vínculo_ativo, tipo_benefício, renda_CadÚnico.
+**Fontes:** Decreto 8.424/2015 e critérios oficiais do serviço. ([Portal da Câmara dos Deputados][8])
+**Assunções:** CNIS/eSocial/benefícios estão atualizados; divergências exigem confirmação humana.
+
+### Tipologia T2 — “RGP irregular no momento do requerimento”
+
+**Regra lógica:** pagamento concedido a pessoa cujo RGP estava cancelado, suspenso, inexistente ou com menos de um ano na data do requerimento.
+**Campos:** CPF, RGP, data_inscrição_RGP, status_RGP, data_requerimento.
+**Fontes:** critérios oficiais e novas regras de habilitação. ([Serviços e Informações do Brasil][1])
+**Assunções:** há trilha histórica confiável de status do RGP.
+
+### Tipologia T3 — “REAP/documentação de atividade ausente”
+
+**Regra lógica:** beneficiário com pagamento, mas sem REAP válido, sem comprovação de comercialização ou sem contribuição previdenciária no período exigido.
+**Campos:** CPF, RGP, ano_REAP, data_REAP, notas_fiscais, contribuição_previdenciária.
+**Fontes:** MTE informa REAP, contribuições e notas fiscais como critérios; Lei 15.399/2026 reforça relatório anual. ([Serviços e Informações do Brasil][7])
+**Assunções:** pequenos pescadores podem ter dificuldades de formalização; alerta não é achado conclusivo.
+
+### Tipologia T4 — “Concentração territorial/cadastral anômala”
+
+**Regra lógica:** município ou entidade com crescimento abrupto de RGP, requerimentos ou aprovações, descolado de histórico, população local, produção pesqueira ou defeso aplicável.
+**Campos:** município, data_cadastro, entidade, quantidade_registros, quantidade_requerimentos, quantidade_pagamentos.
+**Fontes:** CGU apontou vulnerabilidades e picos anômalos no cadastro em auditoria anterior; CGU iniciou nova auditoria em 2025 em estados com maior concentração de beneficiários. ([Serviços e Informações do Brasil][4])
+**Assunções:** é necessário ajustar por sazonalidade e mudanças normativas.
+
+---
+
+## 5. Testes executáveis — exemplos
+
+### Teste SQL 1 — vínculo ou benefício incompatível
+
+```sql
+-- Objetivo: identificar pagamentos do Seguro-Defeso com possível incompatibilidade
+-- Observação: nomes de tabelas/campos são placeholders e devem ser ajustados ao dicionário real.
+
+SELECT
+    sd.cpf_hash,
+    sd.nis_hash,
+    sd.data_pagamento,
+    sd.valor_pago,
+    sd.municipio_residencia,
+    cnis.tipo_vinculo,
+    cnis.data_inicio_vinculo,
+    cnis.data_fim_vinculo,
+    ben.tipo_beneficio AS beneficio_inss,
+    ben.status_beneficio
+FROM seguro_defeso_pagamentos sd
+LEFT JOIN cnis_vinculos cnis
+    ON sd.cpf_hash = cnis.cpf_hash
+   AND sd.data_pagamento BETWEEN cnis.data_inicio_vinculo
+                             AND COALESCE(cnis.data_fim_vinculo, DATE '9999-12-31')
+LEFT JOIN beneficios_inss ben
+    ON sd.cpf_hash = ben.cpf_hash
+   AND sd.data_pagamento BETWEEN ben.data_inicio
+                             AND COALESCE(ben.data_fim, DATE '9999-12-31')
+WHERE
+    cnis.tipo_vinculo IS NOT NULL
+    OR ben.tipo_beneficio IN ('APOSENTADORIA', 'BPC', 'AUXILIO_DOENCA_CONTINUADO');
+```
+
+**Interpretação:** resultado indica indício de incompatibilidade, não irregularidade conclusiva. Deve ser revisado com regras de exceção, datas de cessação, decisões administrativas e eventuais recursos.
+
+**Fontes:** critérios de ausência de outra renda e exclusões por vínculo/benefícios incompatíveis. ([Serviços e Informações do Brasil][1])
+**Assunções:** bases de vínculo e benefícios estão atualizadas e os hashes permitem vinculação segura.
+
+---
+
+### Teste SQL 2 — RGP inválido ou recente demais
+
+```sql
+SELECT
+    sd.cpf_hash,
+    sd.data_requerimento,
+    sd.data_pagamento,
+    rgp.numero_rgp,
+    rgp.status_rgp,
+    rgp.data_inscricao
+FROM seguro_defeso_pagamentos sd
+LEFT JOIN rgp_historico rgp
+    ON sd.cpf_hash = rgp.cpf_hash
+   AND sd.data_requerimento BETWEEN rgp.data_inicio_status
+                                AND COALESCE(rgp.data_fim_status, DATE '9999-12-31')
+WHERE
+    rgp.numero_rgp IS NULL
+    OR rgp.status_rgp <> 'ATIVO'
+    OR rgp.data_inscricao > sd.data_requerimento - INTERVAL '1 year';
+```
+
+**Fontes:** exigência de RGP ativo e inscrição mínima. ([Serviços e Informações do Brasil][1])
+**Assunções:** a base RGP mantém histórico temporal confiável.
+
+---
+
+### Teste Python — anomalia territorial em requerimentos
+
+```python
+import pandas as pd
+
+def detectar_anomalias_municipais(df: pd.DataFrame, z_limite: float = 3.0) -> pd.DataFrame:
+    """
+    Detecta municípios com crescimento atípico de requerimentos do Seguro-Defeso.
+
+    Espera colunas:
+    - municipio
+    - ano_mes
+    - qtd_requerimentos
+
+    Retorna municípios/meses com z-score acima do limite.
+    Não conclui fraude; apenas gera alerta para revisão humana.
+    """
+    required = {"municipio", "ano_mes", "qtd_requerimentos"}
+    missing = required - set(df.columns)
+    if missing:
+        raise ValueError(f"Colunas ausentes: {missing}")
+
+    df = df.copy()
+    df["media_hist"] = df.groupby("municipio")["qtd_requerimentos"].transform(
+        lambda s: s.shift(1).rolling(12, min_periods=6).mean()
+    )
+    df["desvio_hist"] = df.groupby("municipio")["qtd_requerimentos"].transform(
+        lambda s: s.shift(1).rolling(12, min_periods=6).std()
+    )
+
+    df["z_score"] = (df["qtd_requerimentos"] - df["media_hist"]) / df["desvio_hist"]
+    alertas = df[df["z_score"] >= z_limite].sort_values("z_score", ascending=False)
+
+    return alertas[["municipio", "ano_mes", "qtd_requerimentos", "media_hist", "z_score"]]
+```
+
+**Fontes:** achados da CGU sobre vulnerabilidades cadastrais e uso indevido do cadastro; auditoria de 2025 em municípios/estados com maior concentração de beneficiários. ([Serviços e Informações do Brasil][4])
+**Assunções:** séries históricas estão completas; mudanças normativas e mutirões cadastrais devem ser controlados antes de qualquer conclusão.
+
+---
+
+## 6. Lacunas de informação e impacto na confiança
+
+| Lacuna                                                        | Alternativa de auditoria                                                                       | Impacto na confiança |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------- |
+| Acesso ao histórico completo do RGP e logs administrativos    | Requisitar base histórica com trilha de status, usuário, data e origem da alteração            | Alto                 |
+| Dados ambientais sobre estoque pesqueiro e eficácia do defeso | Integrar portarias de defeso, fiscalização ambiental, desembarque pesqueiro e estudos técnicos | Alto                 |
+| Dados de indeferimentos e recursos                            | Requisitar base de requerimentos negados, motivos, revisões e decisões                         | Médio/Alto           |
+| Comprovação de atividade em contextos de informalidade        | Amostragem, entrevistas, notas fiscais, REAP, geolocalização com cautela e validação local     | Médio                |
+| Dicionário real de dados                                      | Exigir catálogo de campos, chaves, periodicidade, qualidade e regras de negócio                | Alto                 |
+
+---
+
+## 7. Encaminhamentos de Fiscalização Contínua
+
+1. **Construir painel mensal de integridade** com pagamentos, requerimentos, indeferimentos, RGP, REAP, CNIS, CadÚnico e normas de defeso.
+2. **Gerar alertas por tipologia**, sempre com evidência, regra aplicada, fonte normativa e nível de confiança.
+3. **Separar alerta de achado:** alerta automatizado deve virar amostra para revisão humana, não responsabilização automática.
+4. **Monitorar efeitos de acesso:** acompanhar se biometria, CadÚnico e REAP reduzem inconsistências sem excluir indevidamente pescadores legítimos.
+5. **Avaliar componente ambiental:** medir se as regras de defeso estão atualizadas e se há avaliação periódica da efetividade, ponto já sinalizado pelo TCU. ([Portal TCU][3])
+
+---
+
+## Fontes
+
+* Serviço Gov.br “Solicitar Seguro Defeso — Pescador Artesanal”, atualizado em 15/12/2025. ([Serviços e Informações do Brasil][1])
+* Decreto nº 8.424/2015, texto publicado pela Câmara dos Deputados. ([Portal da Câmara dos Deputados][8])
+* INSS, página sobre transição do Seguro-Defeso para o MTE. ([Serviços e Informações do Brasil][2])
+* MTE, pagamentos e critérios em 2026. ([Serviços e Informações do Brasil][5])
+* Lei 15.399/2026, conforme notícias institucionais da Câmara e do Senado. ([Portal da Câmara dos Deputados][6])
+* TCU, auditoria operacional sobre ordenamento pesqueiro e fragilidades de informação. ([Portal TCU][3])
+* CGU, avaliação de 2017 e auditoria iniciada em 2025. ([Serviços e Informações do Brasil][4])
+* Portal da Transparência, base de dados abertos do Seguro-Defeso. ([Portal da Transparência][10])
+* Diretrizes operacionais do agente de Fiscalização Contínua. 
+
+---
+
+## Assunções
+
+* A avaliação considera a situação normativa consultada em **16/05/2026**.
+* Os nomes de tabelas e campos nos testes são ilustrativos; dependem do dicionário real das bases.
+* Alertas automatizados indicam **risco ou indício**, não irregularidade conclusiva.
+* Dados pessoais devem ser tratados com minimização, mascaramento, logs de acesso e uso preferencial de agregações/hashes.
+
+[1]: https://www.gov.br/pt-br/servicos/solicitar-seguro-defeso-pescador-artesanal "Solicitar Seguro Defeso - Pescador Artesanal"
+[2]: https://www.gov.br/inss/pt-br/servicos/seguro-defeso "Seguro Defeso — Instituto Nacional do Seguro Social - INSS"
+[3]: https://portal.tcu.gov.br/imprensa/noticias/gestao-do-ordenamento-pesqueiro-fragilizada-e-inadequada.htm "Gestão do ordenamento pesqueiro fragilizada e inadequada – Notícias | Portal TCU"
+[4]: https://www.gov.br/cgu/pt-br/assuntos/noticias/2017/10/cgu-avalia-regularidade-dos-pagamentos-do-seguro-defeso-ao-pescador-artesanal "CGU avalia regularidade dos pagamentos do seguro defeso ao pescador artesanal — Controladoria-Geral da União"
+[5]: https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/marco/governo-do-brasil-libera-pagamento-do-sexto-lote-do-seguro-defeso-no-dia-24 "Governo do Brasil libera pagamento do sexto lote do Seguro-Defeso — Ministério do Trabalho e Emprego"
+[6]: https://www.camara.leg.br/noticias/1268930-nova-lei-endurece-regras-do-seguro-defeso-para-combater-fraudes/ "
+      Nova lei endurece regras do seguro-defeso para combater fraudes - Notícias - Portal da Câmara dos Deputados
+  "
+[7]: https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2026/fevereiro/governo-do-brasil-inicia-pagamento-do-seguro-defeso-a-quase-47-mil-pescadores-artesanais "Governo do Brasil inicia pagamento do seguro-defeso a quase 47 mil pescadores artesanais — Ministério do Trabalho e Emprego"
+[8]: https://www2.camara.leg.br/legin/fed/decret/2015/decreto-8424-31-marco-2015-780438-publicacaooriginal-146585-pe.html "Portal da Câmara dos Deputados"
+[9]: https://www12.senado.leg.br/noticias/materias/2026/05/05/lei-que-altera-regras-do-seguro-defeso-e-sancionada-com-vetos "Lei que altera regras do seguro-defeso é sancionada com vetos — Senado Notícias"
+[10]: https://portaldatransparencia.gov.br/download-de-dados/seguro-defeso "Despesas - Transferências - Programas Sociais - Pescador Artesanal"
