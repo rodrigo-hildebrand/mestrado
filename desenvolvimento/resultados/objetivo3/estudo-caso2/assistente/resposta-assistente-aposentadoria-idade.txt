@@ -1,0 +1,219 @@
+## Avaliação preliminar — Política pública “Aposentadoria por idade”
+
+**Escopo adotado:** Regime Geral de Previdência Social, administrado pelo INSS, abrangendo aposentadoria por idade urbana, aposentadoria por idade rural, aposentadoria híbrida e aposentadoria programada após a EC nº 103/2019. **Fora do escopo:** RPPS, BPC/LOAS e aposentadorias especiais, salvo quando usados para cruzamentos de risco.
+
+Esta avaliação **não homologa achados nem conclui irregularidades**. Ela organiza riscos, critérios e testes para revisão por equipe de auditoria humana, conforme governança prevista para fiscalização contínua .
+
+---
+
+## 1. Caracterização da política
+
+A aposentadoria por idade é uma política previdenciária de proteção de renda na velhice, financiada no âmbito do RGPS. Para segurados urbanos com direito adquirido até 13/11/2019, o INSS informa idade mínima de 65 anos para homens e 60 para mulheres, com 180 meses de contribuição/carência; nas regras de transição, a idade da mulher subiu gradualmente até 62 anos a partir de 2023. ([Serviços e Informações do Brasil][1])
+
+Para novos filiados ao RGPS após a EC nº 103/2019, a regra geral passou a ser a **aposentadoria programada**, com 62 anos para mulheres, 65 anos para homens, 180 contribuições, 15 anos de contribuição para mulheres e 20 anos para homens. ([Serviços e Informações do Brasil][2])
+
+Na aposentadoria por idade rural, o INSS informa exigência de 180 meses de atividade rural, idade mínima de 60 anos para homens e 55 anos para mulheres; também há possibilidade de aposentadoria híbrida, somando períodos urbanos e rurais, mas sem a redução etária rural quando não comprovado o tempo mínimo rural. ([Serviços e Informações do Brasil][3])
+
+---
+
+## 2. Avaliação por dimensões
+
+| Dimensão                      | Avaliação preliminar                                                                                                                       |                                                                                                                                                                              Evidência / critério | Confiança |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | --------- |
+| **Relevância social**         | Política material e estrutural para proteção de renda na velhice; deve ser acompanhada continuamente por volume financeiro e populacional. |                            Em 2024, havia 34,4 milhões de benefícios do RGPS na folha de dezembro; despesas urbanas somaram R$ 712,6 bilhões e despesas rurais R$ 191,3 bilhões. ([TCU Sites][4]) | Alta      |
+| **Conformidade de concessão** | Risco relevante de concessões fora dos requisitos de idade, carência, tempo de contribuição ou comprovação rural.                          |                                    Critérios de idade/carência variam por regra: direito adquirido, transição, rural, híbrida e aposentadoria programada. ([Serviços e Informações do Brasil][1]) | Média     |
+| **Eficiência administrativa** | Há risco de atraso em apuração de indícios e manutenção de pagamentos possivelmente indevidos.                                             |                                            TCU apontou atrasos e falhas na priorização da apuração de suspeitas em benefícios do INSS, com perda estimada de R$ 1,1 bilhão/ano. ([Portal TCU][5]) | Alta      |
+| **Integridade da folha**      | Risco elevado de inconsistências cadastrais, acúmulos indevidos e pagamentos a pessoas com CPF inválido ou indício de óbito.               | Auditoria do TCU identificou, em dezembro/2023, 1,087 milhão de benefícios com indícios de pagamento indevido, incluindo acúmulos, CPF cancelado/nulo e indício de falecimento. ([Portal TCU][6]) | Alta      |
+| **Sustentabilidade fiscal**   | Política exige monitoramento fiscal e atuarial contínuo, sem inferir automaticamente irregularidade.                                       |          Em 2024, arrecadação urbana foi R$ 630,8 bilhões e despesa urbana R$ 712,6 bilhões; na previdência rural, arrecadação foi R$ 9,9 bilhões e benefícios R$ 191,3 bilhões. ([TCU Sites][4]) | Alta      |
+| **Equidade e acesso**         | Necessário avaliar diferenças por sexo, clientela urbana/rural, região, renda contributiva, tempo de espera e indeferimentos.              |  A própria regra distingue urbano, rural, transição e filiação pós-reforma; sem microdados de requerimentos não é possível concluir impacto distributivo. ([Serviços e Informações do Brasil][1]) | Média     |
+
+---
+
+## 3. Matriz de riscos para fiscalização contínua
+
+| ID | Risco                                                                                    | Critério                                                                                                                          | Dados necessários                                                                                 | Testabilidade | Prioridade técnica |
+| -- | ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| R1 | Concessão de aposentadoria urbana/programada sem idade mínima, carência ou tempo exigido | Regras urbanas/transição e aposentadoria programada do INSS. ([Serviços e Informações do Brasil][1])                              | Benefício, espécie, DER, DIB, sexo, data de nascimento, vínculos/contribuições, regra aplicada    | Alta          | Alta               |
+| R2 | Uso indevido da redução etária rural sem comprovação dos 180 meses rurais                | Regra rural exige 180 meses de atividade rural e idade de 60/55 anos. ([Serviços e Informações do Brasil][3])                     | Categoria de segurado, períodos rurais reconhecidos, documentos rurais, vínculos urbanos, DER/DIB | Média         | Alta               |
+| R3 | Benefício ativo com CPF nulo/cancelado ou indício de óbito                               | TCU identificou pagamentos com CPF cancelado/nulo e titulares com indício de falecimento. ([Portal TCU][6])                       | Folha de benefícios, CPF, status CPF, óbitos, data de cessação, pagamentos posteriores            | Alta          | Alta               |
+| R4 | Acumulação indevida de benefícios                                                        | TCU apontou 23 mil casos de acumulação indevida em 2023. ([Portal TCU][6])                                                        | Benefícios por CPF/NIT, espécies, status, datas, matriz normativa de acumulação                   | Alta          | Alta               |
+| R5 | Indícios antigos sem apuração tempestiva                                                 | TCU apontou atraso e falhas de priorização na apuração de indícios. ([Portal TCU][5])                                             | Base de indícios, data de geração, status da apuração, motivo, unidade responsável                | Alta          | Média/Alta         |
+| R6 | Erro de enquadramento entre direito adquirido, transição, rural, híbrida e programada    | Regras diferem conforme filiação, data de cumprimento dos requisitos e tipo de atividade. ([Serviços e Informações do Brasil][1]) | Histórico contributivo, data de filiação, DER, DIB, regra aplicada, períodos urbanos/rurais       | Média         | Média              |
+| R7 | Fragilidade de dados cadastrais e inconsistência entre sistemas                          | TCU registrou inconsistências entre sistemas e ausência de informações para identificar regras especiais. ([Portal TCU][6])       | Dicionários de dados, chaves de integração, logs de alteração, bases de origem                    | Média         | Média              |
+
+---
+
+## 4. Tipologias e alertas sugeridos
+
+### Tipologia T1 — Concessão abaixo da idade mínima aplicável
+
+**Regra lógica:** comparar idade na DER/DIB com idade mínima da regra aplicada.
+**Campos mínimos:** data de nascimento, sexo, DER, DIB, espécie, regra de concessão, data de filiação.
+**Alerta:** benefício concedido com idade inferior ao critério aplicável, salvo direito adquirido, decisão judicial ou regra especial documentada.
+**Fontes:** regras urbanas/transição e aposentadoria programada do INSS. ([Serviços e Informações do Brasil][1])
+**Assunções:** a base possui indicador confiável da regra de concessão; decisões judiciais estão marcadas.
+**Impacto da lacuna:** alto, se regra aplicada ou decisão judicial não estiverem estruturadas.
+
+### Tipologia T2 — Rural com redução etária sem comprovação rural suficiente
+
+**Regra lógica:** identificar aposentadorias rurais concedidas com idade reduzida e verificar se há 180 meses de atividade rural reconhecida.
+**Campos mínimos:** espécie rural, períodos rurais reconhecidos, categoria do segurado, vínculos urbanos, DER/DIB.
+**Fontes:** INSS informa exigência de 180 meses rurais e idade 60/55. ([Serviços e Informações do Brasil][3])
+**Assunções:** períodos rurais reconhecidos estão estruturados ou podem ser extraídos de processos.
+**Impacto da lacuna:** alto, pois documentos rurais podem estar em anexos não estruturados.
+
+### Tipologia T3 — Pagamento após óbito ou com CPF inválido
+
+**Regra lógica:** cruzar folha ativa/paga com bases de óbito e situação cadastral do CPF; sinalizar pagamentos posteriores à data de óbito ou CPF nulo/cancelado.
+**Campos mínimos:** CPF, NIT, NB, status do benefício, competência paga, data de óbito, status CPF.
+**Fontes:** TCU identificou benefícios pagos a titulares com indício de falecimento e CPF cancelado/nulo. ([Portal TCU][6])
+**Assunções:** bases de óbito e CPF estão atualizadas e legalmente acessíveis.
+**Impacto da lacuna:** médio/alto, por risco de falso positivo em homônimos, atraso cadastral ou decisão judicial.
+
+### Tipologia T4 — Acumulação potencialmente indevida
+
+**Regra lógica:** agrupar benefícios ativos por CPF/NIT e aplicar matriz de acumulação permitida/proibida.
+**Campos mínimos:** CPF/NIT, espécie, status, DIB, valor, origem, fundamento legal.
+**Fontes:** TCU apontou acúmulos indevidos em benefícios do INSS. ([Portal TCU][6])
+**Assunções:** matriz de acumulação está atualizada e contempla exceções.
+**Impacto da lacuna:** alto, se a matriz normativa não estiver versionada.
+
+---
+
+## 5. Testes automatizáveis propostos
+
+### Teste 1 — Elegibilidade por idade mínima
+
+```sql
+-- Pseudocódigo: ajustar nomes de tabelas/campos ao dicionário oficial
+SELECT
+    b.id_beneficio,
+    b.cpf_mascarado,
+    b.especie,
+    b.data_entrada_requerimento,
+    b.data_inicio_beneficio,
+    p.sexo,
+    p.data_nascimento,
+    b.regra_concessao,
+    DATE_PART('year', AGE(b.data_entrada_requerimento, p.data_nascimento)) AS idade_der
+FROM beneficios b
+JOIN pessoas p ON p.id_pessoa = b.id_pessoa
+WHERE b.status_beneficio = 'ATIVO'
+  AND b.tipo_beneficio IN ('APOSENTADORIA_IDADE_URBANA', 'APOSENTADORIA_PROGRAMADA')
+  AND (
+        (p.sexo = 'F' AND DATE_PART('year', AGE(b.data_entrada_requerimento, p.data_nascimento)) < 62)
+     OR (p.sexo = 'M' AND DATE_PART('year', AGE(b.data_entrada_requerimento, p.data_nascimento)) < 65)
+  )
+  AND COALESCE(b.indicador_decisao_judicial, false) = false;
+```
+
+**Interpretação:** o resultado é apenas **alerta preliminar**. Deve ser depurado por direito adquirido, regra de transição, DER reafirmada, decisão judicial e dados incompletos.
+**Fontes:** regras do INSS para urbana/transição e aposentadoria programada. ([Serviços e Informações do Brasil][1])
+**Assunções:** campos de sexo, nascimento, DER, regra aplicada e decisão judicial existem e são confiáveis.
+
+### Teste 2 — Benefício ativo com indício de óbito
+
+```sql
+SELECT
+    b.id_beneficio,
+    b.cpf_mascarado,
+    b.especie,
+    b.status_beneficio,
+    o.data_obito,
+    MAX(pag.competencia_pagamento) AS ultima_competencia_paga
+FROM beneficios b
+JOIN pagamentos pag ON pag.id_beneficio = b.id_beneficio
+JOIN obitos o ON o.cpf_hash = b.cpf_hash
+WHERE b.status_beneficio = 'ATIVO'
+  AND pag.competencia_pagamento > DATE_TRUNC('month', o.data_obito)
+GROUP BY
+    b.id_beneficio,
+    b.cpf_mascarado,
+    b.especie,
+    b.status_beneficio,
+    o.data_obito;
+```
+
+**Interpretação:** priorizar revisão humana de casos com maior tempo de pagamento após óbito e maior valor acumulado.
+**Fontes:** TCU identificou pagamentos a titulares com indício de falecimento. ([Portal TCU][6])
+**Assunções:** CPF/NIT foi tratado com hash ou mascaramento; acesso a dados pessoais deve ser restrito.
+
+### Teste 3 — Acumulação potencialmente indevida
+
+```sql
+SELECT
+    b.cpf_hash,
+    COUNT(*) AS qtd_beneficios_ativos,
+    ARRAY_AGG(b.especie) AS especies,
+    SUM(b.valor_mensal) AS valor_total_mensal
+FROM beneficios b
+WHERE b.status_beneficio = 'ATIVO'
+GROUP BY b.cpf_hash
+HAVING COUNT(*) > 1;
+```
+
+**Próximo passo técnico:** cruzar o resultado com uma matriz normativa de acumulação permitida/proibida, versionada por data.
+**Fontes:** TCU identificou casos de acumulação indevida e ausência de atualização da matriz de acumulação. ([Portal TCU][6])
+**Assunções:** sem matriz normativa atualizada, o teste só identifica acúmulo, não irregularidade.
+
+---
+
+## 6. Indicadores de acompanhamento
+
+| Indicador                                      | Fórmula sugerida                                            | Uso em auditoria                  |
+| ---------------------------------------------- | ----------------------------------------------------------- | --------------------------------- |
+| Taxa de concessões com alerta de elegibilidade | alertas de idade/carência ÷ concessões da espécie           | Medir risco de conformidade       |
+| Tempo médio de concessão por espécie e UF      | média entre DER e decisão                                   | Avaliar eficiência e acesso       |
+| Estoque de indícios pendentes                  | indícios não concluídos por faixa de antiguidade            | Avaliar capacidade de apuração    |
+| Valor mensal sob alerta                        | soma dos valores de benefícios com alerta                   | Mensurar materialidade            |
+| Taxa de falso positivo após revisão            | alertas descartados ÷ alertas revisados                     | Calibrar regras                   |
+| Cobertura de dados                             | campos essenciais preenchidos ÷ campos essenciais esperados | Medir confiabilidade da automação |
+
+---
+
+## 7. Lacunas de dados e impacto na confiança
+
+| Lacuna                                                                               | Alternativa                                                              | Impacto    |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ---------- |
+| Dicionário oficial das bases de benefícios, pagamentos e requerimentos não fornecido | Requisitar catálogo de dados, chaves, periodicidade, regras de qualidade | Alto       |
+| Matriz normativa de acumulação não versionada                                        | Construir matriz com área jurídica/previdenciária e registrar vigência   | Alto       |
+| Documentos rurais podem estar em PDF/imagem                                          | Amostragem humana e extração assistida com validação                     | Alto       |
+| Decisões judiciais podem não estar estruturadas                                      | Criar campo de exceção judicial e cruzar com base processual             | Médio/alto |
+| Bases de óbito e CPF podem ter defasagem                                             | Usar múltiplas fontes oficiais e trilha de atualização                   | Médio      |
+| Dados sensíveis de segurados                                                         | Usar hash, mascaramento, agregação e controle de acesso                  | Alto       |
+
+---
+
+## 8. Síntese avaliativa
+
+A política é **materialmente relevante** para fiscalização contínua pelo volume de benefícios, despesa e impacto social. Os principais focos auditáveis não são a “validade” da política em si, mas a **conformidade da concessão**, a **integridade da folha**, a **tempestividade da apuração de indícios**, a **qualidade cadastral** e a **sustentabilidade fiscal monitorada**.
+
+Com as fontes disponíveis, há evidência forte de que o ambiente de controle do INSS tem riscos relevantes: o TCU registrou indícios de pagamentos indevidos, acúmulos, CPF inválido, indício de óbito, inconsistências entre sistemas e dificuldades de revisão de benefícios antigos. ([Portal TCU][6]) Também há evidência de atraso na apuração de indícios, com risco de continuidade de pagamentos indevidos. ([Portal TCU][5])
+
+A conclusão de desempenho, porém, depende de microdados e validação humana. Sem dicionários de dados, trilhas de decisão, documentação de exceções, decisões judiciais e base de requerimentos, a avaliação deve permanecer como **diagnóstico preliminar baseado em riscos**.
+
+---
+
+## Fontes
+
+* INSS/Gov.br — regras de aposentadoria por idade urbana, rural, transição e aposentadoria programada. ([Serviços e Informações do Brasil][1])
+* TCU — auditorias e notícias sobre indícios de pagamentos indevidos, acúmulos, CPF inválido, óbito e atraso na apuração de irregularidades. ([Portal TCU][6])
+* TCU — Contas do Presidente, dados agregados do RGPS urbano e rural em 2024. ([TCU Sites][4])
+* Instruções operacionais do agente de fiscalização contínua, especialmente limites, rastreabilidade, lacunas e revisão humana. 
+
+---
+
+## Assunções
+
+* A avaliação considera o RGPS/INSS, não regimes próprios de servidores.
+* “Aposentadoria por idade” foi interpretada em sentido operacional amplo: urbana, rural, híbrida e aposentadoria programada pós-EC nº 103/2019.
+* Os nomes de tabelas e campos dos testes são ilustrativos; devem ser substituídos pelo dicionário oficial.
+* Alertas automatizados não equivalem a irregularidade confirmada.
+* Qualquer uso de CPF, NIT, NB, dados de óbito ou histórico contributivo deve observar minimização, mascaramento, logs de acesso e revisão humana.
+
+[1]: https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-idade-urbana "Aposentadoria por Idade Urbana — Instituto Nacional do Seguro Social - INSS"
+[2]: https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/regras-de-aposentadorias "Regras de Aposentadorias — Instituto Nacional do Seguro Social - INSS"
+[3]: https://www.gov.br/inss/pt-br/direitos-e-deveres/aposentadorias/aposentadoria-por-idade-do-trabalhador-rural "Aposentadoria por idade do trabalhador rural — Instituto Nacional do Seguro Social - INSS"
+[4]: https://sites.tcu.gov.br/contas-do-presidente/ficha-01.html "Contas do Presidente"
+[5]: https://portal.tcu.gov.br/imprensa/noticias/tcu-conclui-que-pagamentos-de-beneficios-do-inss-apresentam-irregularidades "TCU conclui que pagamentos de benefícios do INSS apresentam irregularidades – Notícias | Portal TCU"
+[6]: https://portal.tcu.gov.br/imprensa/noticias/auditoria-aponta-pagamento-indevido-de-beneficios-pelo-inss-em-2023 "Auditoria aponta pagamento indevido de benefícios pelo INSS em 2023 – Notícias | Portal TCU"
