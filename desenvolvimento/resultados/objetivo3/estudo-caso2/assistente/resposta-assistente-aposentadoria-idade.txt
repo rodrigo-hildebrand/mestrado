@@ -217,3 +217,100 @@ A conclusão de desempenho, porém, depende de microdados e validação humana. 
 [4]: https://sites.tcu.gov.br/contas-do-presidente/ficha-01.html "Contas do Presidente"
 [5]: https://portal.tcu.gov.br/imprensa/noticias/tcu-conclui-que-pagamentos-de-beneficios-do-inss-apresentam-irregularidades "TCU conclui que pagamentos de benefícios do INSS apresentam irregularidades – Notícias | Portal TCU"
 [6]: https://portal.tcu.gov.br/imprensa/noticias/auditoria-aponta-pagamento-indevido-de-beneficios-pelo-inss-em-2023 "Auditoria aponta pagamento indevido de benefícios pelo INSS em 2023 – Notícias | Portal TCU"
+
+
+## Segunda interação com o assistente
+
+## 1. Marco constitucional
+
+| Norma                                                   | Aplicação à aposentadoria por idade                                                                                                                                                         | Uso em fiscalização                                                                                                                        |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Constituição Federal de 1988 — arts. 194, 195 e 201** | Define a seguridade social, seu financiamento e a organização da previdência social no RGPS. O art. 201 é a base constitucional da cobertura previdenciária, inclusive para idade avançada. | Critério macro para avaliar universalidade, seletividade, equilíbrio financeiro e atuarial, financiamento e cobertura. ([Planalto][1])     |
+| **Emenda Constitucional nº 103/2019**                   | Reforma da Previdência. Alterou regras constitucionais e criou regras permanentes e de transição para aposentadorias no RGPS.                                                               | Essencial para separar benefícios por data de filiação, direito adquirido, regras de transição e aposentadoria programada. ([Planalto][2]) |
+
+---
+
+## 2. Leis principais
+
+| Norma                                                             | Conteúdo relevante                                                                                                                                                                                                                                                                                | Uso em fiscalização                                                                                                                                                   |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Lei nº 8.213/1991 — Plano de Benefícios da Previdência Social** | É a lei central para benefícios do RGPS. Contém regras de carência, aposentadoria por idade, segurado rural, cálculo, manutenção e cessação de benefícios. O art. 48 trata da aposentadoria por idade, e o art. 142 contém tabela progressiva de carência para inscritos antigos. ([Planalto][3]) | Base principal para testes de elegibilidade: idade, carência, qualidade/condição de segurado, DIB, DER, espécie e regra aplicada.                                     |
+| **Lei nº 8.212/1991 — Plano de Custeio da Previdência Social**    | Rege financiamento da seguridade/previdência, contribuições, categorias de segurados e aspectos de custeio. ([Planalto][4])                                                                                                                                                                       | Útil para avaliar sustentabilidade, vínculo contributivo, categoria de segurado e aderência entre arrecadação, contribuição e benefício.                              |
+| **Lei nº 9.784/1999 — Processo Administrativo Federal**           | Estabelece normas básicas do processo administrativo no âmbito da Administração Pública Federal. ([Planalto][5])                                                                                                                                                                                  | Critério para análise de devido processo, motivação, revisão administrativa, contraditório, comunicação ao beneficiário e rastreabilidade decisória.                  |
+| **Lei nº 13.846/2019**                                            | Instituiu programa especial para análise de benefícios com indícios de irregularidade e revisão de benefícios. ([Planalto][6])                                                                                                                                                                    | Base para avaliar governança de apuração de indícios, priorização, estoque de suspeitas, revisão e cobrança administrativa.                                           |
+| **Lei Complementar nº 142/2013**                                  | Regula aposentadoria da pessoa com deficiência no RGPS, incluindo aposentadoria por idade da pessoa com deficiência: 60 anos para homem e 55 para mulher, observadas as condições da LC. ([Planalto][7])                                                                                          | Aplicável se o escopo incluir aposentadoria por idade da pessoa com deficiência; exige testes específicos para deficiência, tempo mínimo e avaliação biopsicossocial. |
+
+---
+
+## 3. Regulamentos e decretos
+
+| Norma                                                         | Conteúdo relevante                                                                                                                                                               | Uso em fiscalização                                                                                                   |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **Decreto nº 3.048/1999 — Regulamento da Previdência Social** | Regulamenta o RGPS. Trata de aposentadoria programada, aposentadoria por idade do trabalhador rural, carência, cálculo, manutenção e outras regras operacionais. ([Planalto][8]) | Deve ser usado para transformar comandos legais em critérios operacionais de teste.                                   |
+| **Decreto nº 10.410/2020**                                    | Atualizou o Regulamento da Previdência Social após a EC nº 103/2019. ([Planalto][9])                                                                                             | Importante para regras pós-reforma, aposentadoria programada, rural e adequações no RPS.                              |
+| **Decreto nº 8.145/2013**                                     | Regulamenta pontos relativos à aposentadoria da pessoa com deficiência. ([Planalto][10])                                                                                         | Aplicável quando houver análise de aposentadoria por idade da pessoa com deficiência.                                 |
+| **Decreto nº 8.539/2015**                                     | Dispõe sobre uso do meio eletrônico no processo administrativo federal. ([Planalto][11])                                                                                         | Útil para avaliar processos digitais, trilhas, documentos eletrônicos, integridade processual e registros sistêmicos. |
+
+---
+
+## 4. Atos infralegais do INSS
+
+| Norma                                                              | Conteúdo relevante                                                                                                                                                       | Uso em fiscalização                                                                                                           |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
+| **Instrução Normativa PRES/INSS nº 128/2022**                      | Disciplina regras, procedimentos e rotinas para aplicação das normas de direito previdenciário no âmbito do INSS. ([Imprensa Nacional][12])                              | Principal ato operacional para verificar como o INSS deve reconhecer, manter, revisar e operacionalizar benefícios.           |
+| **IN PRES/INSS nº 128/2022 — aposentadoria por idade e transição** | A IN prevê regra para segurado filiado até 13/11/2019, requisitos de idade, tempo de contribuição e progressão da idade da mulher até 62 anos. ([Imprensa Nacional][13]) | Base direta para testes de regra de transição, carência e enquadramento da concessão.                                         |
+| **IN PRES/INSS nº 128/2022 — rural**                               | A IN trata da carência rural, comprovação de atividade rural e aposentadoria por idade do trabalhador rural. ([Imprensa Nacional][13])                                   | Base para tipologias sobre redução etária rural, comprovação de 180 meses e períodos urbanos/rurais.                          |
+| **Alterações posteriores da IN 128**                               | O portal do INSS registra atos posteriores que alteram a IN 128, inclusive a IN PRES/INSS nº 203/2026. ([Serviços e Informações do Brasil][14])                          | Em fiscalização contínua, a regra aplicada no teste deve ser versionada pela data da DER/DIB e pela redação vigente na época. |
+
+---
+
+## 5. Matriz critério normativo → teste de auditoria
+
+| Tema auditável                        | Norma-base                                                                | Teste sugerido                                                                                                       |
+| ------------------------------------- | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Idade mínima urbana/programada        | CF art. 201, EC 103/2019, Lei 8.213/1991, Decreto 3.048/1999, IN 128/2022 | Comparar idade na DER/DIB com regra aplicável por sexo, data de filiação e data de cumprimento dos requisitos.       |
+| Carência / tempo mínimo               | Lei 8.213/1991, art. 25 e art. 142; IN 128/2022                           | Verificar 180 contribuições ou tabela progressiva, conforme data de inscrição e regra aplicável.                     |
+| Rural com redução etária              | Lei 8.213/1991, Decreto 3.048/1999, IN 128/2022                           | Validar idade 60/55, 180 meses de atividade rural e documentação/registro de atividade rural.                        |
+| Aposentadoria híbrida                 | Lei 8.213/1991, Decreto 3.048/1999, IN 128/2022                           | Verificar soma de períodos urbanos e rurais e impedir aplicação indevida de redução etária rural quando não cabível. |
+| Pessoa com deficiência                | LC 142/2013, Decreto 8.145/2013, IN 128/2022                              | Validar idade, tempo mínimo, condição de deficiência e avaliação exigida.                                            |
+| Revisão de indícios                   | Lei 13.846/2019, Lei 9.784/1999, IN 128/2022                              | Medir estoque de indícios, tempo de apuração, priorização por materialidade e garantia de contraditório.             |
+| Processo eletrônico e rastreabilidade | Lei 9.784/1999, Decreto 8.539/2015                                        | Verificar motivação, documentos, logs, integridade processual e trilha de decisão.                                   |
+
+---
+
+## 6. Fontes
+
+* Constituição Federal de 1988, arts. 194, 195 e 201. ([Planalto][1])
+* Emenda Constitucional nº 103/2019. ([Planalto][2])
+* Lei nº 8.213/1991. ([Planalto][3])
+* Lei nº 8.212/1991. ([Planalto][4])
+* Decreto nº 3.048/1999. ([Planalto][8])
+* Decreto nº 10.410/2020. ([Planalto][9])
+* IN PRES/INSS nº 128/2022 e alterações. ([Imprensa Nacional][12])
+* Lei nº 9.784/1999. ([Planalto][5])
+* Lei nº 13.846/2019. ([Planalto][6])
+* Diretrizes do agente de fiscalização contínua: rastreabilidade, revisão humana, não responsabilização automática e tratamento de lacunas. 
+
+---
+
+## 7. Assunções
+
+* Mantive o foco no **RGPS/INSS**, não em regimes próprios de servidores.
+* Incluí normas de processo e revisão porque a avaliação da política envolve não só concessão, mas também manutenção, revisão, apuração de indícios e governança.
+* A lista é suficiente para uma matriz inicial de fiscalização, mas a equipe deve confirmar a redação vigente e a redação histórica aplicável à **DER**, **DIB** e data de cumprimento dos requisitos de cada benefício.
+* Para transformar isso em teste automatizado, ainda é necessário obter o dicionário oficial das bases do INSS/CNIS/folha, com campos, chaves, periodicidade e regras de qualidade.
+
+[1]: https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm?utm_source=chatgpt.com "Constituição - Planalto"
+[2]: https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm?utm_source=chatgpt.com "Emenda Constitucional nº 103 - Planalto"
+[3]: https://www.planalto.gov.br/ccivil_03/leis/l8213cons.htm?utm_source=chatgpt.com "L8213consol - Planalto"
+[4]: https://www.planalto.gov.br/ccivil_03/leis/l8212cons.htm?utm_source=chatgpt.com "L8212 - Consolidada - Planalto"
+[5]: https://www.planalto.gov.br/ccivil_03/leis/l9784.htm?utm_source=chatgpt.com "L9784 - Planalto"
+[6]: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13846.htm?utm_source=chatgpt.com "L13846 - Planalto"
+[7]: https://planalto.gov.br/ccivil_03/LEIS/LCP/Lcp142.htm?utm_source=chatgpt.com "Lcp 142 - Planalto"
+[8]: https://www.planalto.gov.br/ccivil_03/decreto/d3048.htm?utm_source=chatgpt.com "D3048 - Planalto"
+[9]: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/decreto/d10410.htm?utm_source=chatgpt.com "D10410 - Planalto"
+[10]: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/decreto/d8145.htm?utm_source=chatgpt.com "Decreto nº 8145 - Planalto"
+[11]: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/decreto/d8539.htm?utm_source=chatgpt.com "Decreto nº 8539 - Planalto"
+[12]: https://www.in.gov.br/web/dou/-/instrucao-normativa-pres/inss-n-128-de-28-de-marco-de-2022-389275446?utm_source=chatgpt.com "Instrução Normativa PRES/INSS n. 128/2022"
+[13]: https://www.in.gov.br/web/dou/-/instrucao-normativa-pres/inss-n-128-de-28-de-marco-de-2022-389275446 "INSTRUÇÃO NORMATIVA PRES/INSS Nº 128, DE 28 DE MARÇO DE 2022 - INSTRUÇÃO NORMATIVA PRES/INSS Nº 128, DE 28 DE MARÇO DE 2022 - DOU - Imprensa Nacional"
+[14]: https://www.gov.br/inss/pt-br/centrais-de-conteudo/legislacao/instrucao-normativa/2026 "2026 — Instituto Nacional do Seguro Social - INSS"
