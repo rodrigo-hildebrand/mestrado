@@ -1,0 +1,157 @@
+## Avaliação preliminar — Política pública “BPC Idoso”
+
+**Escopo:** avaliação de desenho, implementação, focalização, riscos e testabilidade em fiscalização contínua.
+**Limite:** isto não homologa achados, não responsabiliza agentes e não substitui julgamento profissional humano; os alertas abaixo são hipóteses para revisão da equipe de auditoria. 
+
+---
+
+## 1. Síntese avaliativa
+
+O **BPC Idoso** é um benefício assistencial de **um salário mínimo mensal** destinado à pessoa idosa com **65 anos ou mais**, de família de baixa renda, sem exigência de contribuição ao INSS. O MDS informa que o BPC não é aposentadoria, não paga 13º salário, não gera pensão por morte e é revisado periodicamente. ([Serviços e Informações do Brasil][1])
+
+O desenho normativo é relativamente claro: exige renda familiar per capita de até **¼ do salário mínimo**, inscrição atualizada no CadÚnico, CPF dos membros familiares, biometria e residência no Brasil. ([Serviços e Informações do Brasil][1]) A composição familiar e as exclusões de renda relevantes também estão definidas pelo MDS, como a desconsideração de outro BPC e de benefício previdenciário de até um salário mínimo pago a pessoa idosa ou pessoa com deficiência, com limites específicos. ([Serviços e Informações do Brasil][1])
+
+Em termos de escala, o BPC como um todo alcançou **6,5 milhões de beneficiários em julho de 2025**, segundo o MDS; essa informação agrega idosos e pessoas com deficiência, portanto não deve ser usada isoladamente como número do BPC Idoso. ([Serviços e Informações do Brasil][2])
+
+A principal fragilidade auditável está na **focalização e qualidade cadastral**. Em auditoria de 2025, o TCU estimou que **6,3% dos beneficiários do BPC** tinham renda familiar per capita acima do limite legal, com pagamentos indevidos potenciais da ordem de **R$ 5 bilhões ao ano**; também apontou **6.701 casos de acumulação indevida**, **2.476 beneficiários possivelmente falecidos** e **31.157 inconsistências cadastrais**. ([Portal TCU][3])
+
+---
+
+## 2. Matriz de riscos — BPC Idoso
+
+| ID | Risco preliminar                                                       | Criticidade | Critério / fonte                                                                                                                                                                                                                     | Dados necessários                                           | Teste de fiscalização contínua                                                                        | Limitações                                                          |
+| -- | ---------------------------------------------------------------------- | ----------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| R1 | Pagamento a pessoa com renda familiar per capita acima do limite legal |        Alta | Renda familiar per capita até ¼ do salário mínimo; atualização CadÚnico obrigatória. ([Serviços e Informações do Brasil][1])                                                                                                         | CadÚnico, CNIS/rendas, folha BPC, composição familiar       | Cruzar renda familiar declarada e rendas administrativas; recalcular renda per capita por competência | Regras de exclusão de renda precisam ser parametrizadas com cuidado |
+| R2 | Acumulação indevida com outro benefício incompatível                   |        Alta | TCU identificou acumulações indevidas e determinou providências ao INSS. ([Portal TCU][3])                                                                                                                                           | BPC, benefícios INSS, RPPS quando disponível                | Detectar CPF/NIS com BPC e outro benefício não permitido no mesmo período                             | Bases de RPPS podem não estar integradas                            |
+| R3 | Pagamento após óbito ou com CPF inválido/cancelado                     |        Alta | TCU apontou beneficiários possivelmente falecidos e casos com CPF nulo/cancelado. ([Portal TCU][3])                                                                                                                                  | BPC, CPF, bases de óbito, SIRC, CadÚnico                    | Cruzar CPF/NIS com óbito e situação cadastral; gerar alerta mensal                                    | Óbitos tardios ou subregistro podem gerar falso positivo            |
+| R4 | CadÚnico desatualizado, comprometendo elegibilidade                    |  Média/Alta | Prazo máximo de atualização cadastral de 24 meses. ([Serviços e Informações do Brasil][1])                                                                                                                                           | CadÚnico, data de atualização, folha BPC                    | Listar beneficiários com cadastro vencido ou ausente                                                  | Pode haver regularização em curso não refletida na base             |
+| R5 | Fragilidade de transparência e rastreabilidade dos pagamentos          |       Média | Portal da Transparência disponibiliza dados e dicionário de BPC, incluindo competência, UF, município, NIS, CPF, representante, concessão judicial e valor da parcela. ([Portal da Transparência][4]) ([Portal da Transparência][5]) | Portal da Transparência, folha operacional, logs de decisão | Comparar folha operacional com dados publicados e agregados por UF/município                          | Dados abertos podem ter defasagem e exposição sensível              |
+| R6 | Inclusão/exclusão indevida por erro na composição familiar             |       Média | O MDS define quais membros compõem família para BPC e exclui outros moradores não enquadrados. ([Serviços e Informações do Brasil][1])                                                                                               | CadÚnico, parentesco, domicílio, estado civil               | Testar famílias com composição atípica ou alterações frequentes                                       | Pode exigir validação amostral em CRAS                              |
+
+---
+
+## 3. Tipologias e alertas automáticos
+
+### T1 — Renda per capita acima do limite
+
+**Definição operacional:** beneficiário idoso com renda familiar recalculada acima de ¼ do salário mínimo, após aplicar exclusões legais.
+**Regra lógica:** `renda_familiar_considerada / qtd_membros_familia > 0.25 * salario_minimo`.
+**Fontes:** critérios de renda e cálculo familiar do MDS; achado de focalização do TCU. ([Serviços e Informações do Brasil][1])
+**Assunções:** salário mínimo por competência disponível; rendas administrativas completas; exclusões de renda parametrizadas.
+
+### T2 — BPC com CPF/NIS associado a óbito
+
+**Definição operacional:** pagamento em competência posterior à data de óbito registrada.
+**Regra lógica:** `competencia_pagamento > data_obito`.
+**Fontes:** TCU apontou beneficiários possivelmente falecidos e determinou correções. ([Portal TCU][3])
+**Assunções:** base de óbitos confiável e atualizada; CPF/NIS com qualidade suficiente para pareamento.
+
+### T3 — CadÚnico vencido
+
+**Definição operacional:** beneficiário com última atualização do CadÚnico superior a 24 meses.
+**Regra lógica:** `data_referencia - data_atualizacao_cadunico > 24 meses`.
+**Fontes:** MDS informa prazo máximo de atualização cadastral de 24 meses. ([Serviços e Informações do Brasil][1])
+**Assunções:** data de atualização disponível e sincronizada com a competência do benefício.
+
+### T4 — Acúmulo potencialmente indevido
+
+**Definição operacional:** CPF/NIS recebe BPC e outro benefício incompatível na mesma competência.
+**Regra lógica:** `beneficio_bpc_ativo = 1 AND beneficio_incompativel_ativo = 1`.
+**Fontes:** TCU identificou 6.701 casos de acumulação indevida. ([Portal TCU][3])
+**Assunções:** regras de compatibilidade atualizadas; bases de benefícios integradas.
+
+---
+
+## 4. Especificação de testes
+
+### Teste A — Recalcular elegibilidade de renda
+
+**Objetivo:** identificar beneficiários idosos com renda familiar per capita potencialmente acima do limite.
+**Hipótese:** parte dos pagamentos ativos pode estar baseada em renda desatualizada, composição familiar incorreta ou rendas administrativas não capturadas.
+**Critério:** renda familiar per capita de até ¼ do salário mínimo e CadÚnico atualizado. ([Serviços e Informações do Brasil][1])
+**Dados:** folha BPC, CadÚnico, CNIS, bases de benefícios previdenciários, salário mínimo por competência.
+**Interpretação:** resultado positivo é alerta, não achado definitivo; exige validação de exclusões legais, composição familiar e eventual decisão judicial.
+
+```sql
+-- Exemplo conceitual: não executar sem adaptar ao dicionário real das bases
+WITH familia AS (
+  SELECT
+      b.cpf_beneficiario,
+      b.competencia,
+      c.id_familia,
+      COUNT(DISTINCT c.cpf_pessoa) AS qtd_membros,
+      SUM(COALESCE(r.valor_renda_considerada, 0)) AS renda_total_considerada
+  FROM folha_bpc b
+  JOIN cadunico_pessoas c
+    ON b.id_familia = c.id_familia
+  LEFT JOIN rendas_administrativas r
+    ON r.cpf = c.cpf_pessoa
+   AND r.competencia = b.competencia
+  WHERE b.tipo_bpc = 'IDOSO'
+    AND b.situacao_beneficio = 'ATIVO'
+  GROUP BY b.cpf_beneficiario, b.competencia, c.id_familia
+)
+SELECT
+    f.cpf_beneficiario,
+    f.competencia,
+    f.id_familia,
+    f.qtd_membros,
+    f.renda_total_considerada,
+    f.renda_total_considerada / NULLIF(f.qtd_membros, 0) AS renda_per_capita,
+    sm.valor_salario_minimo * 0.25 AS limite_bpc
+FROM familia f
+JOIN salario_minimo sm
+  ON sm.competencia = f.competencia
+WHERE f.renda_total_considerada / NULLIF(f.qtd_membros, 0) > sm.valor_salario_minimo * 0.25;
+```
+
+### Teste B — Óbito posterior com pagamento ativo
+
+**Objetivo:** detectar pagamentos em competência posterior ao óbito.
+**Critério:** manutenção do benefício exige beneficiário vivo e elegível; TCU apontou casos de beneficiários possivelmente falecidos. ([Portal TCU][3])
+**Dados:** folha BPC, base de óbitos/SIRC, CPF/NIS.
+
+### Teste C — CadÚnico desatualizado
+
+**Objetivo:** gerar lista de beneficiários com cadastro vencido.
+**Critério:** atualização cadastral em até 24 meses. ([Serviços e Informações do Brasil][1])
+**Dados:** folha BPC, CadÚnico, data de atualização.
+
+---
+
+## 5. Questões de avaliação
+
+1. **Relevância:** a política tem público-alvo normativamente definido — idosos de baixa renda com 65 anos ou mais — e se insere na proteção social básica do SUAS. ([Serviços e Informações do Brasil][2])
+2. **Desenho:** critérios de renda, idade, residência, CadÚnico e biometria são verificáveis, mas exigem integração de bases para reduzir erro de inclusão e erro de exclusão. ([Serviços e Informações do Brasil][1])
+3. **Implementação:** a dependência de CadÚnico, Meu INSS/INSS e CRAS cria pontos de controle, mas também riscos de desatualização e barreiras operacionais. ([Serviços e Informações do Brasil][1])
+4. **Focalização:** há evidência recente do TCU de pagamentos potenciais a pessoas fora dos critérios, acumulações indevidas e inconsistências cadastrais. ([Portal TCU][3])
+5. **Transparência e dados:** há dados abertos do BPC no Portal da Transparência e dicionário com campos úteis para auditoria, mas os dados contêm identificadores pessoais, exigindo minimização, anonimização e controle de acesso. ([Portal da Transparência][4])
+
+---
+
+## 6. Fontes
+
+* MDS — Página oficial do BPC, critérios de acesso, CadÚnico, biometria, renda e composição familiar. ([Serviços e Informações do Brasil][1])
+* MDS/SAGICAD — objetivos, modelo lógico, plano de monitoramento/avaliação e enquadramento do BPC no PPA. ([MDS/SAGICAD][6])
+* MDS — Relatório/notícia de 2026 com escala agregada do BPC e integração ao SUAS. ([Serviços e Informações do Brasil][2])
+* TCU — Auditoria de 2025 sobre conformidade e focalização do BPC, com achados de renda, acumulação, óbitos e inconsistências cadastrais. ([Portal TCU][3])
+* Portal da Transparência/CGU — download e dicionário de dados do BPC. ([Portal da Transparência][4])
+* Decreto nº 12.534/2025 — alteração do regulamento do BPC e do CadÚnico, conforme Câmara dos Deputados. ([Portal da Câmara dos Deputados][7])
+* Instruções operacionais do agente de fiscalização contínua fornecidas no ambiente. 
+
+---
+
+## 7. Assunções e lacunas
+
+* **Assunção:** a avaliação é preliminar e baseada em fontes públicas; não foram acessadas bases internas do INSS, MDS, Dataprev, CadÚnico ou CNIS.
+* **Lacuna relevante:** o número citado de **6,5 milhões** é do BPC total, não exclusivamente do BPC Idoso. Impacto na confiança: **médio** para análise de escala específica do idoso.
+* **Lacuna de dados:** os testes exigem dicionários reais, chaves de pareamento e regras vigentes de exclusão de renda. Impacto na confiança: **alto** para execução automatizada.
+* **Privacidade:** CPF, NIS, nome e representante legal aparecem no dicionário de dados do BPC; qualquer fiscalização contínua deve priorizar agregações, pseudonimização, logs de acesso e segregação de perfis.
+
+[1]: https://www.gov.br/mds/pt-br/acoes-e-programas/suas/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc "Benefício de Prestação Continuada (BPC) — Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome"
+[2]: https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/mds-lanca-relatorio-sobre-o-bpc-e-reforca-compromisso-com-a-protecao-social-de-pessoas-idosas-e-com-deficiencia "MDS lança relatório sobre o Benefício de Prestação Continuada — Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome"
+[3]: https://portal.tcu.gov.br/imprensa/noticias/tribunal-avalia-beneficio-de-prestacao-continuada "Tribunal avalia Benefício de Prestação Continuada – Notícias | Portal TCU"
+[4]: https://portaldatransparencia.gov.br/download-de-dados/bpc "Despesas - Transferências - Programas Sociais - BPC"
+[5]: https://portaldatransparencia.gov.br/dicionario-de-dados/bpc "Dicionário de Dados - BPC"
+[6]: https://wiki-sagi.mds.gov.br/home/DS/BPC "Benefício de Prestação Continuada - BPC | MDS/SAGICAD"
+[7]: https://www2.camara.leg.br/legin/fed/decret/2025/decreto-12534-25-junho-2025-797658-norma-pe.html "Portal da Câmara dos Deputados"
