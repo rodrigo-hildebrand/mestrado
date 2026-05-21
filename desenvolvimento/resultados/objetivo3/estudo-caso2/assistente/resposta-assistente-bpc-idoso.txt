@@ -155,3 +155,90 @@ WHERE f.renda_total_considerada / NULLIF(f.qtd_membros, 0) > sm.valor_salario_mi
 [5]: https://portaldatransparencia.gov.br/dicionario-de-dados/bpc "Dicionário de Dados - BPC"
 [6]: https://wiki-sagi.mds.gov.br/home/DS/BPC "Benefício de Prestação Continuada - BPC | MDS/SAGICAD"
 [7]: https://www2.camara.leg.br/legin/fed/decret/2025/decreto-12534-25-junho-2025-797658-norma-pe.html "Portal da Câmara dos Deputados"
+
+
+## Segunda interação com o assistente
+
+## Base normativa utilizada — BPC Idoso
+
+Abaixo está a base normativa que sustentou a avaliação preliminar da política pública **BPC Idoso**, com foco em critérios auditáveis: elegibilidade, renda, CadÚnico, manutenção, revisão e controles de identificação.
+
+| Norma                            | Dispositivo / tema usado                                                                                                                                                            | Uso na avaliação                                                                                                            |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **Constituição Federal de 1988** | Art. 203, V: garantia de um salário mínimo mensal à pessoa com deficiência e ao idoso que comprovem não possuir meios de prover a própria manutenção ou tê-la provida pela família. | Fundamento constitucional do BPC como benefício assistencial não contributivo. ([Normas Legislativa][1])                    |
+| **Lei nº 8.742/1993 — LOAS**     | Art. 20: define o Benefício de Prestação Continuada.                                                                                                                                | Base legal principal para existência do BPC e para critérios de concessão/manutenção. ([Planalto][2])                       |
+| **Lei nº 12.435/2011**           | Alterou a LOAS e consolidou no art. 20 o BPC como garantia de um salário mínimo mensal à pessoa com deficiência e ao idoso com 65 anos ou mais.                                     | Usada para o critério etário do BPC Idoso: **65 anos ou mais**. ([Planalto][3])                                             |
+| **Lei nº 13.982/2020**           | Alterou regras de renda e não cômputo de BPC/benefício previdenciário de até um salário mínimo em hipóteses legais.                                                                 | Usada para alertas de renda familiar e exclusões no cálculo da renda per capita. ([Planalto][4])                            |
+| **Lei nº 14.176/2021**           | Tratou de alterações no BPC, incluindo renda familiar mensal per capita igual ou inferior a ¼ do salário mínimo em dispositivos da LOAS.                                            | Usada para reforçar o critério de renda de **até ¼ do salário mínimo**. ([Planalto][5])                                     |
+| **Decreto nº 6.214/2007**        | Regulamenta o BPC da assistência social devido à pessoa com deficiência e ao idoso, com base na LOAS e no Estatuto do Idoso.                                                        | Regulamento central para operacionalização do BPC: beneficiário, concessão, manutenção, revisão e cessação. ([Planalto][6]) |
+| **Decreto nº 11.016/2022**       | Regulamenta o Cadastro Único para Programas Sociais do Governo Federal, instituído na LOAS.                                                                                         | Base para testes de inscrição/atualização no CadÚnico e qualidade cadastral. ([Planalto][7])                                |
+| **Lei nº 15.077/2024**           | Base legal recente relacionada a requisitos de formalização e biometria para benefícios da seguridade social.                                                                       | Usada como norma de contexto para controles de identificação e manutenção. ([Planalto][8])                                  |
+| **Decreto nº 12.534/2025**       | Alterou o regulamento do BPC; estabelece requisitos como CPF e CadÚnico para concessão e manutenção.                                                                                | Usado para riscos de manutenção irregular, CadÚnico e CPF. ([Planalto][9])                                                  |
+| **Decreto nº 12.561/2025**       | Regulamenta o cadastro biométrico obrigatório para concessão, manutenção e renovação de benefícios da seguridade social da União.                                                   | Usado para riscos/alertas de identificação biométrica e integridade cadastral. ([Imprensa Nacional][10])                    |
+
+---
+
+## Normas operacionais e fontes interpretativas usadas como apoio
+
+Estas não substituem a lei, mas foram usadas para interpretar a aplicação administrativa dos critérios:
+
+| Fonte                                                        | Conteúdo usado                                                                                                                                                                      | Uso na avaliação                                                                                               |
+| ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Página oficial do MDS sobre o BPC**                        | Requisitos atuais: renda familiar per capita de até ¼ do salário mínimo, idade igual ou superior a 65 anos, CadÚnico atualizado, CPF dos membros, biometria e residência no Brasil. | Tradução operacional dos critérios legais em requisitos testáveis. ([Serviços e Informações do Brasil][11])    |
+| **Página do MDS sobre cálculo da renda per capita familiar** | Orienta somar rendimentos da família e dividir pelo número de integrantes; renda final deve ser igual ou menor que ¼ do salário mínimo.                                             | Base para desenhar o teste de recálculo de renda familiar per capita. ([Serviços e Informações do Brasil][12]) |
+| **Notícia técnica do MDS sobre nova regra de renda do BPC**  | Lista valores/benefícios que podem ser desconsiderados no cálculo da renda, como outro BPC e benefício previdenciário de até um salário mínimo, observados limites.                 | Base para parametrizar exclusões de renda no teste automatizado. ([Serviços e Informações do Brasil][13])      |
+| **INSS — Benefícios assistenciais**                          | Identifica o serviço “Solicitar Benefício Assistencial ao Idoso (BPC/LOAS)”.                                                                                                        | Apoio para mapear o órgão operacionalizador e o fluxo administrativo. ([Serviços e Informações do Brasil][14]) |
+
+---
+
+## Relação norma → risco/teste
+
+| Critério normativo                                                 | Risco/teste associado                                                                       |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
+| Idade mínima de 65 anos                                            | Teste de beneficiário com idade inferior à mínima legal na data de concessão ou manutenção. |
+| Renda familiar per capita até ¼ do salário mínimo                  | Teste de renda familiar recalculada acima do limite.                                        |
+| Inscrição e atualização no CadÚnico                                | Teste de beneficiário ativo com CadÚnico ausente, vencido ou inconsistente.                 |
+| CPF dos membros familiares                                         | Teste de CPF nulo, cancelado, duplicado ou inconsistente.                                   |
+| Não acumulação indevida                                            | Teste de acúmulo com benefício incompatível no mesmo CPF/NIS/competência.                   |
+| Biometria obrigatória, conforme cronograma e hipóteses de dispensa | Teste de ausência de registro biométrico aplicável à concessão/manutenção.                  |
+| Revisão/manutenção periódica do BPC                                | Teste de benefícios sem revisão ou com indícios supervenientes de perda de elegibilidade.   |
+
+---
+
+## Fontes
+
+* Constituição Federal, art. 203, V. ([Normas Legislativa][1])
+* Lei nº 8.742/1993 — LOAS. ([Planalto][2])
+* Lei nº 12.435/2011. ([Planalto][3])
+* Lei nº 13.982/2020. ([Planalto][4])
+* Lei nº 14.176/2021. ([Planalto][5])
+* Decreto nº 6.214/2007. ([Planalto][6])
+* Decreto nº 11.016/2022. ([Planalto][7])
+* Lei nº 15.077/2024. ([Planalto][8])
+* Decreto nº 12.534/2025. ([Planalto][9])
+* Decreto nº 12.561/2025. ([Imprensa Nacional][10])
+* Regras de governança da fiscalização contínua fornecidas no ambiente. 
+
+---
+
+## Assunções
+
+* A base normativa foi consolidada para **avaliação preliminar de auditoria/fiscalização contínua**, não para parecer jurídico conclusivo.
+* A aplicação concreta dos testes depende do dicionário de dados real das bases do INSS, MDS, Dataprev, CadÚnico e eventuais bases de óbito/renda.
+* Normas infralegais internas, portarias e instruções operacionais específicas do INSS/MDS devem ser adicionadas se a equipe tiver acesso a repositórios internos atualizados.
+
+[1]: https://normas.leg.br/?urn=urn%3Alex%3Abr%3Afederal%3Aconstituicao%3A1988-10-05%3B1988%21art203&utm_source=chatgpt.com "Art. 203. da Constituição da República Federativa do Brasil"
+[2]: https://www.planalto.gov.br/ccivil_03/leis/l8742compilado.htm?utm_source=chatgpt.com "L8742compilado - Planalto"
+[3]: https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12435.htm?utm_source=chatgpt.com "L12435 - Planalto"
+[4]: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2020/lei/l13982.htm?utm_source=chatgpt.com "L13982 - Planalto"
+[5]: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14176.htm?utm_source=chatgpt.com "L14176 - Planalto"
+[6]: https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2007/decreto/d6214.htm?utm_source=chatgpt.com "Decreto nº 6214 - Planalto"
+[7]: https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2022/decreto/d11016.htm?utm_source=chatgpt.com "D11016 - Planalto"
+[8]: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/L15077.htm?utm_source=chatgpt.com "L15077 - Planalto"
+[9]: https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/decreto/d12534.htm?utm_source=chatgpt.com "D12534 - Planalto"
+[10]: https://www.in.gov.br/en/web/dou/-/decreto-n-12.561-de-23-de-julho-de-2025-643870556?utm_source=chatgpt.com "Decreto nº 12.561, de 23 de julho de 2025"
+[11]: https://www.gov.br/mds/pt-br/acoes-e-programas/suas/beneficios-assistenciais/beneficio-assistencial-ao-idoso-e-a-pessoa-com-deficiencia-bpc?utm_source=chatgpt.com "Benefício de Prestação Continuada (BPC)"
+[12]: https://www.gov.br/mds/pt-br/acoes-e-programas/suas/beneficios-assistenciais/como-calcular-a-renda-per-capita-familiar?utm_source=chatgpt.com "Como Calcular a Renda por Pessoa da Família"
+[13]: https://www.gov.br/mds/pt-br/noticias-e-conteudos/desenvolvimento-social/noticias-desenvolvimento-social/nova-regra-do-bpc-garante-protecao-a-quem-tiver-variacao-de-renda?utm_source=chatgpt.com "Nova regra do BPC garante proteção a quem tiver ..."
+[14]: https://www.gov.br/inss/pt-br/servicos/beneficios-assistenciais?utm_source=chatgpt.com "Benefícios Assistenciais - INSS"
+
