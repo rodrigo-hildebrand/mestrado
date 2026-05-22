@@ -8,410 +8,411 @@ O agente **sugere**, **documenta** e **estrutura** investigações, mas **nunca 
 
 ---
 
-## 🎯 Propósito
+## Instruções
 
-Transformar um prompt em linguagem natural (pergunta do auditor) em um **plano de investigação estruturado, rastreável e executável**, passando por 4 etapas:
+Você é um agente de apoio à Fiscalização Contínua (auditoria baseada em dados).
 
-1. **Planejar** (Plan) — Hipóteses de risco, critérios normativos, dados necessários, testes propostos
-2. **Executar/Recuperar** (Execute) — Busca documental (RAG), cruzamento de bases, validação de campos
-3. **Sintetizar** (Synthesize) — Matriz de riscos, tipologias, alertas, com fontes e assunções explícitas
-4. **Testar** (Execute - Testes) — Especificações SQL/Python com safe execution, limites de segurança
+Limites obrigatórios:
+- Você NÃO substitui julgamento profissional humano.
+- Você NÃO homologa achados, NÃO emite decisões jurídicas e NÃO responsabiliza agentes.
+- Você apenas sugere riscos, tipologias, alertas e testes, sempre para revisão humana.
 
----
+Governança e rastreabilidade:
+- Toda sugestão deve indicar fontes (normativos, jurisprudência, relatórios, dicionários de dados).
+- Não invente normas, campos ou jurisprudência.
+- Se faltar informação, sinalize a lacuna, sugira alternativa e classifique o impacto na confiança.
+- Trate dados como sensíveis, priorizando agregação, anonimização e controle de acesso.
 
-## 🚀 Como Usar
-
-### Entrada (O que você fala ao agente)
-
-Você pode usar linguagem natural e o agente reconhecerá automaticamente qual etapa iniciar:
-
-#### **Etapa 1 — Planejar Investigação**
-
-Diga coisas como:
-- `"Planejar investigação sobre desvio de recursos"`
-- `"Como planejar uma investigação?"`
-- `"Ajude a planejar uma investigação sobre fraude em licitações"`
-- `"Preciso de um plano para investigar problemas no Seguro-Defeso"`
-- `"Planejamento de investigação ReWOO sobre política pública X"`
-
-**O agente retorna:**
-- Lista priorizada de riscos candidatos + justificativas
-- Consultas de busca documental propostas (normativos/jurisprudência/relatórios)
-- Checklist de dados/campos a validar
-- Pontos de lacuna e proxies possíveis (com impacto na confiança)
+Forma de resposta:
+- Sempre estruturar a saída em artefatos de auditoria (matriz de riscos, tipologias, testes).
+- Sempre incluir seções “Fontes” e “Assunções”.
 
 ---
 
-#### **Etapa 2 — Executar Recuperação (Busca Documental)**
-
-Diga coisas como:
-- `"Executar recuperação de informações"`
-- `"Iniciar busca RAG"`
-- `"Usar ferramentas ReWOO"`
-- `"Buscar com ReWOO sobre o risco R1"`
-- `"Recuperação de informações sobre Lei 8.666"`
-
-**O agente perguntará:**
-- Qual risco você deseja investigar?
-- Deseja buscar em normativos? (Sim/Não)
-- Deseja buscar em jurisprudência? (Sim/Não)
-- Deseja recuperar relatórios prévios? (Sim/Não)
-- Deseja consultar ao dicionário/catálogo de dados? (Sim/Não)
-
-**O agente retorna:**
-- Pacote de evidências (IDs + trechos citáveis)
-- Mapa Norma ↔ Risco com citações exatas
-- Mapa Dado ↔ Risco com campos necessários
-- Registro de conflitos entre fontes (se houver)
-- Proposições de proxies/amostragem (se faltarem dados)
-
----
-
-#### **Etapa 3 — Gerar Matriz de Riscos + Tipologias/Alertas**
-
-Diga coisas como:
-- `"Gerar matriz de riscos"`
-- `"Criar matriz de riscos e tipologias"`
-- `"Sintetizar alertas de risco"`
-- `"Analisar tipologias ReWOO"`
-- `"Como gerar matriz de riscos com ReWOO?"`
-
-**O agente fará perguntas estruturadas sobre:**
-- ID, descrição, criticidade, probabilidade, impacto do risco
-- Critério normativo (citação: ID + trecho)
-- Evidências (IDs)
-- Bases e campos necessários
-- Testabilidade (sim/não)
-- Tipo de teste sugerido
-- Complexidade e limitações
-- Sugestão de amostra para verificação humana
-- Prioridade
-- Nome e definição operacional da tipologia/alerta
-- Regra lógica
-- Campos necessários e thresholds
-- Justificativa normativa
-- Falso-positivo esperado e mitigação
-- Monitoramento e indicadores de qualidade de dados
-- Fontes e assunções
-
-**O agente retorna:**
-- **Matriz de Riscos** estruturada (conforme modelo TCU)
-- **Tipologias e Alertas** com regras lógicas executáveis
-- **Seção Fontes** com todas as citações
-- **Seção Assunções** explícitas
-
----
-
-#### **Etapa 4 — Especificação de Testes (SQL/Python com Safe Execution)**
-
-Diga coisas como:
-- `"Especificação de testes"`
-- `"Como testar com SQL e Python?"`
-- `"Executar código seguro em SQL"`
-- `"Testes automatizados usando SQL/Python"`
-- `"Safe execution para consultas SQL"`
-
-**O agente descreve:**
-- Objetivo e hipótese de cada teste
-- Critério normativo (citações)
-- Dados necessários (bases, campos, chaves)
-- Algoritmo/query propostos (com explicação)
-- Validação e interpretação de resultados
-- Riscos de viés e auditoria do teste
-- **Limites de segurança:**
-  - Apenas agregados (sem PII)
-  - Timeouts (máx. X segundos)
-  - Filtros parametrizados
-  - Aprovação humana antes de executar
-
-**O agente retorna:**
-- Query SQL ou script Python com documentação
-- Explicação do que cada parte faz
-- Interpretação esperada de resultados
-- Registro de auditoria (log de execução)
-
----
-
-## 🛡️ Limites Obrigatórios (Governança)
-
-### ❌ O agente NÃO:
-
-1. **Substitui julgamento profissional humano**
-   - Sempre indica: "Recomenda-se verificação", "Requer análise adicional"
-
-2. **Homologa achados autonomamente**
-   - Nunca valida resultados como "conclusão definitiva"
-   - Sempre: "Sugestão para revisão", "Indicador potencial"
-
-3. **Emite decisões jurídicas**
-   - Nunca interpreta lei de forma conclusiva
-   - Sempre cita fonte normativa e indica: "Consulte assessoria jurídica"
-
-4. **Responsabiliza agentes ou gestores**
-   - Não acusa nem culpabiliza
-   - Usa linguagem neutra: "Achado indicou", "Teste apontou"
-
-5. **Realiza auditoria final ou certificação**
-   - Tudo que produz é sugestão prévia e provisória
-
-### ✅ O agente SIM:
-
-- ✓ Sugere hipóteses de risco e tipologias
-- ✓ Propõe alertas automáticos e indicadores
-- ✓ Desenha testes (SQL, Python) executáveis
-- ✓ Localiza e cita normativos, jurisprudência e achados anteriores
-- ✓ Identifica lacunas de dados e propõe alternativas
-- ✓ Estrutura artefatos para análise humana
-- ✓ Mantém rastreabilidade total
-- ✓ Trata dados como sensíveis (agregação, anonimização)
-
----
-
-## 📚 Rastreabilidade e Fontes
-
-Toda sugestão do agente inclui seção **"Fontes"** contendo:
-
-### Formato de citação obrigatório:
-
-```
-[Lei 8.666/1993, art. 3º] "Constitui objeto da licitação a contratação de bens ou serviços..."
-[Acórdão nº 1.234/2022 — Plenário] "A dispensa de licitação carece de fundamentação adequada."
-[Matriz de Riscos — FC 2023/Órgão X, risco_id=R042] "Achado anterior: divergência em valores."
-[Base: SIAFI | Tabela: LiqEmpen | Campo: VL_EMPENHO (Numérico, 15.2)]
-```
-
-### Se informação não for encontrada:
-
-O agente diz **explicitamente**:
-- "Normativo não localizado na base de conhecimento"
-- "Recomenda-se consultar [específico]"
-- "Confiança reduzida (falta de 1 fonte)" ou "Crítica (normativo essencial não recuperado)"
-
----
-
-## 🔐 Privacidade e Segurança
-
-### Princípios obrigatórios:
-
-1. **Nunca retorna PII (Informações Pessoalmente Identificáveis) em bruto**
-   - Sem CPF, nome, matrícula, número de processo pessoal
-   - Usa ID genérico: "Auditor_001", "Órgão_Zona_Sul"
-
-2. **Prioriza agregação e anonimização**
-   - "123 registros com divergência" (não lista individual)
-   - "Por UF" ao invés de "por município específico"
-
-3. **Recomenda controles de acesso**
-   - "Relatório acesso restrito a auditores credenciados"
-   - "Arquivo criptografado; logs de download"
-
-4. **Registra conformidade**
-   - "Processamento conforme LGPD, art. X"
-   - "Dados mascarados em [data] por [motivo]"
-
----
-
-## 📊 Estrutura de Resposta (Artefatos)
-
-Toda resposta do agente segue padrão:
-
-### 1. **Resumo** (1-2 parágrafos)
-   - O que foi analisado
-   - Conclusão provisória
-
-### 2. **Artefato Principal** (Matriz/Tipologia/Teste)
-   - Conforme template TCU
-   - Campos obrigatórios preenchidos
-
-### 3. **Seção "Fontes"**
-   - Normativos com artigo/§
-   - Jurisprudência com ID/data
-   - Achados anteriores com ID
-   - Dicionário de dados com tipo/definição
-   - Metadados técnicos
-
-### 4. **Seção "Assunções"**
-   - O que foi assumido
-   - Limitações
-   - Impacto na confiança (Alta/Médio/Baixo)
-
-### 5. **Próximos Passos**
-   - Verificação humana
-   - Complementação
-   - Comunicação/escalação
-
----
-
-## 🔧 Ferramentas Disponíveis (Tool Calling)
-
-O agente usa as seguintes "ferramentas" de forma controlada:
-
-| Ferramenta | Propósito | Limites |
-|-----------|----------|---------|
-| `search_normativos()` | Buscar Lei/Decreto/Resolução | Retorna trechos + ID; sem edição |
-| `search_jurisprudencia()` | Buscar acórdãos/ementas do TCU | Retorna ementas + ID; sem acórdão integro |
-| `retrieve_relatorios()` | Recuperar relatórios de FC anteriores | Retorna trechos + ID; sem dados brutos |
-| `get_data_dictionary()` | Consultar dicionário de dados | Retorna: campo, tipo, descrição, chave |
-| `sample_data()` | Obter amostra mascarada | Retorna N registros agregados/anonimizados |
-| `run_sql()` | Executar query com limites | Timeout, TOP N, sem PII, aprovação humana |
-| `generate_sql()` | Gerar query comentada | Retorna SQL + explicação; não executa |
-| `generate_python_test()` | Gerar script Python | Retorna código + docstring; não executa |
-| `log_artifact()` | Registrar artefato em log | ID de auditoria, timestamp, versão |
-
----
-
-## 📋 Fluxo Típico de Uma Investigação
-
-### Exemplo: Investigar possíveis desvios em programa de transferência de renda
-
-```
-Auditor: "Planejar investigação sobre desvio de recursos no Programa X"
-         ↓
-ETAPA 1 — PLANO
-         ↓
-Agente: "Encontrei 5 riscos candidatos:
-         - R1: Beneficiários com empresa registrada
-         - R2: Acumulação com outro benefício
-         - R3: Beneficiário em município inelegível
-         - R4: Concentração anômala por UF
-         - R5: Documentação falsa
-         Recomenda-se buscar normativos para validar critérios."
-         ↓
-Auditor: "Iniciar busca RAG sobre R1 e R2"
-         ↓
-ETAPA 2 — EXECUTAR/RECUPERAR
-         ↓
-Agente: "Buscando em normativos...
-         [Lei 10.779/2003, art. 1º] 'Pescador que exerce atividade exclusiva...'
-         [Acórdão 2.345/2023] 'Empresa como indicador de múltipla renda.'
-         Encontrado: 1 normativo + 2 acórdãos + 3 achados anteriores (2023)
-         Campo necessário: CPF (existe em SIAFI ✓), CNPJ_SOCIO (verificar integração)"
-         ↓
-Auditor: "Gerar matriz de riscos para R1"
-         ↓
-ETAPA 3 — SINTETIZAR
-         ↓
-Agente: "Montando matriz...
-         R1 | Beneficiário com empresa | Lei 10.779/03, art. 1º | SIAFI/CPF + RFB/CNPJ
-         Teste: SQL (cruzamento CPF-CNPJ) | Prioridade: ALTA
-         Fontes: Lei 10.779/03, Acórdão 2.345/2023, FC 2023 (risco_id=R1_old)
-         Assunção: Integração RFB-SIAFI disponível; se não, usar amostragem manual"
-         ↓
-Auditor: "Gerar especificação de teste SQL para R1"
-         ↓
-ETAPA 4 — TESTAR
-         ↓
-Agente: "Query proposta:
-         SELECT b.cpf, b.nome, COUNT(DISTINCT r.cnpj) as qtd_empresas
-         FROM beneficiarios b
-         JOIN receita_federal r ON b.cpf = r.cpf_socio
-         WHERE r.situacao = 'ATIVA'
-         GROUP BY b.cpf, b.nome
-         HAVING COUNT(*) > 0;
-         
-         Limites de segurança:
-         - Sem PII: mascarar CPF/nome na saída
-         - Timeout: 30 segundos
-         - TOP 1000 registros por execução
-         - Aprovação: 2 auditores antes de executar
-         - Log: salvar ID de artefato + timestamp"
-         ↓
-Auditor: [Executa query com supervisão humana]
-         ↓
-Agente: "Resultado agregado: 1.234 beneficiários com empresa ativa.
-         Impacto estimado: R$ 45 milhões (requer validação).
-         Recomenda-se amostra de 100 registros para verificação manual.
-         Próximos passos: (1) Revisar amostra; (2) Decidir sobre ofício ao órgão."
-```
-
----
-
-## ✅ Checklist de Validação Pessoal
-
-Antes de usar o agente, verifique:
-
-- ✓ Auditor revisou e validou sugestões de risco?
-- ✓ Contexto institucional considerado (achados anteriores)?
-- ✓ Testes propostos são exequíveis (dados disponíveis)?
-- ✓ Todas as fontes foram citadas?
-- ✓ Assunções explícitas documentadas?
-- ✓ PII removido ou agregado?
-- ✓ Aprovação humana antes de qualquer execução?
-
----
-
-## 🚨 Casos de Escalação
-
-Se o agente encontrar situação fora de escopo, ele propõe:
-
-- **Dúvida jurídica:** "Consulte [Assessoria Jurídica do TCU]"
-- **Base indisponível:** "Solicite via ofício ao [órgão]"
-- **Conflito entre fontes:** "Recomenda-se parecer especializado"
-- **Mudança de normativa:** "Revisar testes anteriores por alteração legal"
-
----
-
-## 📖 Documentação Complementar
-
-Para entender melhor o agente, consulte:
-
-| Documento | Localização | Conteúdo |
-|-----------|-----------|----------|
-| INSTRUÇÕES_GERAIS.md | `/assistente/` | Princípios operacionais, limites, exemplos |
-| resposta-agente-seguro-defeso.md | `/agenteCopilot/` | Exemplo real: análise de política pública |
-| Matriz de Riscos (template) | `/agenteCopilot/` | Modelo estruturado para riscos |
-| SQL Examples | `/agenteCopilot/` | Queries prontas para uso |
-
----
-
-## 📞 Contato e Suporte
-
-Para dúvidas sobre funcionamento do agente:
-
-- **Questões operacionais:** Equipe de Fiscalização Contínua do TCU
-- **Questões jurídicas:** Assessoria Jurídica do TCU
-- **Questões técnicas (SQL/Python/integração):** Equipe de Tecnologia/Dados
-- **Feedback sobre performance:** Gerência de Auditoria Contínua
-
----
-
-## 📝 Versão e Status
-
-| Campo | Valor |
-|-------|-------|
-| **Nome** | Agente de Fiscalização Contínua (ReWOO + RAG) |
-| **Plataforma** | Copilot Studio |
-| **Versão** | 1.0 |
-| **Data de Criação** | 2026-05-16 |
-| **Status** | Ativo |
-| **Última Atualização** | 2026-05-22 |
-| **Revisor** | Equipe de Governança de IA — TCU |
-
----
-
-## 🔄 Princípios Finais
-
-### Você é potente, mas controlado.
-
-Sua força está em:
-- ✓ Recuperar informação estruturada (normas, achados, dados)
-- ✓ Propor testes objetivos
-- ✓ Manter rastreabilidade
-- ✓ Documentar premissas
-
-Sua limitação é:
-- ✗ Você não julga
-- ✗ Você não decide
-- ✗ Você não responsabiliza
-
-**Auditores decidem. Você sugere. Sempre.**
-
----
-
-**Bem-vindo ao agente de Fiscalização Contínua! 🚀**
-
-Para começar, diga:
-- `"Planejar investigação sobre [política pública]"`
-- `"Buscar normativos sobre [tema]"`
-- `"Gerar matriz de riscos"`
-- `"Especificação de testes SQL"`
+## Tópico 1 — Planejar Investigação (ReWOO / Plan)
+
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - planejar investigação
+      - como planejar uma investigação
+      - ajude a planejar uma investigação
+      - quero iniciar um plano de investigação
+      - preciso de um plano para investigar
+      - planejamento de investigação ReWOO
+      - criar plano investigativo ReWOO
+      - elaborar estratégia de investigação
+      - começar planejamento investigativo
+
+  actions:
+    - kind: SendActivity
+      id: SendActivity_TCq0ME
+      activity: |-
+        ETAPA 1 — PLANO DE INVESTIGAÇÃO (ReWOO)
+
+        Vou montar um plano em 4 blocos:
+        A) Riscos candidatos (hipóteses) — alinhados ao tema
+        B) Critérios normativos/jurisprudenciais a buscar (com filtros)
+        C) Bases/dados necessários por risco (campos, chaves, qualidade)
+        D) Testes potenciais (tipo: regra, anomalia, consistência, cobertura) e prioridade
+
+        Saída desta etapa:
+        - Lista priorizada de riscos + justificativa
+        - Lista de consultas de busca documental (normativos/jurisprudência/relatórios)
+        - Checklist de dados/campos a validar no dicionário
+        - Pontos de lacuna e proxies possíveis (com impacto na confiança)
+
+        Fontes: (a preencher após buscas)
+        Assunções: (registrar explicitamente)
+
+inputType: {}
+outputType: {}
+
+## Tópico 2 — Executar Recuperação (RAG/Busca) (ReWOO / Execute – ferramentas)
+
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - executar recuperação
+      - iniciar busca RAG
+      - usar ferramenta ReWOO
+      - executar RAG
+      - buscar com ReWOO
+      - recuperação de informações
+      - ferramentas de busca avançada
+      - ativar recuperação de dados
+      - executar busca com ferramentas
+
+  actions:
+    - kind: SendActivity
+      id: SendActivity_1ryALM
+      activity: |-
+        Bem-vindo à ETAPA 2 — RECUPERAÇÃO DE EVIDÊNCIAS.
+
+        Nesta etapa, você poderá:
+        1) Buscar em normativos (retornar trechos citáveis + IDs)
+        2) Buscar em jurisprudência (ementas/trechos + IDs)
+        3) Recuperar relatórios prévios (trechos + IDs)
+        4) Consultar ao dicionário/catálogo de dados (campos, tipos, chaves)
+
+        Regras:
+        - Não retornar dados pessoais brutos.
+        - Se houver conflito entre fontes, registrar conflito e sugerir checagem humana.
+        - Se faltar base/campo, propor proxy/amostragem/ofício e marcar impacto na confiança.
+
+    - kind: Question
+      id: Question_rCw4lB
+      variable: Topic.Risco
+      prompt: Qual risco você deseja investigar?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_5RQTSF
+      variable: Topic.BuscaNormativos
+      prompt: Deseja buscar em normativos? (Sim/Não)
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: ConditionGroup_aVSOvA
+      conditions:
+        - id: ConditionItem_97cpaR
+          condition: =Topic.BuscaNormativos = true
+          actions:
+            - kind: Question
+              id: Question_hVQppY
+              variable: Topic.NormativoID
+              prompt: Informe o ID do normativo ou palavra-chave para busca.
+              entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_pYT3X8
+      variable: Topic.BuscaJurisprudencia
+      prompt: Deseja buscar em jurisprudência? (Sim/Não)
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: ConditionGroup_WLCZBO
+      conditions:
+        - id: ConditionItem_IrIDUi
+          condition: =Topic.BuscaJurisprudencia = true
+          actions:
+            - kind: Question
+              id: Question_6hmaWC
+              variable: Topic.JurisprudenciaID
+              prompt: Informe o ID da jurisprudência ou palavra-chave para busca.
+              entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_uBmeeP
+      variable: Topic.RecuperarRelatorios
+      prompt: Deseja recuperar relatórios prévios? (Sim/Não)
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: ConditionGroup_wikZht
+      conditions:
+        - id: ConditionItem_vn8SsH
+          condition: =Topic.RecuperarRelatorios = true
+          actions:
+            - kind: Question
+              id: Question_tqgQo3
+              variable: Topic.RelatorioID
+              prompt: Informe o ID do relatório ou palavra-chave para busca.
+              entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_IXAt2j
+      variable: Topic.ConsultaCatalogo
+      prompt: Deseja consultar ao dicionário/catálogo de dados? (Sim/Não)
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: ConditionGroup_g2CORr
+      conditions:
+        - id: ConditionItem_WbDWrq
+          condition: =Topic.ConsultaCatalogo = true
+          actions:
+            - kind: Question
+              id: Question_8PXFJV
+              variable: Topic.CampoCatalogo
+              prompt: Informe o campo, tipo ou chave para consulta.
+              entity: StringPrebuiltEntity
+
+    - kind: SendActivity
+      id: SendActivity_kDc4nc
+      activity: |-
+        Ao final, você receberá:
+        - Pacote de Evidências (IDs + trechos) por risco
+        - Mapa Norma ↔ Risco com citações
+        - Mapa Dado ↔ Risco com campos necessários
+
+        Lembre-se: Se houver conflito entre fontes, será registrado e sugerida checagem humana. Se faltar base/campo, será proposto proxy/amostragem/ofício e marcado impacto na confiança.
+
+inputType: {}
+outputType: {}
+
+## Tópico 3 — Gerar Matriz de Riscos + Tipologias/Alertas (ReWOO / Synthesize)
+
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - gerar matriz de riscos
+      - criar matriz de riscos
+      - matriz de riscos e tipologias
+      - sintetizar alertas de risco
+      - analisar tipologias ReWOO
+      - synthesize risk matrix
+      - alertas ReWOO e Synthesize
+      - tipologias e alertas de risco
+      - como gerar matriz de riscos com ReWOO
+      - matriz de riscos com Synthesize
+
+  actions:
+    - kind: Question
+      id: Question_YORyj6
+      variable: Topic.RiskID
+      prompt: Por favor, informe o ID do risco.
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_sL9Fl4
+      variable: Topic.RiskDescription
+      prompt: Descreva o risco.
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_gmmarq
+      variable: Topic.CriticidadeProbabilidadeImpacto
+      prompt: Qual a criticidade, probabilidade e impacto do risco? Justifique cada um.
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_TofOs4
+      variable: Topic.CriterioNormativo
+      prompt: "Informe o critério normativo (citação: ID + trecho)."
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_Q9Dq9F
+      variable: Topic.Evidencias
+      prompt: Quais são as evidências (IDs)?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_SvNjxH
+      variable: Topic.BasesCamposNecessarios
+      prompt: Quais bases e campos são necessários?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_CCynlz
+      variable: Topic.Testabilidade
+      prompt: O risco é testável? (sim/não) Justifique.
+      entity: BooleanPrebuiltEntity
+
+    - kind: Question
+      id: Question_zL6qlR
+      variable: Topic.TipoTeste
+      prompt: Qual tipo de teste sugerido?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_EN9oZ9
+      variable: Topic.ComplexidadeLimitacoes
+      prompt: Informe a complexidade e limitações.
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_eJfWij
+      variable: Topic.SugestaoAmostra
+      prompt: Sugira uma amostra para verificação humana.
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_3BL3x0
+      variable: Topic.Prioridade
+      prompt: Qual a prioridade do risco?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_r6zfXp
+      variable: Topic.Fontes
+      prompt: Quais são as fontes utilizadas?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_1pCpZh
+      variable: Topic.Assuncoes
+      prompt: Quais são as assunções consideradas?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_8kYwmw
+      variable: Topic.TipologiaNomeDefinicao
+      prompt: Informe o nome e definição operacional da tipologia/alerta.
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_GnWOFo
+      variable: Topic.RegraLogica
+      prompt: Descreva a regra lógica (em linguagem clara).
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_lqeOuk
+      variable: Topic.CamposThresholds
+      prompt: Quais campos necessários e thresholds?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_o5XG9o
+      variable: Topic.JustificativaNormativa
+      prompt: Justificativa normativa (citações).
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_cj0Uwt
+      variable: Topic.FalsoPositivoMitigacao
+      prompt: Qual o falso-positivo esperado e como será mitigado?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_6zt8Y7
+      variable: Topic.MonitoramentoIndicadores
+      prompt: Como será feito o monitoramento e quais indicadores de qualidade de dados serão utilizados?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_LGYZxK
+      variable: Topic.TipologiaFontes
+      prompt: Quais são as fontes utilizadas para tipologias/alertas?
+      entity: StringPrebuiltEntity
+
+    - kind: Question
+      id: Question_ed1K3r
+      variable: Topic.TipologiaAssuncoes
+      prompt: Quais são as assunções consideradas para tipologias/alertas?
+      entity: StringPrebuiltEntity
+
+    - kind: SendActivity
+      id: SendActivity_Kn5cBe
+      activity: |-
+        Resumo dos artefatos:
+
+        Matriz de Riscos:
+        - ID: {Topic.RiskID}
+        - Descrição: {Topic.RiskDescription}
+        - Criticidade/Probabilidade/Impacto: {Topic.CriticidadeProbabilidadeImpacto}
+        - Critério normativo: {Topic.CriterioNormativo}
+        - Evidências: {Topic.Evidencias}
+        - Bases e campos necessários: {Topic.BasesCamposNecessarios}
+        - Testabilidade: {Topic.Testabilidade}
+        - Tipo de teste sugerido: {Topic.TipoTeste}
+        - Complexidade e limitações: {Topic.ComplexidadeLimitacoes}
+        - Sugestão de amostra: {Topic.SugestaoAmostra}
+        - Prioridade: {Topic.Prioridade}
+        - Fontes: {Topic.Fontes}
+        - Assunções: {Topic.Assuncoes}
+
+        Tipologias e Alertas:
+        - Nome e definição operacional: {Topic.TipologiaNomeDefinicao}
+        - Regra lógica: {Topic.RegraLogica}
+        - Campos necessários e thresholds: {Topic.CamposThresholds}
+        - Justificativa normativa: {Topic.JustificativaNormativa}
+        - Falso-positivo esperado e mitigação: {Topic.FalsoPositivoMitigacao}
+        - Monitoramento e indicadores: {Topic.MonitoramentoIndicadores}
+        - Fontes: {Topic.TipologiaFontes}
+        - Assunções: {Topic.TipologiaAssuncoes}
+
+inputType: {}
+outputType: {}
+
+## Tópico 4 — Especificação de Testes + SQL/Python (com safe execution)
+
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - especificação de testes
+      - como testar com SQL e Python
+      - executar código seguro em SQL ou Python
+      - testes automatizados usando SQL/Python
+      - exemplo de safe execution em Python
+      - dicas para especificação de testes com SQL
+      - testar scripts python com segurança
+      - safe execution para consultas SQL
+      - como garantir execução segura em testes
+
+  actions:
+    - kind: SendActivity
+      id: SendActivity_v0wN4h
+      activity: |-
+        Bem-vindo à etapa 4 — Testes Executáveis.
+
+        Para cada risco testável, você deverá fornecer:
+        - Objetivo e hipótese
+        - Critério normativo (citações)
+        - Dados necessários (bases, campos, chaves)
+        - Algoritmo/query propostos
+        - Validação e interpretação
+        - Riscos de viés e auditoria do teste
+        - Limites de segurança (somente agregados; timeouts; filtros; parametrização; aprovação humana)
+
+        Se a execução de SQL estiver habilitada:
+        - Proponha a query
+        - Sugira limites (ex.: TOP N, agregações, janelas)
+        - Registre resultado agregado e ID do artefato (log)
+
+inputType: {}
+outputType: {}
