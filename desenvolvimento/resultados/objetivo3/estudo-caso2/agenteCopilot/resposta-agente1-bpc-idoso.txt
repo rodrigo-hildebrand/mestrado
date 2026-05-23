@@ -1,0 +1,150 @@
+# Avaliação de Risco — Política Pública: BPC Idoso (Benefício de Prestação Continuada ao Idoso)
+
+> ⚠️ **Aviso obrigatório:** Esta avaliação é um subsídio técnico para revisão humana. Não substitui
+> julgamento profissional, não homologa achados, não emite decisões jurídicas e não responsabiliza agentes.
+
+---
+
+## 1. Contextualização da Política
+
+O BPC é um benefício assistencial que garante **um salário mínimo por mês** à pessoa idosa com idade
+igual ou superior a **65 anos** que comprove ser de família de baixa renda. Não é aposentadoria — para
+ter direito, não é preciso ter contribuído para o INSS. Diferentemente dos benefícios previdenciários,
+o BPC é revisado periodicamente.
+
+**Critérios de elegibilidade para o BPC Idoso:**
+
+Para receber o BPC, é preciso:
+- Possuir **renda familiar per capita de até ¼ do salário mínimo**;
+- Ter **idade igual ou superior a 65 anos**;
+- Ter inscrição atualizada do grupo familiar no **Cadastro Único (CadÚnico)**, com CPF de todos os membros;
+- Possuir **registro biométrico** na Carteira de Identidade Nacional (CIN) ou, transitoriamente,
+  no Título de Eleitor ou na Base da Polícia Federal;
+- **Residir no Brasil**.
+
+**Dimensão orçamentária:**
+
+Mais de **6 milhões de pessoas** recebem hoje o BPC. Em junho de 2022, eram menos de 5 milhões.
+Em 2025, o governo deve gastar **cerca de R$ 113 bilhões** somente com o BPC. Em 2022, foram
+R$ 74 bilhões — um aumento de mais de R$ 50 bilhões em cinco anos. Em 31 meses seguidos de
+ampliação, o número de beneficiários saltou **33%** e 1,6 milhão de pessoas foram adicionadas
+ao programa. Em 2025, **1.167 municípios** já recebem mais recursos para o BPC que para o Bolsa Família.
+
+---
+
+## 2. Base Normativa e Jurisprudência
+
+| Instrumento | Conteúdo |
+|---|---|
+| **CF/88, art. 203, V** | Direito fundamental ao benefício assistencial de 1 salário mínimo |
+| **Lei nº 8.742/1993 (LOAS)** | Art. 20 — requisitos do BPC (renda, idade/deficiência) |
+| **Decreto nº 6.214/2007** | Regulamenta o BPC |
+| **Acórdão TCU 451/2025 – Plenário** | Auditoria de conformidade e focalização dos pagamentos do BPC (TC 007.560/2024-9) |
+| **RE 567985/MT (STF)** | Declarou inconstitucionalidade parcial do critério de ¼ SM, relativizando o critério objetivo |
+| **STJ – REsp 1962868-SP / Informativo 770** | Reafirma que o BPC deve ser concedido conforme a lei, sem requisitos adicionais além dos legais |
+
+O STJ reafirmou que o BPC-LOAS deve ser concedido com base nos **critérios estabelecidos pela
+legislação**, sem a imposição de requisitos adicionais ou mais rigorosos do que os previstos na lei.
+
+O STF, ao julgar a Reclamação nº 4374 e o RE 567985/MT, reconheceu e declarou a
+**inconstitucionalidade do § 3º do art. 20 da Lei 8.742/93**, por considerar que o critério de
+¼ do salário mínimo está defasado para caracterizar a situação de vulnerabilidade, **relativizando
+o critério objetivo** e determinando que a insuficiência financeira seja aferida individualmente,
+conforme as peculiaridades de cada caso.
+
+---
+
+## 3. Matriz de Riscos
+
+| # | Risco | Causa-Raiz Potencial | Impacto | Probabilidade | Nível |
+|---|---|---|---|---|---|
+| R1 | Beneficiários com renda acima do limite legal | Subdeclaração de renda no CadÚnico; cruzamento insuficiente de dados | **Muito Alto** (R$ 5 bi/ano) | Alta | 🔴 Crítico |
+| R2 | Acumulação indevida de BPC com outros benefícios | Falha de interoperabilidade entre sistemas INSS/MDS | **Alto** (R$ 113,5 mi/ano) | Média | 🔴 Alto |
+| R3 | Pagamento a beneficiários falecidos | Atraso no cruzamento com bases de óbitos (SIRC/Cartórios) | **Alto** | Média | 🔴 Alto |
+| R4 | Inconsistências cadastrais (endereço, família) | Subnotificação na atualização do CadÚnico | **Alto** | Alta | 🔴 Alto |
+| R5 | Concessões judiciais sem cumprimento pleno de requisitos | Judicialização crescente sem avaliação técnica integral | **Muito Alto** | Alta | 🔴 Crítico |
+| R6 | Subdeclaração de membros do grupo familiar | Manipulação intencional da composição familiar para reduzir renda per capita | **Alto** | Média | 🟠 Médio-Alto |
+| R7 | Crescimento insustentável do programa sem estudos atuariais | Ausência de regulamentação atualizada de miserabilidade | **Muito Alto** | Alta | 🔴 Crítico |
+| R8 | CPFs nulos ou cancelados na folha de pagamento | Falha na higienização das bases do INSS | **Médio** | Baixa | 🟡 Médio |
+
+---
+
+## 4. Tipologias de Irregularidades Identificadas (TCU – Acórdão 451/2025)
+
+O TCU verificou pagamentos a pessoas que **não atendem aos critérios de elegibilidade** ao BPC.
+A auditoria estimou que **6,3% dos beneficiários** possuem renda familiar per capita acima de
+¼ do salário mínimo, o que representa **pagamentos indevidos de R$ 5 bilhões ao ano**.
+Também foram identificados **6.701 casos de acumulação indevida** do BPC com outro benefício,
+com impacto financeiro anual de **R$ 113,5 milhões**. Foram constatados ainda **2.476 beneficiários
+possivelmente falecidos** e **31.157 inconsistências** nos registros cadastrais dos titulares e
+seus familiares.
+
+**Detalhamento das inconsistências cadastrais:**
+
+- **12,6%** dos beneficiários deixaram de informar sobre outros membros da família;
+- **15,9%** apresentaram endereços diferentes;
+- Quase **2,5 mil beneficiários** possivelmente falecidos;
+- Mais de **31 mil inconsistências** nos dados de beneficiários e familiares.
+
+**Sobre as concessões judiciais:**
+
+As decisões judiciais representam **25% do total das concessões**, e a maioria delas sem qualquer
+indicação de CID (identificação da doença ou deficiência). Até setembro de 2024, foram quase
+3 milhões de novas concessões de BPC a pessoas com deficiência, das quais **711 mil foram por
+determinação judicial**, e a maior parte não possuía indicação de CID.
+
+---
+
+## 5. Testes de Auditoria Sugeridos
+
+| # | Teste | Fontes de Dados | Técnica | Risco Coberto |
+|---|---|---|---|---|
+| T1 | Cruzar folha de pagamento BPC com SIRC/Receita Federal para identificar óbitos não processados | Folha INSS × SIRC × CPF/RFB | Cruzamento de bases | R3 |
+| T2 | Comparar renda declarada no CadÚnico com bases de vínculos empregatícios (CAGED, eSocial, RAIS) e benefícios previdenciários (INSS) | CadÚnico × CAGED × RAIS × Folha INSS | Cruzamento de bases | R1, R6 |
+| T3 | Verificar acúmulo de BPC com outros benefícios da Seguridade Social (seguro-desemprego, aposentadoria, pensão) | Folha BPC × SISOBI × CadBenef | Cruzamento de bases | R2 |
+| T4 | Identificar CPFs nulos, cancelados ou suspensos na base de beneficiários ativos | Base INSS × Receita Federal | Análise de integridade | R8 |
+| T5 | Analisar composição familiar declarada no CadÚnico versus endereços em outros cadastros governamentais (IPTU, CNIS, Sefaz) | CadÚnico × CNIS × Receita Federal | Análise geoespacial e cruzamento | R4, R6 |
+| T6 | Mapear concessões judiciais sem CID registrado e verificar cumprimento dos demais critérios (renda, CadÚnico) | Base concessões INSS × sistema judicial | Análise de atributos e completude | R5 |
+| T7 | Analisar evolução temporal das concessões por município para detectar outliers (municípios com crescimento atípico) | Histórico de folha MDS/INSS | Análise estatística / série temporal | R7 |
+| T8 | Verificar se CadÚnico está atualizado há no máximo 24 meses para todos os beneficiários ativos | Base BPC × data última atualização CadÚnico | Análise de temporalidade | R4 |
+
+---
+
+## 6. Deliberações Já Emitidas pelo TCU
+
+O **TCU determinou ao INSS** que, no prazo de **180 dias**, adote providências para corrigir as
+ocorrências de acúmulo indevido de benefícios, nos casos de beneficiários falecidos, com CPF nulos
+ou cancelados e aqueles sem Cadastro Único ativo. O TCU **recomendou ao MDS** que inclua estrato
+representativo da população beneficiária do BPC no procedimento de pesquisa amostral bienal e que
+promova **estudos e pesquisas para a regulamentação da condição de miserabilidade** do grupo familiar.
+
+> Acórdão 451/2025 – Plenário | TC 007.560/2024-9 | Sessão: 26/02/2025 | Rel. Min. Antonio Anastasia
+
+---
+
+## 7. Assunções
+
+- As estimativas de impacto financeiro utilizam como base o **Acórdão TCU 451/2025** e reportagens
+  de veículos de referência (Portal TCU, G1, CNN Brasil).
+- Os dados de beneficiários e orçamento são de **março/2025**, podendo estar desatualizados.
+- O critério de ¼ do SM como linha de corte de elegibilidade é objeto de debate jurídico (STF
+  relativizou o critério); parte dos "pagamentos indevidos" pode refletir concessões via tutela
+  judicial que flexibilizou esse limite.
+- Os testes sugeridos dependem de **acesso real às bases de dados** do INSS, CadÚnico, SIRC,
+  CAGED e Receita Federal.
+
+---
+
+## 8. Fontes
+
+| Fonte | Referência |
+|---|---|
+| Portal MDS/Gov.br | https://www.gov.br/mds/pt-br/acoes-e-programas/suas/beneficios-assistenciais |
+| **TCU – Acórdão 451/2025 – Plenário** | TC 007.560/2024-9 – Sessão 26/02/2025 – Rel. Min. Antonio Anastasia |
+| STF – RE 567985/MT | Inconstitucionalidade parcial do art. 20, §3º, LOAS |
+| STJ – REsp 1962868-SP | Informativo 770 – Critérios BPC-LOAS |
+| Lei nº 8.742/1993 (LOAS) | Art. 20 e seguintes |
+| Decreto nº 6.214/2007 | Regulamentação do BPC |
+| CNN Brasil (16/06/2025) | Crescimento do BPC – dados de beneficiários |
+| G1/Jornal Nacional (02/06/2025) | Gastos com BPC crescem R$ 50 bi em 5 anos |
+| Portal da Transparência (CGU) | http://www.portaltransparencia.gov.br |
