@@ -1,0 +1,133 @@
+🔍 Análise de Fiscalização Contínua — Aposentadoria por Idade
+⚠️ Aviso de Governança: Esta análise é estritamente instrumental e de apoio ao julgamento profissional humano. Não constitui homologação de achados, emissão de decisão jurídica, nem responsabilização de agentes. Toda sugestão deve ser submetida à revisão técnica e legal competente.
+
+1. 📋 Descrição da Política Pública
+A Aposentadoria por Idade é um benefício previdenciário do Regime Geral de Previdência Social (RGPS), administrado pelo INSS, que garante renda ao segurado que atingir determinada idade mínima e cumprir os requisitos de carência e tempo de contribuição.
+
+Antes da EC 103/2019, a aposentadoria por idade urbana era devida ao segurado que completasse 65 anos de idade para homens e 60 anos para mulheres, sendo exigida a carência de 180 meses de contribuições, sem previsão legal de tempo mínimo de contribuição.​1​Com a vigência da EC 103/2019, houve uma reformulação das regras, substituindo as aposentadorias por idade e por tempo de contribuição pela aposentadoria programada. Para segurados filiados ao RGPS após a emenda, os requisitos passaram a ser: mulheres — 62 anos e mínimo de 15 anos de contribuição; homens — 65 anos e mínimo de 20 anos de contribuição, mantendo-se a carência mínima de 180 meses.​1​
+
+Submodalidades Vigentes
+Modalidade	Carência	Idade Mínima
+Aposentadoria por Idade Urbana (pré-EC 103/2019)	180 contribuições	60 anos (mulher) / 65 anos (homem)
+Aposentadoria por Idade Rural	180 meses de atividade rural	55 anos (mulher) / 60 anos (homem)
+Aposentadoria Programada (pós-EC 103/2019)	180 contribuições	62 anos (mulher) + 15 anos contrib. / 65 anos (homem) + 20 anos contrib.
+Aposentadoria por Idade – PcD	180 contribuições	55 anos (mulher) / 60 anos (homem)
+​2​
+
+Cálculo do Benefício
+O valor do benefício é calculado com base em 100% da média dos salários de contribuição desde julho de 1994, com coeficiente de 60% do salário-de-benefício, acrescido de 2% para cada ano de contribuição que exceda os 20 anos para homens e os 15 anos para mulheres.​1​Há uma redução de aproximadamente 20% no valor do benefício entre o segurado que se aposentou antes da reforma e o que se aposenta pelas regras da EC 103/2019. Por exemplo: segurada com 20 anos de contribuição recebia 90% da média antes da reforma; com as novas regras, recebe apenas 70% da mesma média.​3​
+
+2. 🟥 Matriz de Riscos
+#	Risco	Tipologia	Probabilidade	Impacto	Nível de Risco
+R1	Concessão com carência insuficiente ou fictícia	Fraude/Erro	Alta	Muito Alto	🔴 Crítico
+R2	Vínculos empregatícios fraudulentos no CNIS	Fraude documental	Alta	Muito Alto	🔴 Crítico
+R3	Pagamento continuado a beneficiário falecido	Fraude/Omissão de óbito	Alta	Alto	🔴 Crítico
+R4	Descontos não autorizados em folha (consignados)	Fraude por terceiros	Alta	Alto	🔴 Crítico
+R5	Concessão com dados de atividade rural não comprovada	Fraude documental	Média-Alta	Muito Alto	🔴 Crítico
+R6	Cálculo incorreto da RMI (Renda Mensal Inicial)	Erro operacional	Média	Alto	🟠 Alto
+R7	Acúmulo indevido de benefícios	Irregularidade	Média	Alto	🟠 Alto
+R8	Atraso na apuração de indícios de irregularidades	Falha processual	Alta	Alto	🟠 Alto
+R9	Ausência de revisão periódica de benefícios ativos	Falha de controle	Alta	Médio	🟡 Médio
+R10	Erro na aplicação das regras de transição (pré/pós EC 103)	Erro interpretativo	Média	Médio	🟡 Médio
+3. 🗂️ Tipologias e Alertas
+🚨 Tipologia 1 — Carência Insuficiente ou Fictícia
+Descrição: Benefício concedido sem o cumprimento dos 180 meses de contribuição exigidos pela Lei 8.213/91.
+Indicadores de Alerta: Vínculos empregatícios de curta duração; salários de contribuição acima da média histórica do segurado; empregadores com alto volume de vínculos próximos ao período de carência.
+Referência: Art. 25, II, da Lei 8.213/91, que exige número mínimo de 180 contribuições mensais para que o beneficiário faça jus à aposentadoria por idade. Vínculos devem estar no CNIS e o INSS deve considerá-los, mesmo sem CTPS, especialmente se não houver indício de fraude.​4​
+🚨 Tipologia 2 — Pagamento a Beneficiário Falecido
+Descrição: Continuidade de pagamentos após óbito do titular, por falha no cruzamento com o Registro Civil.
+Indicadores de Alerta: Benefício sem movimentação bancária; ausência de prova de vida em períodos estabelecidos; dados de óbito no SISOBI não integrados ao CNIS/INSS.
+Referência: O TCU identificou atrasos e falhas no processo de apuração de irregularidades, sendo que o tempo necessário para concluir investigações excedeu três anos em 2022, contribuindo para a continuidade de pagamentos indevidos com estimativa de perda de R$ 1,1 bilhão por ano aos cofres públicos.​5​
+🚨 Tipologia 3 — Descontos Não Autorizados em Folha
+Descrição: Desconto de valores em benefícios sem autorização expressa do aposentado (empréstimos consignados ou mensalidades associativas fraudulentas).
+Indicadores de Alerta: Descontos sem instrumento contratual; ausência de assinatura eletrônica/biometria; entidades consignatárias sem registros regulares.
+Referência: O TCU analisou R$ 91 bilhões em descontos de empréstimos e mensalidades de associações nos pagamentos do INSS, concluindo que nem todos os descontos foram autorizados pelos aposentados. Para proteção, determinou que novos descontos de associações só pudessem ser feitos com assinatura eletrônica avançada e biometria.​6​
+🚨 Tipologia 4 — Irregularidades em RPPS Municipais
+Descrição: Descontos realizados sem normativo interno ou contrato, afetando aposentados de regimes próprios.
+Indicadores de Alerta: Ausência de contratos/convênios lastreando descontos; inexistência de normativo interno; descontos não conferidos.
+Referência: Auditoria do TCESP identificou que nos RPPSs municipais, 106 regimes não possuíam normativo interno que regulamentasse os descontos em folha, e em 64 casos (30,33%) não havia nenhuma autorização dos aposentados para os descontos realizados.​7​
+🚨 Tipologia 5 — Fraudes em Aposentadoria Rural
+Descrição: Concessão de aposentadoria por idade rural com base em documentação de atividade rural forjada ou insuficiente.
+Indicadores de Alerta: Beneficiário com endereço urbano; ausência de documentos comprobatórios de atividade rural (DAP/CAF, notas fiscais, declaração de sindicato); incompatibilidade com dados do Cadastro Ambiental Rural (CAR).
+Referência: A aposentadoria por idade rural destina-se a trabalhadores rurais, pescadores artesanais ou indígenas, sendo possível somar o tempo de trabalho urbano ao rural quando a mulher atingir 60 anos e o homem 65 anos de idade.​2​
+🚨 Tipologia 6 — Acúmulo Indevido de Benefícios
+Descrição: Segurado recebendo mais de um benefício vedado por lei simultaneamente.
+Indicadores de Alerta: Mesmo CPF com múltiplos NB (Número do Benefício) ativos; cruzamento com bases do BPC-LOAS e aposentadoria.
+Referência: Pesquisa da FGV (2024) identificou que 1,15% dos benefícios cessados tiveram alguma ligação com motivos relacionados a irregularidades ou fraudes, e que os valores despendidos pela União em benefícios irregulares poderiam ser utilizados em prol de políticas públicas diversas.​8​
+4. 🧪 Especificação de Testes Analíticos
+Teste T1 — Verificação de Carência Mínima
+
+-- Identificar benefícios concedidos sem 180 contribuições
+SELECT nb, cpf, dt_concessao, qtd_contribuicoes
+FROM beneficios_inss
+WHERE especie IN ('41','42') -- Aposentadoria por Idade
+  AND qtd_contribuicoes < 180
+  AND situacao = 'ATIVO';
+Risco coberto: R1 | Base: Art. 25, II, Lei 8.213/91
+
+Teste T2 — Cruzamento com Base de Óbitos
+
+-- Benefícios ativos com registro de óbito
+SELECT b.nb, b.cpf, b.dt_concessao, o.dt_obito
+FROM beneficios_inss b
+JOIN sisobi o ON b.cpf = o.cpf
+WHERE b.situacao = 'ATIVO'
+  AND o.dt_obito IS NOT NULL
+  AND b.dt_concessao < o.dt_obito;
+Risco coberto: R3 | Base: Acórdão TCU 2.197/2024 – Plenário
+
+Teste T3 — Descontos sem Autorização
+
+-- Descontos sem contrato ou autorização registrada
+SELECT b.nb, b.cpf, d.entidade, d.valor_desconto, d.dt_desconto
+FROM descontos_folha d
+LEFT JOIN autorizacoes_desconto a ON d.nb = a.nb AND d.entidade = a.entidade
+WHERE d.tipo IN ('CONSIGNADO','ASSOCIACAO')
+  AND a.id IS NULL; -- Sem autorização correspondente
+Risco coberto: R4 | Base: Deliberação TCU (Acórdão jun/2024)
+
+Teste T4 — Acúmulo Indevido de Benefícios
+
+-- CPF com mais de um benefício ativo de aposentadoria por idade
+SELECT cpf, COUNT(nb) as qtd_beneficios, SUM(vl_rmi) as total_recebido
+FROM beneficios_inss
+WHERE especie IN ('41','42','57') -- Aposentadoria por Idade + Programada
+  AND situacao = 'ATIVO'
+GROUP BY cpf
+HAVING COUNT(nb) > 1;
+Risco coberto: R7
+
+Teste T5 — Inconsistência Rural × Endereço Urbano
+
+# Python: cruzar beneficiários de aposentadoria rural com base de endereço urbano
+import pandas as pd
+
+rural = pd.read_csv('beneficios_rurais.csv')  # NB, CPF, municipio_atividade
+cadastro = pd.read_csv('cadastro_inss.csv')    # CPF, municipio_residencia, zona
+
+# Alerta: zona urbana + aposentadoria rural
+suspeitos = rural.merge(cadastro, on='cpf')
+alertas = suspeitos[suspeitos['zona'] == 'URBANA']
+print(f"Total de alertas: {len(alertas)}")
+Risco coberto: R5
+
+5. 📌 Lacunas e Confiança da Análise
+Lacuna	Impacto na Confiança	Sugestão
+Ausência de acesso direto às bases do CNIS/INSS	Alto — testes dependem de dados reais	Solicitar extração via convênio TCU-INSS
+Quantificação atualizada de benefícios rurais irregulares	Médio — estimativas baseadas em pesquisas FGV/2024	Consultar relatórios DATAPREV
+Volume real de descontos não autorizados pós-operação PF/CGU	Médio	Aguardar consolidação de dados da operação em curso
+6. 📚 Fontes
+#	Fonte	Tipo
+F1	Lei nº 8.213/1991 — Art. 25, II e Art. 48	Normativo
+F2	Emenda Constitucional nº 103/2019 — Arts. 3º, 15, 16, 17, 18, 20, 21	Normativo Constitucional
+F3	INSS — Regras de Aposentadorias (gov.br, atualizado em 2025)	Fonte Oficial
+F4	Acórdão TCU 2.197/2024 – Plenário (TC 030.214/2022-0)	Jurisprudência/TCU
+F5	Auditoria TCU — Irregularidades em descontos INSS (jun/2024)	Achado de Auditoria
+F6	TCESP — Auditoria Extraordinária em 218 RPPS Municipais (jul/2025)	Achado de Auditoria
+F7	FGV EBAPE — "O Impacto de fraudes e irregularidades no Sistema Previdenciário Brasileiro" (2024)	Pesquisa Acadêmica
+F8	TRF-5, ApelRemNec XXXXX20204058300	Jurisprudência
+7. 📎 Assunções
+Os testes SQL/Python são modelos conceituais. A execução real depende do acesso às bases CNIS, DATAPREV e SISOBI, sujeitas a convênios e controles de acesso do TCU.
+A análise considera o RGPS (INSS). Regimes Próprios (RPPS) possuem especificidades adicionais.
+Dados de irregularidades citados são os mais recentes disponíveis publicamente (2024–2025).
+Nenhum achado individual foi homologado ou confirmado nesta análise.
