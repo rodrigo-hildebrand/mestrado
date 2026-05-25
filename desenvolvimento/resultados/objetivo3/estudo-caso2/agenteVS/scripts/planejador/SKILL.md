@@ -1,6 +1,6 @@
 ---
 name: planejador
-description: Cria planos estruturados para o trabalho do agente no formato JSON, no estilo ReWOO, com referencias entre etapas (ex.: #E1). Use quando for preciso quebrar uma tarefa em passos com tool e input para execucao pelo orquestrador.
+description: Cria planos estruturados para o trabalho do agente no formato JSON, no estilo ReWOO, com referencias entre etapas (ex.: `#E1`). Use quando for preciso quebrar uma tarefa em passos com tool e input para execucao pelo orquestrador.
 compatibility: Any
 ---
 
