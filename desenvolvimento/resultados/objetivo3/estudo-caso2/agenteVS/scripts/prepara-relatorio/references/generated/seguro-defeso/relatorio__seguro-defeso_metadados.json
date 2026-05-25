@@ -1,0 +1,58 @@
+{
+  "status": "ok_com_lacunas",
+  "politica_publica": "Seguro defeso",
+  "politica_slug": "seguro-defeso",
+  "relatorio_timestamp": "2026-05-15T15:06:27Z",
+  "arquivo_saida": ".\\references\\generated\\seguro-defeso\\relatorio_seguro-defeso.docx",
+  "total_tipologias": 9,
+  "tipologias_criticas": 5,
+  "total_campos_avaliados": 56,
+  "normativos_inclusos": 5,
+  "bases_referenciadas": 0,
+  "swot_incluido": true,
+  "swot_estrategia": "consolidada_swot2_com_swot1",
+  "swot_insumos": [
+    "analise-swot2",
+    "analise-swot"
+  ],
+  "assinante": {
+    "nome": "Auditor Federal de Controle Externo",
+    "matricula": "000.000",
+    "cargo": "Auditoria Operacional - TCU"
+  },
+  "lacunas": [
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.NUMERO_REQUERIMENTO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.NUMERO_RGP",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.DATA_PRIMEIRO_RGP",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.STATUS_REQUERIMENTO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.COD_STATUS_REQUERIMENTO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.DATA_REQUERIMENTO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.DATA_INICIO_DEFESO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.DATA_FIM_DEFESO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.NUMERO_REQUERIMENTO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.DATA_PAGAMENTO_PARCELA",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.NIT_PIS_REQUERENTE",
+    "Sem regra explicita de validade para BD_ESOCIAL.dbo.VINCULOS.NU_NIT",
+    "Sem regra explicita de validade para BD_ESOCIAL.dbo.VINCULOS.DT_ADMISSAO",
+    "Sem regra explicita de validade para BD_ESOCIAL.dbo.VINCULOS.DT_RESCISAO",
+    "Sem regra explicita de validade para BD_ESOCIAL.dbo.VINCULOS.ANOMES_REF",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.SITUACAO_ATUAL_PARCELA",
+    "Sem regra explicita de validade para BD_SIRC.dbo.CERTIDOES_OBITO_SISOBI.DT_OBITO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.IDENTIDADE_REQUERENTE",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.REQUERIMENTO.COD_MUNICIPIO_RESIDENCIA",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.COD_MUNICIPIO_RESIDENCIA",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.DATA_INICIO_DEFESO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.DATA_FIM_DEFESO",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.VALOR_PARCELA_PAGA",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.VALOR_PAGO_TOTAL",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.DATA_SEM_DIREITO_PARCELA",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.DATA_A_RESTITUIR_PARCELA",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.DATA_RESTITUICAO_PARCELA",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.INDICADOR_PARCELA_COMPENSADA",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.VALOR_PARCELA_A_RESTITUIR",
+    "Sem regra explicita de validade para BD_SEGURO_DEFESO.dbo.PAGAMENTO.VALOR_PARCELA_RESTITUIDA"
+  ],
+  "referencias": {
+    "generated": "references/generated/seguro-defeso/relatorio_seguro-defeso_metadados.json"
+  }
+}
