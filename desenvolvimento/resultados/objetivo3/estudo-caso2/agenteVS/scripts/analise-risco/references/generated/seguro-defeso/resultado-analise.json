@@ -1,0 +1,441 @@
+{
+  "consulta": {
+    "politica_publica": "Seguro defeso",
+    "max_results": 8
+  },
+  "status": "concluido_com_lacuna",
+  "resumo_executivo": "A base normativa de Seguro defeso foi localizada na skill busca-legislacao e permitiu identificar riscos relevantes de elegibilidade, integridade cadastral, comprovacao da atividade pesqueira, pagamento indevido, fraude e falhas de monitoramento. Os riscos mais criticos concentram-se na concessao indevida por falhas de validacao do RGP, ausencia de comprovacao de exercicio da atividade entre defesos, inconsistencias biometrico-cadastrais, manutencao de pagamentos a beneficiarios sem requisitos atualizados e fragilidade no tratamento de fraude. O resultado foi mantido como concluido_com_lacuna porque ha ato sublegal pendente de validacao e parte dos textos extraidos pela skill normativa ainda contem ruido de formatacao.",
+  "normativos_utilizados": [
+    {
+      "normativo": "CF/88",
+      "arquivo": "skills/busca-legislacao/references/common/cf/cf88.txt",
+      "relevancia": "Base constitucional de seguridade social, competencias da Uniao e financimento do FAT"
+    },
+    {
+      "normativo": "Lei 10.779/2003",
+      "arquivo": "skills/busca-legislacao/references/generated/seguro-defeso/03_lo_10779-2003.txt",
+      "relevancia": "Norma central do beneficio de seguro-defeso"
+    },
+    {
+      "normativo": "Lei 7.998/1990",
+      "arquivo": "skills/busca-legislacao/references/generated/seguro-defeso/03_lo_7998-1990.txt",
+      "relevancia": "Regras gerais de seguro-desemprego, FAT, fiscalizacao e compensacao de parcelas indevidas"
+    },
+    {
+      "normativo": "Lei 8.212/1991",
+      "arquivo": "skills/busca-legislacao/references/generated/seguro-defeso/03_lo_8212-1991.txt",
+      "relevancia": "Base de contribuicao previdenciaria do segurado especial pescador artesanal"
+    },
+    {
+      "normativo": "Lei 8.213/1991",
+      "arquivo": "skills/busca-legislacao/references/generated/seguro-defeso/03_lo_8213-1991.txt",
+      "relevancia": "Enquadramento do segurado especial pescador artesanal"
+    },
+    {
+      "normativo": "Lei 11.959/2009",
+      "arquivo": "skills/busca-legislacao/references/generated/seguro-defeso/03_lo_11959-2009.txt",
+      "relevancia": "Definicoes de defeso, pesca artesanal e obrigatoriedade de RGP"
+    },
+    {
+      "normativo": "Decreto 8.424/2015",
+      "arquivo": "skills/busca-legislacao/references/generated/seguro-defeso/04_decreto_8424-2015.txt",
+      "relevancia": "Detalha requisitos, verificacoes, cessacao, cruzamentos e homologacao do RGP"
+    }
+  ],
+  "resumos_normativos": [
+    {
+      "normativo": "Lei 10.779/2003",
+      "dispositivos_relevantes": [
+        "art. 1o e paragrafos: define publico-alvo, exclusividade, ausencia de outra renda, limitacao de um beneficio por ano e carater pessoal do beneficio",
+        "art. 1o, paras. 9o a 13: exige cruzamento de bases, biometria, CadUnico, domicilio em municipio abrangido e canais de revisao",
+        "art. 2o, paras. 2o a 7o: exige RGP, documentos fiscais/contribuicoes, verificacao de segurado artesanal e divulgacao de beneficiarios",
+        "art. 2o, para. 12: condiciona concessao e manutencao a comprovacao do exercicio da atividade pesqueira entre defesos",
+        "art. 3o a 4o-A: trata fraude, cancelamento e compensacao automatica de valores indevidos",
+        "art. 5o: indica financiamento pelo FAT e limite orcamentario anual"
+      ],
+      "implicacoes_de_risco": [
+        "concessao indevida sem comprovacao completa de elegibilidade",
+        "pagamento indevido a pescador com outra fonte de renda ou sem atuacao ininterrupta",
+        "manutencao indevida por falha de cruzamento cadastral e biometrico",
+        "fraude documental ou cadastral em RGP, documentos fiscais e identidade"
+      ]
+    },
+    {
+      "normativo": "Decreto 8.424/2015",
+      "dispositivos_relevantes": [
+        "art. 2o: lista requisitos detalhados, inclusive RGP ativo, segurado especial, ausencia de outra renda, CIN, domicilio em municipio abrangido e homologacao do RGP",
+        "art. 2o, paras. 1o a 4o: exige contribuicoes e relatorio de exercicio da atividade pesqueira, alem de consultas a bases governamentais",
+        "art. 2o-A: condiciona a concessao a homologacao do RGP pela autoridade competente",
+        "art. 3o, paras. 2o a 4o: exige verificacao previa no CNIS, CAEPF, DAE e outras bases, inclusive analise de risco de fraude e erro material",
+        "art. 5o: define informacoes declaradas pelo requerente e responsabilizacao civil e criminal",
+        "art. 6o: define hipoteses de cessacao, inclusive outra renda, desrespeito ao defeso, fraude e beneficios inacompativeis"
+      ],
+      "implicacoes_de_risco": [
+        "falha de implementacao dos cruzamentos cadastrais obrigatorios",
+        "erro na homologacao do RGP e na validacao do domicilio",
+        "pagamento continuado sem verificacao mensal de causas de cessacao",
+        "fragilidade na deteccao de fraude e irregularidade material"
+      ]
+    },
+    {
+      "normativo": "Lei 11.959/2009",
+      "dispositivos_relevantes": [
+        "art. 2o, XIX e XXII: define defeso e pescador profissional",
+        "art. 8o, I, a: define pesca artesanal",
+        "art. 24 e 25: torna o RGP requisito previo e disciplina atos autorizativos da atividade pesqueira",
+        "art. 31 a 33: preve fiscalizacao e sancoes sobre a atividade pesqueira"
+      ],
+      "implicacoes_de_risco": [
+        "erro de enquadramento do beneficiario como pescador artesanal",
+        "uso de RGP irregular ou desatualizado",
+        "deficiencia na fiscalizacao da atividade pesqueira usada como base de elegibilidade"
+      ]
+    },
+    {
+      "normativo": "Lei 7.998/1990",
+      "dispositivos_relevantes": [
+        "art. 4o e para. 5o: disciplina limite de parcelas e reserva minima de liquidez do FAT",
+        "art. 7o e 8o: trata suspensao, cancelamento, falsidade e fraude",
+        "art. 10 a 11: disciplina o FAT",
+        "art. 19 e 25-A: disciplina gestao do FAT e compensacao automatica de parcelas indevidas"
+      ],
+      "implicacoes_de_risco": [
+        "pagamento acima do limite aplicavel ao periodo de defeso",
+        "compensacao insuficiente de valores indevidos",
+        "falhas de controle financeiro e de governanca do FAT"
+      ]
+    }
+  ],
+  "riscos_gerais": [
+    {
+      "id_risco_geral": "RG-01",
+      "titulo": "Falhas de elegibilidade e habilitacao",
+      "descricao": "Riscos de concessao do beneficio sem atendimento integral dos requisitos legais e regulamentares.",
+      "categoria": "elegibilidade",
+      "fundamento_resumido": "Lei 10.779/2003, art. 1o e art. 2o; Decreto 8.424/2015, art. 2o"
+    },
+    {
+      "id_risco_geral": "RG-02",
+      "titulo": "Fragilidade de comprovacao documental e cadastral",
+      "descricao": "Riscos relacionados a documentos fiscais, contribuicoes, RGP, biometria e consistencia de dados cadastrais.",
+      "categoria": "comprovacao documental",
+      "fundamento_resumido": "Lei 10.779/2003, art. 2o, para. 2o; Decreto 8.424/2015, art. 2o, art. 5o"
+    },
+    {
+      "id_risco_geral": "RG-03",
+      "titulo": "Pagamentos e manutencao indevida do beneficio",
+      "descricao": "Riscos de manutencao, continuidade ou repeticao de pagamentos sem base legal valida.",
+      "categoria": "pagamento e manutencao",
+      "fundamento_resumido": "Lei 10.779/2003, art. 4o e 4o-A; Decreto 8.424/2015, art. 6o; Lei 7.998/1990, art. 7o, 8o e 25-A"
+    },
+    {
+      "id_risco_geral": "RG-04",
+      "titulo": "Fraude e integridade cadastral",
+      "descricao": "Riscos de uso de documentos falsos, declaracoes falsas ou registros inconsistentes na habilitacao e manutencao do beneficio.",
+      "categoria": "fraude",
+      "fundamento_resumido": "Lei 10.779/2003, art. 3o e art. 3o-A; Decreto 8.424/2015, art. 3o, para. 4o e art. 6o"
+    },
+    {
+      "id_risco_geral": "RG-05",
+      "titulo": "Governanca, monitoramento e controle financeiro",
+      "descricao": "Riscos de insuficiencia de controles sobre dotacao, priorizacao, pagamentos e fiscalizacao institucional.",
+      "categoria": "governanca e controle",
+      "fundamento_resumido": "Lei 10.779/2003, art. 5o; Lei 7.998/1990, art. 10 a 11, art. 19; Decreto 8.424/2015, art. 8o"
+    }
+  ],
+  "riscos_especificos": [
+    {
+      "id_risco_especifico": "RE-01",
+      "id_risco_geral": "RG-01",
+      "titulo": "Risco de concessao indevida por ausencia de comprovacao do exercicio ininterrupto da atividade pesqueira entre defesos",
+      "descricao": "Ocorre quando o beneficio e concedido sem evidencia suficiente de que o requerente exerceu atividade pesqueira artesanal ininterrupta no periodo legalmente exigido.",
+      "causa": "Validacao insuficiente do relatorio anual de exercicio da atividade pesqueira e dos documentos de comercializacao/contribuicao.",
+      "efeito": "Pagamento indevido a beneficiario sem requisito material de elegibilidade, com dano ao erario.",
+      "normativos_base": ["Lei 10.779/2003", "Decreto 8.424/2015"],
+      "dispositivos": ["Lei 10.779/2003, art. 1o, para. 3o e art. 2o, para. 12", "Decreto 8.424/2015, art. 1o, para. 1o e art. 2o, para. 1o"],
+      "evidencia_normativa": "A legislacao exige exercicio ininterrupto da atividade pesqueira no periodo entre defesos e comprovacao especifica desse exercicio.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-02",
+      "id_risco_geral": "RG-02",
+      "titulo": "Risco de concessao indevida por RGP irregular, desatualizado ou nao homologado",
+      "descricao": "Ocorre quando a habilitacao aceita registro de pescador sem situacao cadastral valida ou sem a homologacao exigida.",
+      "causa": "Falha na verificacao do RGP e na interoperabilidade entre MTE, MPA e autoridade municipal ou distrital.",
+      "efeito": "Beneficio concedido a pessoa sem comprovacao valida de condicao de pescador profissional artesanal.",
+      "normativos_base": ["Lei 11.959/2009", "Lei 10.779/2003", "Decreto 8.424/2015"],
+      "dispositivos": ["Lei 11.959/2009, art. 24 e 25", "Lei 10.779/2003, art. 2o, para. 2o, I", "Decreto 8.424/2015, art. 2o, I e VIII; art. 2o-A"],
+      "evidencia_normativa": "O RGP e requisito previo e, no regulamento atual, depende de homologacao para a concessao do seguro-defeso.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-03",
+      "id_risco_geral": "RG-01",
+      "titulo": "Risco de beneficio concedido sem verificacao da ausencia de outra fonte de renda ou vinculo de trabalho",
+      "descricao": "Ocorre quando a administracao nao confirma adequadamente a inexistencia de renda diversa da pesca ou de vinculo laboral incompatível.",
+      "causa": "Cruzamentos cadastrais incompletos e dependencia excessiva de autodeclaracao do requerente.",
+      "efeito": "Pagamento indevido a beneficiarios fora do publico elegivel.",
+      "normativos_base": ["Lei 10.779/2003", "Decreto 8.424/2015"],
+      "dispositivos": ["Lei 10.779/2003, art. 1o, para. 4o e art. 2o, para. 1o", "Decreto 8.424/2015, art. 2o, IV e V; art. 3o, para. 3o"],
+      "evidencia_normativa": "A lei e o decreto exigem ausencia de outra fonte de renda e autorizam confirmacao em bases governamentais, inclusive junto a Receita Federal.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-04",
+      "id_risco_geral": "RG-02",
+      "titulo": "Risco de pagamento indevido por falha de conferencia biometrica, de identidade ou de domicilio em municipio abrangido pelo defeso",
+      "descricao": "Ocorre quando identidade, biometria e local de residencia nao sao validados de modo consistente com a area de abrangencia do ato de defeso.",
+      "causa": "Baixa confiabilidade dos cadastros, falha nos canais de revisao ou insuficiencia de validacoes automatizadas.",
+      "efeito": "Concessao a titular nao elegivel territorialmente ou com cadastro inconsistente.",
+      "normativos_base": ["Lei 10.779/2003", "Decreto 8.424/2015"],
+      "dispositivos": ["Lei 10.779/2003, art. 1o, paras. 10 a 12", "Decreto 8.424/2015, art. 2o, VI e VII; art. 5o, II-A"],
+      "evidencia_normativa": "A regulacao exige biometria/CIN e domicilio em municipio abrangido ou limitrofe ao ato que institui o periodo de defeso.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-05",
+      "id_risco_geral": "RG-03",
+      "titulo": "Risco de manutencao indevida do beneficio apos ocorrencia de causa legal de cessacao",
+      "descricao": "Ocorre quando parcelas continuam sendo pagas mesmo apos inicio de atividade remunerada, outra renda, morte, fraude ou desrespeito ao periodo de defeso.",
+      "causa": "Ausencia de verificacao mensal efetiva das hipoteses de cessacao e baixa tempestividade na recepcao de eventos externos.",
+      "efeito": "Sobrepagamento e incremento de dano ao erario, com baixa recuperacao posterior.",
+      "normativos_base": ["Lei 10.779/2003", "Decreto 8.424/2015", "Lei 7.998/1990"],
+      "dispositivos": ["Lei 10.779/2003, art. 4o", "Decreto 8.424/2015, art. 6o, paras. 1o a 3o", "Lei 7.998/1990, art. 7o e 8o"],
+      "evidencia_normativa": "O regulamento determina cessacao do beneficio e verificacao mensal da nao ocorrencia das hipoteses impeditivas.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-06",
+      "id_risco_geral": "RG-04",
+      "titulo": "Risco de fraude documental em documentos fiscais de venda do pescado e comprovantes de contribuicao previdenciaria",
+      "descricao": "Ocorre quando documentos apresentados para demonstrar atividade e contribuicao nao correspondem a operacoes reais ou ao requerente.",
+      "causa": "Fragilidade de autenticacao documental e baixa confrontacao com bases fiscais e previdenciarias.",
+      "efeito": "Concessao ou manutencao indevida do beneficio com base em prova material falsa.",
+      "normativos_base": ["Lei 10.779/2003", "Lei 8.212/1991", "Decreto 8.424/2015"],
+      "dispositivos": ["Lei 10.779/2003, art. 2o, para. 2o, II", "Decreto 8.424/2015, art. 2o, para. 1o; art. 3o, para. 4o; art. 5o, para. 1o, III"],
+      "evidencia_normativa": "Os normativos exigem documentos fiscais e contribuicoes previdenciarias como elementos centrais de comprovacao da atividade.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-07",
+      "id_risco_geral": "RG-04",
+      "titulo": "Risco de nao conformidade com a Lei 10.779/2003 por falha na implementacao dos cruzamentos obrigatorios de bases cadastrais",
+      "descricao": "Ocorre quando a administracao nao realiza ou realiza de forma incompleta o cruzamento de bases oficiais para concessao e manutencao do beneficio.",
+      "causa": "Baixa interoperabilidade entre MTE, INSS, Receita Federal, bases de identidade e bases de programas sociais.",
+      "efeito": "Persistencia de inconsistencias cadastrais, pagamentos indevidos e reducao da capacidade de deteccao de fraude.",
+      "normativos_base": ["Lei 10.779/2003", "Decreto 8.424/2015"],
+      "dispositivos": ["Lei 10.779/2003, art. 1o, para. 9o", "Decreto 8.424/2015, art. 3o, para. 2o e 3o"],
+      "evidencia_normativa": "A legislacao passou a exigir expressamente cruzamentos em bases de dados dos orgaos da administracao federal e verificacoes previas no CNIS, CAEPF e DAE.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-08",
+      "id_risco_geral": "RG-05",
+      "titulo": "Risco de pagamento em desacordo com limite orcamentario e distribuicao de recursos por periodo de defeso",
+      "descricao": "Ocorre quando a execucao do beneficio nao observa adequadamente a dotacao orcamentaria anual e os criterios de distribuicao de recursos.",
+      "causa": "Fragilidade de governanca financeira do FAT e insuficiencia de planejamento sobre volume esperado de beneficiarios por periodo de defeso.",
+      "efeito": "Pressao sobre a liquidez do programa, pagamentos irregulares ou contingenciamento sem criterio tecnico suficiente.",
+      "normativos_base": ["Lei 10.779/2003", "Lei 7.998/1990", "Decreto 8.424/2015"],
+      "dispositivos": ["Lei 10.779/2003, art. 5o, paras. 1o a 3o", "Lei 7.998/1990, art. 10, 11 e 19", "Decreto 8.424/2015, art. 1o-A"],
+      "evidencia_normativa": "A legislacao vincula o beneficio ao FAT e a limite orcamentario, com criterios de distribuicao de recursos por periodo de defeso.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-09",
+      "id_risco_geral": "RG-03",
+      "titulo": "Risco de recuperacao insuficiente de valores pagos indevidamente",
+      "descricao": "Ocorre quando valores indevidos identificados nao sao compensados ou cobrados tempestivamente.",
+      "causa": "Falha no acionamento da compensacao automatica e baixa efetividade dos procedimentos de revisao e cobranca.",
+      "efeito": "Perda financeira para o programa e incentivo a reincidencia de irregularidades.",
+      "normativos_base": ["Lei 10.779/2003", "Lei 7.998/1990"],
+      "dispositivos": ["Lei 10.779/2003, art. 4o-A", "Lei 7.998/1990, art. 25-A"],
+      "evidencia_normativa": "Ambas as leis preveem compensacao automatica de valores percebidos indevidamente com novos beneficios.",
+      "tipo": "especifico"
+    }
+  ],
+  "avaliacao_dvr": [
+    {
+      "id_risco_especifico": "RE-01",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "O requisito depende de comprovacao material sensivel e distribuida no tempo. Falhas nesse ponto afetam diretamente a elegibilidade central do beneficio e tendem a gerar alto volume de pagamentos indevidos."
+    },
+    {
+      "id_risco_especifico": "RE-02",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "O RGP e a homologacao passaram a ser condicionantes estruturais da concessao. Qualquer falha cadastral ou procedimental compromete a identificacao do publico elegivel desde a entrada do processo."
+    },
+    {
+      "id_risco_especifico": "RE-03",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "A verificacao de renda e vinculo depende de integracao entre bases e de informacao atualizada. A falha produz concessao indevida com impacto financeiro e reputacional relevante."
+    },
+    {
+      "id_risco_especifico": "RE-04",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "justificativa": "As exigencias biometricas e territoriais aumentam a complexidade operacional. Embora nao atinjam todos os casos, quando falham podem permitir beneficios a titulares ou localidades nao elegiveis."
+    },
+    {
+      "id_risco_especifico": "RE-05",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "A cessacao depende de verificacao mensal e fluxo tempestivo de eventos externos. Em programas massivos, a nao interrupcao rapida amplia perdas acumuladas."
+    },
+    {
+      "id_risco_especifico": "RE-06",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "justificativa": "Documentos fiscais e de contribuicao sao decisivos para comprovar atividade. Fraudes ou inconsistencias documentais costumam ser menos frequentes que erros cadastrais, mas produzem alto impacto unitario e sistêmico."
+    },
+    {
+      "id_risco_especifico": "RE-07",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "Os cruzamentos cadastrais sao o principal mecanismo contemporaneo de controle. Sua implementacao incompleta compromete varias camadas de validacao ao mesmo tempo."
+    },
+    {
+      "id_risco_especifico": "RE-08",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "justificativa": "O risco e relevante para governanca financeira, mas seus efeitos tendem a se manifestar mais na gestao agregada do programa do que na elegibilidade individual de cada processo."
+    },
+    {
+      "id_risco_especifico": "RE-09",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "justificativa": "A recuperacao de valores indevidos costuma enfrentar limitações procedimentais e operacionais. O impacto pode ser relevante, mas geralmente ocorre apos deteccao de irregularidade ja consumada."
+    }
+  ],
+  "matriz_risco": [
+    {
+      "ordem_prioridade": 1,
+      "id_risco_especifico": "RE-02",
+      "risco": "Risco de concessao indevida por RGP irregular, desatualizado ou nao homologado",
+      "categoria": "comprovacao documental",
+      "normativo_chave": "Decreto 8.424/2015, art. 2o e 2o-A",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Validacao automatizada do RGP ativo, confirmacao de homologacao e bloqueio sistemico de requerimentos sem status regular.",
+      "teste_de_auditoria_sugerido": "Selecionar amostra de beneficios concedidos e conferir, nas bases do RGP e da homologacao municipal/distrital, se o registro estava ativo e homologado na data do deferimento."
+    },
+    {
+      "ordem_prioridade": 2,
+      "id_risco_especifico": "RE-07",
+      "risco": "Risco de nao conformidade com a Lei 10.779/2003 por falha na implementacao dos cruzamentos obrigatorios de bases cadastrais",
+      "categoria": "fraude",
+      "normativo_chave": "Lei 10.779/2003, art. 1o, para. 9o",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Rotina de cruzamento previo e continuado com bases federais, registro de trilha de auditoria e tratamento de alertas de inconsistencias.",
+      "teste_de_auditoria_sugerido": "Reexecutar cruzamentos em amostra de processos deferidos usando CNIS, CAEPF, DAE, bases de identidade e cadastros de programas sociais, comparando com a decisao administrativa original."
+    },
+    {
+      "ordem_prioridade": 3,
+      "id_risco_especifico": "RE-01",
+      "risco": "Risco de concessao indevida por ausencia de comprovacao do exercicio ininterrupto da atividade pesqueira entre defesos",
+      "categoria": "elegibilidade",
+      "normativo_chave": "Lei 10.779/2003, art. 2o, para. 12",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Exigencia e validacao substantiva do relatorio anual e de evidencias de comercializacao/contribuicao no periodo legal.",
+      "teste_de_auditoria_sugerido": "Conferir em amostra se o relatorio anual e os documentos de venda do pescado demonstram atividade entre defesos no periodo exigido."
+    },
+    {
+      "ordem_prioridade": 4,
+      "id_risco_especifico": "RE-03",
+      "risco": "Risco de beneficio concedido sem verificacao da ausencia de outra fonte de renda ou vinculo de trabalho",
+      "categoria": "elegibilidade",
+      "normativo_chave": "Decreto 8.424/2015, art. 2o, IV e V",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Consulta obrigatoria a bases tributarias, trabalhistas e previdenciarias antes do deferimento e em revisoes periodicas.",
+      "teste_de_auditoria_sugerido": "Cruzar amostra de beneficiarios com bases de vinculo laboral, renda e beneficios continuados para confirmar ausencia de fonte de renda incompatível."
+    },
+    {
+      "ordem_prioridade": 5,
+      "id_risco_especifico": "RE-05",
+      "risco": "Risco de manutencao indevida do beneficio apos ocorrencia de causa legal de cessacao",
+      "categoria": "pagamento e manutencao",
+      "normativo_chave": "Decreto 8.424/2015, art. 6o",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Monitoramento mensal automatizado de obitos, renda, vinculo, fraude e infracoes ao defeso com suspensao tempestiva de pagamento.",
+      "teste_de_auditoria_sugerido": "Confrontar lista de pagamentos com eventos de obito, vinculo, beneficios inacompativeis e autuacoes por desrespeito ao defeso ocorridos no mesmo periodo."
+    },
+    {
+      "ordem_prioridade": 6,
+      "id_risco_especifico": "RE-04",
+      "risco": "Risco de pagamento indevido por falha de conferencia biometrica, de identidade ou de domicilio em municipio abrangido pelo defeso",
+      "categoria": "comprovacao documental",
+      "normativo_chave": "Lei 10.779/2003, art. 1o, paras. 10 a 12",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "controle_esperado": "Validacao biometrica integrada e checagem georreferenciada ou cadastral do domicilio com regras de impedimento e revisao.",
+      "teste_de_auditoria_sugerido": "Testar amostra de requerimentos indeferidos e deferidos para verificar se biometria e domicilio foram checados conforme a area de abrangencia do defeso."
+    },
+    {
+      "ordem_prioridade": 7,
+      "id_risco_especifico": "RE-06",
+      "risco": "Risco de fraude documental em documentos fiscais de venda do pescado e comprovantes de contribuicao previdenciaria",
+      "categoria": "fraude",
+      "normativo_chave": "Lei 10.779/2003, art. 2o, para. 2o, II",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "controle_esperado": "Conferencia de autenticidade documental, reconciliacao com bases fiscais/previdenciarias e tratamento de outliers de comercializacao.",
+      "teste_de_auditoria_sugerido": "Confrontar notas/documentos fiscais apresentados com registros da empresa adquirente, recolhimentos previdenciarios e historico de producao do beneficiario."
+    },
+    {
+      "ordem_prioridade": 8,
+      "id_risco_especifico": "RE-08",
+      "risco": "Risco de pagamento em desacordo com limite orcamentario e distribuicao de recursos por periodo de defeso",
+      "categoria": "governanca e controle",
+      "normativo_chave": "Lei 10.779/2003, art. 5o; Decreto 8.424/2015, art. 1o-A",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "controle_esperado": "Planejamento anual do gasto por periodo de defeso, conciliacao com dotacao orcamentaria e supervisao do FAT/Codefat.",
+      "teste_de_auditoria_sugerido": "Comparar a execucao financeira por periodo de defeso com a dotacao, os criterios de distribuicao e os atos anuais de definicao de recursos."
+    },
+    {
+      "ordem_prioridade": 9,
+      "id_risco_especifico": "RE-09",
+      "risco": "Risco de recuperacao insuficiente de valores pagos indevidamente",
+      "categoria": "pagamento e manutencao",
+      "normativo_chave": "Lei 10.779/2003, art. 4o-A; Lei 7.998/1990, art. 25-A",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "controle_esperado": "Rotina de cobranca e compensacao automatica vinculada ao historico do beneficiario e ao fluxo de novos requerimentos.",
+      "teste_de_auditoria_sugerido": "Identificar pagamentos indevidos reconhecidos e verificar se houve compensacao automatica ou cobranca tempestiva nos termos normativos."
+    }
+  ],
+  "referencias_metodologicas": [
+    "skills/analise-risco/references/metodologia/manual-auditoria-operacional-tcu.txt",
+    "skills/analise-risco/references/metodologia/portaria-segecex-31-2010.txt",
+    "skills/analise-risco/references/metodologia/swot-dvr-auditoria.txt"
+  ],
+  "lacunas": [
+    "Ha ato sublegal ainda pendente de validacao oficial na base da skill busca-legislacao para Seguro defeso.",
+    "Os textos normativos de Seguro defeso ainda contem ruido de extracao HTML e caracteres corrompidos, o que recomenda revisao fina antes de uso massivo em avaliacoes automatizadas.",
+    "A matriz foi produzida com foco em concessao, manutencao e controle do beneficio; riscos operacionais regionais dependentes de ato especifico de defeso nao foram aprofundados sem o ato sublegal validado."
+  ]
+}
