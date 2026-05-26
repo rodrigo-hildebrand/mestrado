@@ -1,0 +1,169 @@
+{
+  "status": "ok",
+  "politica_publica": "Aposentadoria por idade",
+  "politica_slug": "aposentadoria-por-idade",
+  "analise_timestamp": "2026-05-15T14:00:00Z",
+  "forcas": [
+    {
+      "item": "Base constitucional solida: a CF/88 garante cobertura previdenciaria para idade avancada, define competencias da Uniao e impoe equilibrio financeiro e atuarial, provendo fundamento normativo indisponivel.",
+      "fonte": "normativos_utilizados[0]"
+    },
+    {
+      "item": "Marco legal inclusivo para pessoa com deficiencia: a LC 142/2013 regula a aposentadoria por idade da pessoa com deficiencia segurada do RGPS, garantindo requisitos proprios e avaliacao biopsicossocial especializada.",
+      "fonte": "normativos_utilizados[1]"
+    },
+    {
+      "item": "Norma central dos requisitos e do calculo: a Lei 8.213/1991 consolida os criterios de carencia, idade minima, regras de perda da qualidade de segurado, DIB e valor da aposentadoria por idade em suas variantes.",
+      "fonte": "normativos_utilizados[2]"
+    },
+    {
+      "item": "Base de custeio e de validacao contributiva: a Lei 8.212/1991 disciplina as contribuicoes usadas para validar tempo e carencia, sustentando a verificacao de elegibilidade sobre base legalmente definida.",
+      "fonte": "normativos_utilizados[3]"
+    },
+    {
+      "item": "Regulamentacao detalhada do CNIS e da prova documental: o Decreto 3.048/1999 disciplina a confiabilidade do CNIS, exige documentos contemporaneos para dados extemporaneos e detalha o regulamento operacional do RGPS.",
+      "fonte": "normativos_utilizados[4]"
+    },
+    {
+      "item": "Instrucao normativa operacional abrangente: a IN PRES/INSS 128/2022 define o fluxo instrucional completo — carta de exigencia, pesquisa externa, justificacao administrativa, motivacao decisoria e validacao de documentos digitais.",
+      "fonte": "normativos_utilizados[5]"
+    }
+  ],
+  "fraquezas": [
+    {
+      "item": "Falha na conferencia das contribuicoes computadas para carencia, com uso de CNIS inconsistente e baixa segregacao entre tempo, carencia valida e mera inscricao cadastral.",
+      "fonte": "riscos_especificos[RE-01].causa"
+    },
+    {
+      "item": "Processamento automatico sem filtros suficientes para dados extemporaneos do CNIS, associado a analise humana insuficiente para exigir documentos contemporaneos corroborativos.",
+      "fonte": "riscos_especificos[RE-02].causa"
+    },
+    {
+      "item": "Interpretacao imprecisa dos arts. 27-A e 102 da Lei 8.213/1991 nos sistemas e procedimentos, levando a exigencias indevidas de recarencia de quem ja implementou os requisitos.",
+      "fonte": "riscos_especificos[RE-03].causa"
+    },
+    {
+      "item": "Aceitacao de declaracoes ou documentos nao contemporaneos para comprovar atividade rural, ou uso indevido de justificacao administrativa sem inicio razoavel de prova material.",
+      "fonte": "riscos_especificos[RE-04].causa"
+    },
+    {
+      "item": "Nao emissao de carta de exigencia, pesquisa externa, justificacao administrativa ou despacho fundamentado para desconsiderar documentos relevantes como CTPS.",
+      "fonte": "riscos_especificos[RE-05].causa"
+    },
+    {
+      "item": "Falha na leitura do historico funcional e do momento do desligamento, com uso padronizado da data de entrada do requerimento sem aderencia a categoria do segurado.",
+      "fonte": "riscos_especificos[RE-06].causa"
+    },
+    {
+      "item": "Avaliacao medica e funcional incompleta para pessoa com deficiencia, registro insuficiente do periodo com deficiencia no CNIS e baixa integracao entre o laudo pericial e a decisao administrativa.",
+      "fonte": "riscos_especificos[RE-07].causa"
+    },
+    {
+      "item": "Erro de parametrizacao do beneficio, uso de base contributiva sem saneamento e falha em distinguir a regra geral de calculo da variante da LC 142/2013.",
+      "fonte": "riscos_especificos[RE-08].causa"
+    },
+    {
+      "item": "Fragilidade nos controles documentais e no tratamento da prova digital, sem validacao consistente de autenticidade, integridade e contemporaneidade de documentos eletronicos.",
+      "fonte": "riscos_especificos[RE-09].causa"
+    },
+    {
+      "item": "Falha de cruzamento entre bases de identificacao e de seguridade, com aceite de cadastro sem tratamento de pendencia critica de CPF nulo, cancelado, suspenso ou duplicado.",
+      "fonte": "riscos_especificos[RE-10].causa"
+    },
+    {
+      "item": "Deficiencia na integracao de bases de obito e ausencia de rotina de cessacao automatica ou revisao tempestiva ao recebimento de evento de falecimento do titular.",
+      "fonte": "riscos_especificos[RE-11].causa"
+    },
+    {
+      "item": "Insuficiencia de regras automatizadas e de revisao analitica em cruzamentos interbeneficios para deteccao de acumulacao vedada.",
+      "fonte": "riscos_especificos[RE-12].causa"
+    }
+  ],
+  "oportunidades": [
+    {
+      "item": "Marcacao sistemica de pendencias do CNIS, bloqueio do aproveitamento automatico de dados extemporaneos e exigencia de prova documental contemporanea antes de qualquer uso na contagem de carencia.",
+      "fonte": "matriz_risco[RE-02].controle_esperado"
+    },
+    {
+      "item": "Memoria de calculo rastreavel da carencia, segregando contribuicoes validas, competencias invalidadas e periodos apenas cadastrais, com trilha auditavel por processo.",
+      "fonte": "matriz_risco[RE-01].controle_esperado"
+    },
+    {
+      "item": "Checklist probatorio especifico para atividade rural, com avaliacao sistematizada de contemporaneidade e coerencia temporal da prova material em relacao ao periodo de carencia exigido.",
+      "fonte": "matriz_risco[RE-04].controle_esperado"
+    },
+    {
+      "item": "Integracao entre laudo biopsicossocial, registro do periodo com deficiencia no CNIS e memoria de enquadramento da regra especifica da LC 142/2013 na decisao administrativa.",
+      "fonte": "matriz_risco[RE-07].controle_esperado"
+    },
+    {
+      "item": "Parametrizacao decisoria diferenciada para beneficios programaveis, preservando o direito quando os requisitos de idade e carencia ja estiverem implementados antes da perda da qualidade de segurado.",
+      "fonte": "matriz_risco[RE-03].controle_esperado"
+    },
+    {
+      "item": "Rotina de validacao do salario de beneficio e do percentual aplicavel conforme a regra normativa incidente, distinguindo regra geral e variante da LC 142/2013.",
+      "fonte": "matriz_risco[RE-08].controle_esperado"
+    },
+    {
+      "item": "Fluxo instrutorio obrigatorio com carta de exigencia, pesquisa externa, justificacao administrativa e despacho motivado antes da decisao de concessao ou indeferimento.",
+      "fonte": "matriz_risco[RE-05].controle_esperado"
+    },
+    {
+      "item": "Validacao de chave de autenticacao, endereco eletronico de consulta e carimbo do tempo quando cabivel para documentos digitais usados como prova de tempo ou atividade.",
+      "fonte": "matriz_risco[RE-09].controle_esperado"
+    },
+    {
+      "item": "Bloqueio sistemico de concessao e manutencao com pendencia critica de identificacao cadastral e trilha de saneamento antes da decisao final.",
+      "fonte": "matriz_risco[RE-10].controle_esperado"
+    },
+    {
+      "item": "Rotina de monitoramento e cessacao automatica de pagamento apos recepcao de evento de obito em bases oficiais, com prazo definido e controle de recuperacao de valores.",
+      "fonte": "matriz_risco[RE-11].controle_esperado"
+    },
+    {
+      "item": "Verificacao automatizada e analitica de acumulacao vedada no deferimento e nas revisoes de manutencao, por cruzamento interbeneficios.",
+      "fonte": "matriz_risco[RE-12].controle_esperado"
+    },
+    {
+      "item": "Regra sistemica diferenciada para empregado, domestico e demais segurados na fixacao da DIB, com confirmacao do desligamento quando pertinente.",
+      "fonte": "matriz_risco[RE-06].controle_esperado"
+    }
+  ],
+  "ameacas": [
+    {
+      "item": "Ocorre quando o processo reconhece 180 contribuicoes ou periodo equivalente sem base idonea suficiente, ou mistura indevidamente competencias nao validas, gerando concessao ou indeferimento indevido.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-01].descricao"
+    },
+    {
+      "item": "Ocorre quando o INSS admite informacoes inseridas tardiamente no CNIS sem os documentos exigidos para comprovar regularidade, inicio e termino do vinculo, tornando artificiais a carencia e o salario de beneficio.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-02].descricao"
+    },
+    {
+      "item": "Ocorre quando a reducao etaria rural e aplicada sem que a prova material e complementar forme conviccao sobre o exercicio efetivo da atividade no periodo imediatamente anterior ao requerimento.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-04].descricao"
+    },
+    {
+      "item": "Ocorre quando a administracao exige requisitos adicionais de segurado a quem ja havia preenchido os requisitos da aposentadoria, ou aplica indevidamente regras de recarencia a esse beneficio.",
+      "quadrante_dvr": "alto",
+      "fonte": "riscos_especificos[RE-03].descricao"
+    },
+    {
+      "item": "Ocorre quando a regra da LC 142 e aplicada sem definicao confiavel da data de inicio da deficiencia, do grau ou do periodo minimo de 15 anos, gerando concessao ou negativa indevida da modalidade mais vantajosa.",
+      "quadrante_dvr": "alto",
+      "fonte": "riscos_especificos[RE-07].descricao"
+    },
+    {
+      "item": "Ocorre quando o salario de beneficio ou o percentual aplicavel e definido de forma incompativel com a regra normativa incidente, gerando pagamento indevido continuado e passivo revisional.",
+      "quadrante_dvr": "alto",
+      "fonte": "riscos_especificos[RE-08].descricao"
+    }
+  ],
+  "lacunas": [],
+  "referencias": {
+    "analise_risco": "skills/analise-risco/references/generated/aposentadoria-por-idade/resultado-analise.json",
+    "generated": "skills/analise-swot/references/generated/aposentadoria-por-idade/analise_swot.json"
+  }
+}
