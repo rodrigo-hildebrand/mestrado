@@ -1,0 +1,154 @@
+{
+  "status": "ok",
+  "politica_publica": "Seguro defeso",
+  "politica_slug": "seguro-defeso",
+  "analise_timestamp": "2026-05-15T14:00:00Z",
+  "forcas": [
+    {
+      "item": "Base constitucional solida: a CF/88 fundamenta a seguridade social, as competencias da Uniao e o financiamento pelo FAT.",
+      "fonte": "normativos_utilizados[0]"
+    },
+    {
+      "item": "Marco normativo central consolidado: a Lei 10.779/2003 define publico-alvo, requisitos de elegibilidade, controles de concessao e manutencao, mecanismos de cessacao e compensacao automatica de valores indevidos.",
+      "fonte": "normativos_utilizados[1]"
+    },
+    {
+      "item": "Arcabouco de controle financeiro e compensacao: a Lei 7.998/1990 disciplina o FAT, limites de parcelas, suspensao, cancelamento por fraude e compensacao automatica de beneficios indevidos.",
+      "fonte": "normativos_utilizados[2]"
+    },
+    {
+      "item": "Base previdenciaria do segurado especial: a Lei 8.212/1991 define a contribuicao previdenciaria do pescador artesanal, ancorando a condicao de elegibilidade ao historico previdenciario.",
+      "fonte": "normativos_utilizados[3]"
+    },
+    {
+      "item": "Definicao legal do segurado especial pescador: a Lei 8.213/1991 enquadra formalmente o pescador artesanal como segurado especial, delimitando o publico-alvo com precisao legal.",
+      "fonte": "normativos_utilizados[4]"
+    },
+    {
+      "item": "Definicao normativa de defeso e obrigatoriedade do RGP: a Lei 11.959/2009 estabelece os conceitos de defeso, pesca artesanal e torna o Registro Geral da Pesca requisito previo, provendo base objetiva de habilitacao.",
+      "fonte": "normativos_utilizados[5]"
+    },
+    {
+      "item": "Regulamentacao detalhada dos requisitos e cruzamentos: o Decreto 8.424/2015 detalha cada requisito de concessao, exige cruzamentos em bases federais, disciplina a homologacao do RGP, a cessacao e a analise de risco de fraude.",
+      "fonte": "normativos_utilizados[6]"
+    }
+  ],
+  "fraquezas": [
+    {
+      "item": "Validacao insuficiente do relatorio anual de exercicio da atividade pesqueira e dos documentos de comercializacao e contribuicao previdenciaria.",
+      "fonte": "riscos_especificos[RE-01].causa"
+    },
+    {
+      "item": "Falha na verificacao do RGP e na interoperabilidade entre MTE, MPA e autoridade municipal ou distrital responsavel pela homologacao.",
+      "fonte": "riscos_especificos[RE-02].causa"
+    },
+    {
+      "item": "Cruzamentos cadastrais incompletos e dependencia excessiva de autodeclaracao do requerente para comprovacao de ausencia de outra renda.",
+      "fonte": "riscos_especificos[RE-03].causa"
+    },
+    {
+      "item": "Baixa confiabilidade dos cadastros, falha nos canais de revisao e insuficiencia de validacoes automatizadas de identidade, biometria e domicilio.",
+      "fonte": "riscos_especificos[RE-04].causa"
+    },
+    {
+      "item": "Ausencia de verificacao mensal efetiva das hipoteses de cessacao e baixa tempestividade na recepcao de eventos externos que determinariam interrupcao do beneficio.",
+      "fonte": "riscos_especificos[RE-05].causa"
+    },
+    {
+      "item": "Fragilidade de autenticacao documental e baixa confrontacao de documentos fiscais de venda do pescado com bases fiscais e previdenciarias.",
+      "fonte": "riscos_especificos[RE-06].causa"
+    },
+    {
+      "item": "Baixa interoperabilidade entre MTE, INSS, Receita Federal, bases de identidade e bases de programas sociais, comprometendo os cruzamentos cadastrais obrigatorios.",
+      "fonte": "riscos_especificos[RE-07].causa"
+    },
+    {
+      "item": "Fragilidade de governanca financeira do FAT e insuficiencia de planejamento sobre o volume esperado de beneficiarios por periodo de defeso.",
+      "fonte": "riscos_especificos[RE-08].causa"
+    },
+    {
+      "item": "Falha no acionamento da compensacao automatica e baixa efetividade dos procedimentos de revisao e cobranca de valores indevidos ja identificados.",
+      "fonte": "riscos_especificos[RE-09].causa"
+    }
+  ],
+  "oportunidades": [
+    {
+      "item": "Validacao automatizada do RGP ativo, confirmacao de homologacao e bloqueio sistemico de requerimentos sem status regular, eliminando concessoes com base em registros invalidos.",
+      "fonte": "matriz_risco[RE-02].controle_esperado"
+    },
+    {
+      "item": "Rotina de cruzamento previo e continuado com bases federais (CNIS, CAEPF, DAE e outros), com registro de trilha de auditoria e tratamento automatizado de alertas de inconsistencias.",
+      "fonte": "matriz_risco[RE-07].controle_esperado"
+    },
+    {
+      "item": "Exigencia e validacao substantiva do relatorio anual e de evidencias de comercializacao/contribuicao no periodo legal, com criterios objetivos de aceitacao e rejeicao.",
+      "fonte": "matriz_risco[RE-01].controle_esperado"
+    },
+    {
+      "item": "Consulta obrigatoria a bases tributarias, trabalhistas e previdenciarias antes do deferimento e em revisoes periodicas, cobrindo toda a cadeia de verificacao de renda e vinculo.",
+      "fonte": "matriz_risco[RE-03].controle_esperado"
+    },
+    {
+      "item": "Monitoramento mensal automatizado de obitos, renda, vinculo, fraude e infracoes ao defeso, com suspensao tempestiva do pagamento ao surgimento de evento impeditivo.",
+      "fonte": "matriz_risco[RE-05].controle_esperado"
+    },
+    {
+      "item": "Validacao biometrica integrada e checagem georreferenciada ou cadastral do domicilio, com regras de impedimento e revisao para localidades nao abrangidas pelo defeso.",
+      "fonte": "matriz_risco[RE-04].controle_esperado"
+    },
+    {
+      "item": "Conferencia de autenticidade documental, reconciliacao com bases fiscais e previdenciarias e tratamento de outliers de comercializacao para identificar fraudes documentais.",
+      "fonte": "matriz_risco[RE-06].controle_esperado"
+    },
+    {
+      "item": "Planejamento anual do gasto por periodo de defeso com conciliacao com dotacao orcamentaria e supervisao do FAT/Codefat para evitar execucao em desacordo com limites legais.",
+      "fonte": "matriz_risco[RE-08].controle_esperado"
+    },
+    {
+      "item": "Rotina de cobranca e compensacao automatica vinculada ao historico do beneficiario e ao fluxo de novos requerimentos, garantindo recuperacao tempestiva de valores indevidos.",
+      "fonte": "matriz_risco[RE-09].controle_esperado"
+    }
+  ],
+  "ameacas": [
+    {
+      "item": "Ocorre quando o beneficio e concedido sem evidencia suficiente de que o requerente exerceu atividade pesqueira artesanal ininterrupta no periodo legalmente exigido, gerando pagamento indevido com dano ao erario.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-01].descricao"
+    },
+    {
+      "item": "Ocorre quando a habilitacao aceita registro de pescador sem situacao cadastral valida ou sem a homologacao exigida pelo Decreto 8.424/2015, concedendo beneficio a pessoa sem comprovacao valida da condicao de pescador artesanal.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-02].descricao"
+    },
+    {
+      "item": "Ocorre quando a administracao nao confirma adequadamente a inexistencia de renda diversa da pesca ou de vinculo laboral incompativel, permitindo pagamento a beneficiarios fora do publico elegivel.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-03].descricao"
+    },
+    {
+      "item": "Ocorre quando parcelas continuam sendo pagas mesmo apos inicio de atividade remunerada, outra renda, morte, fraude ou desrespeito ao periodo de defeso, ampliando perdas acumuladas.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-05].descricao"
+    },
+    {
+      "item": "Ocorre quando a administracao nao realiza ou realiza de forma incompleta o cruzamento de bases oficiais para concessao e manutencao, persistindo inconsistencias cadastrais e reducao da capacidade de deteccao de fraude.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-07].descricao"
+    },
+    {
+      "item": "Ocorre quando identidade, biometria e local de residencia nao sao validados de modo consistente com a area de abrangencia do ato de defeso, possibilitando concessao a titular nao elegivel territorialmente.",
+      "quadrante_dvr": "alto",
+      "fonte": "riscos_especificos[RE-04].descricao"
+    },
+    {
+      "item": "Ocorre quando documentos fiscais de venda do pescado e comprovantes de contribuicao previdenciaria nao correspondem a operacoes reais ou ao requerente, embasando concessao ou manutencao indevida do beneficio.",
+      "quadrante_dvr": "alto",
+      "fonte": "riscos_especificos[RE-06].descricao"
+    }
+  ],
+  "lacunas": [],
+  "referencias": {
+    "analise_risco": "skills/analise-risco/references/generated/seguro-defeso/resultado-analise.json",
+    "generated": "skills/analise-swot/references/generated/seguro-defeso/analise_swot.json"
+  }
+}
