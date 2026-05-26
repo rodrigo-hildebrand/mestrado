@@ -1,0 +1,438 @@
+{
+  "consulta": {
+    "politica_publica": "BPC Idoso",
+    "max_results": 8
+  },
+  "status": "concluido_com_lacuna",
+  "resumo_executivo": "A base normativa do BPC Idoso foi localizada na skill busca-legislacao e permitiu estruturar riscos de elegibilidade, integridade cadastral, concessao, manutencao e pagamento. Os riscos mais relevantes concentram-se em concessao indevida por validacao incompleta de renda e composicao familiar, manutencao indevida por falhas de revisao periodica, pagamento a titular com cadastro inconsistente ou obito nao refletido tempestivamente e acumulacao indevida com beneficios inacumulaveis. A avaliacao DVR prioriza riscos criticos e altos para orientar testes de auditoria focados em cruzamentos cadastrais, rastreabilidade decisoria e controle de manutencao do beneficio. O resultado foi marcado como concluido_com_lacuna porque permanece ato sublegal especifico pendente de validacao na base normativa consolidada da politica.",
+  "normativos_utilizados": [
+    {
+      "normativo": "CF/88",
+      "arquivo": "skills/busca-legislacao/references/common/cf/cf88.txt",
+      "relevancia": "Base constitucional da assistencia social e da garantia de beneficio ao idoso em situacao de vulnerabilidade"
+    },
+    {
+      "normativo": "Lei 8.742/1993 (LOAS)",
+      "arquivo": "skills/busca-legislacao/references/generated/bpc-idoso/03_lo_8742-1993.txt",
+      "relevancia": "Norma central do BPC com criterios de elegibilidade, renda, concessao e revisao"
+    },
+    {
+      "normativo": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "arquivo": "skills/busca-legislacao/references/generated/bpc-idoso/03_lo_10741-2003.txt",
+      "relevancia": "Conecta o direito da pessoa idosa ao BPC nos termos da LOAS"
+    },
+    {
+      "normativo": "Lei 14.176/2021",
+      "arquivo": "skills/busca-legislacao/references/generated/bpc-idoso/03_lo_14176-2021.txt",
+      "relevancia": "Ajusta criterios de miserabilidade e vulnerabilidade para analise de elegibilidade"
+    },
+    {
+      "normativo": "Decreto 6.214/2007",
+      "arquivo": "skills/busca-legislacao/references/generated/bpc-idoso/04_decreto_6214-2007.txt",
+      "relevancia": "Regulamenta habilitacao, concessao, revisao, suspensao e cessacao do BPC"
+    }
+  ],
+  "resumos_normativos": [
+    {
+      "normativo": "Lei 8.742/1993 (LOAS)",
+      "dispositivos_relevantes": [
+        "art. 20: define o BPC de um salario-minimo para idoso com 65 anos ou mais em vulnerabilidade",
+        "art. 20, par. 3o: criterio geral de renda familiar per capita",
+        "art. 20, par. 11 e 11-A: admite avaliacao de vulnerabilidade e possibilidade de ampliacao regulamentar",
+        "art. 21: exige revisao periodica para manutencao das condicoes",
+        "art. 12, I: atribui a Uniao a concessao e manutencao do beneficio"
+      ],
+      "implicacoes_de_risco": [
+        "risco de concessao sem validacao adequada de renda e composicao familiar",
+        "risco de manutencao indevida por falha de revisao periodica",
+        "risco de decisao inconsistente na avaliacao de vulnerabilidade"
+      ]
+    },
+    {
+      "normativo": "Lei 10.741/2003 (Estatuto da Pessoa Idosa)",
+      "dispositivos_relevantes": [
+        "art. 33: integra a assistencia social da pessoa idosa a LOAS",
+        "art. 34: assegura beneficio mensal de um salario-minimo ao idoso sem meios de subsistencia",
+        "art. 34, paragrafo unico: regra de nao computo de beneficio familiar para renda per capita conforme texto legal vigente"
+      ],
+      "implicacoes_de_risco": [
+        "risco de indeferimento ou deferimento incorreto por erro de calculo da renda per capita familiar",
+        "risco de baixa aderencia entre decisao administrativa e regra de protecao especifica da pessoa idosa"
+      ]
+    },
+    {
+      "normativo": "Lei 14.176/2021",
+      "dispositivos_relevantes": [
+        "art. 1o: altera o art. 20 da LOAS e reafirma criterio-base de renda",
+        "art. 20-B da LOAS (incluido): define parametros adicionais de miserabilidade e vulnerabilidade",
+        "art. 6o: vigencias especificas para regras alteradas"
+      ],
+      "implicacoes_de_risco": [
+        "risco de aplicacao incompleta dos parametros adicionais de vulnerabilidade",
+        "risco de assimetria decisoria por interpretacao divergente de regras de vigencia"
+      ]
+    },
+    {
+      "normativo": "Decreto 6.214/2007",
+      "dispositivos_relevantes": [
+        "art. 1o do Regulamento: escopo do BPC para idoso",
+        "art. 3o: INSS como operador do beneficio",
+        "art. 8o: requisitos para idoso",
+        "art. 12 e 15: exigencias cadastrais e de identificacao",
+        "art. 42 e seguintes: revisao periodica, suspensao e cessacao"
+      ],
+      "implicacoes_de_risco": [
+        "risco de concessao indevida por falha de verificacao cadastral",
+        "risco de manutencao indevida por nao execucao de rotinas de revisao, suspensao e cessacao",
+        "risco de pagamento indevido por desatualizacao de eventos criticos"
+      ]
+    }
+  ],
+  "riscos_gerais": [
+    {
+      "id_risco_geral": "RG-01",
+      "titulo": "Falhas de elegibilidade e habilitacao",
+      "descricao": "Riscos de concessao sem aderencia integral aos requisitos de idade, renda e vulnerabilidade previstos para o BPC Idoso.",
+      "categoria": "elegibilidade",
+      "fundamento_resumido": "LOAS art. 20 e art. 20, par. 3o; Decreto 6.214/2007 art. 8o"
+    },
+    {
+      "id_risco_geral": "RG-02",
+      "titulo": "Fragilidade cadastral e documental",
+      "descricao": "Riscos de identificacao incorreta do titular, composicao familiar inconsistente e dados cadastrais desatualizados.",
+      "categoria": "integridade cadastral",
+      "fundamento_resumido": "Decreto 6.214/2007 art. 12 e art. 15; LOAS art. 20"
+    },
+    {
+      "id_risco_geral": "RG-03",
+      "titulo": "Manutencao e pagamento indevido",
+      "descricao": "Riscos de continuidade de pagamento sem manutencao dos requisitos ou sem interrupcao tempestiva em eventos impeditivos.",
+      "categoria": "pagamento e manutencao",
+      "fundamento_resumido": "LOAS art. 21; Decreto 6.214/2007 art. 42 e seguintes"
+    },
+    {
+      "id_risco_geral": "RG-04",
+      "titulo": "Conformidade normativa e motivacao decisoria",
+      "descricao": "Riscos de decisao administrativa sem lastro suficiente nos dispositivos aplicaveis ou com motivacao incompleta.",
+      "categoria": "conformidade",
+      "fundamento_resumido": "LOAS art. 20 e art. 20-B; Lei 14.176/2021 art. 1o"
+    },
+    {
+      "id_risco_geral": "RG-05",
+      "titulo": "Governanca, monitoramento e controle",
+      "descricao": "Riscos de baixa efetividade dos controles para detectar irregularidades, corrigir inconsistencias e preservar integridade do gasto assistencial.",
+      "categoria": "governanca e controle",
+      "fundamento_resumido": "LOAS art. 12, I; Decreto 6.214/2007 art. 3o e art. 42"
+    }
+  ],
+  "riscos_especificos": [
+    {
+      "id_risco_especifico": "RE-01",
+      "id_risco_geral": "RG-01",
+      "titulo": "Risco de concessao indevida por validacao insuficiente da renda familiar per capita",
+      "descricao": "Ocorre quando o processo defere BPC Idoso sem validacao robusta do criterio de renda e da composicao familiar utilizada no calculo.",
+      "causa": "Falha no confronto de dados declarados no cadastro com bases oficiais e registros atualizados.",
+      "efeito": "Pagamento indevido e distorcao da focalizacao assistencial.",
+      "normativos_base": [
+        "Lei 8.742/1993 (LOAS)",
+        "Decreto 6.214/2007"
+      ],
+      "dispositivos": [
+        "LOAS, art. 20 e art. 20, par. 3o",
+        "Decreto 6.214/2007, art. 8o"
+      ],
+      "evidencia_normativa": "A concessao depende de cumprimento dos requisitos de renda e demais condicoes legais do BPC.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-02",
+      "id_risco_geral": "RG-04",
+      "titulo": "Risco de concessao ou indeferimento inconsistente por aplicacao incompleta dos parametros de vulnerabilidade",
+      "descricao": "Ocorre quando a decisao administrativa nao considera adequadamente os elementos adicionais de vulnerabilidade previstos na LOAS apos alteracoes legais.",
+      "causa": "Interpretacao desigual de criterios de miserabilidade e vulnerabilidade social entre unidades decisorias.",
+      "efeito": "Decisoes assimetricas, litigiosidade e baixa previsibilidade do processo.",
+      "normativos_base": [
+        "Lei 8.742/1993 (LOAS)",
+        "Lei 14.176/2021"
+      ],
+      "dispositivos": [
+        "LOAS, art. 20, par. 11 e 11-A",
+        "LOAS, art. 20-B (incluido pela Lei 14.176/2021, art. 1o)"
+      ],
+      "evidencia_normativa": "A lei admite avaliacao de elementos adicionais de vulnerabilidade para qualificar a analise de elegibilidade.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-03",
+      "id_risco_geral": "RG-02",
+      "titulo": "Risco de concessao indevida por identificacao cadastral invalida do titular",
+      "descricao": "Ocorre quando o beneficio e concedido ou mantido com CPF inconsistente, cadastro desatualizado ou divergencia de identificacao entre bases.",
+      "causa": "Falha de validacao de identificacao e baixa consistencia na atualizacao cadastral obrigatoria.",
+      "efeito": "Pagamento a titular com identidade nao validada e aumento do risco de fraude e duplicidade.",
+      "normativos_base": [
+        "Decreto 6.214/2007",
+        "Lei 8.742/1993 (LOAS)"
+      ],
+      "dispositivos": [
+        "Decreto 6.214/2007, art. 12 e art. 15",
+        "LOAS, art. 20 (regras de acesso e manutencao)"
+      ],
+      "evidencia_normativa": "O regulamento do BPC exige identificacao e requisitos cadastrais para concessao e manutencao.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-04",
+      "id_risco_geral": "RG-02",
+      "titulo": "Risco de concessao indevida por documentacao de elegibilidade insuficiente ou inconsistente",
+      "descricao": "Ocorre quando documentos e informacoes usados na instrucao nao sustentam de forma confiavel os requisitos do beneficio.",
+      "causa": "Controles documentais insuficientes e baixa rastreabilidade da instrucao processual.",
+      "efeito": "Erro de elegibilidade, pagamento indevido e fragilidade de defesa da decisao em auditoria.",
+      "normativos_base": [
+        "Lei 8.742/1993 (LOAS)",
+        "Decreto 6.214/2007"
+      ],
+      "dispositivos": [
+        "LOAS, art. 20",
+        "Decreto 6.214/2007, art. 8o e art. 15"
+      ],
+      "evidencia_normativa": "A concessao depende de comprovacao dos requisitos legais e regulamentares do BPC.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-05",
+      "id_risco_geral": "RG-03",
+      "titulo": "Risco de manutencao indevida do beneficio por falha na revisao periodica",
+      "descricao": "Ocorre quando o beneficio continua ativo sem reavaliacao efetiva da permanencia dos requisitos de elegibilidade.",
+      "causa": "Execucao incompleta das rotinas de revisao e baixa tempestividade no tratamento de pendencias.",
+      "efeito": "Persistencia de pagamentos indevidos e incremento de dano financeiro.",
+      "normativos_base": [
+        "Lei 8.742/1993 (LOAS)",
+        "Decreto 6.214/2007"
+      ],
+      "dispositivos": [
+        "LOAS, art. 21",
+        "Decreto 6.214/2007, art. 42 e seguintes"
+      ],
+      "evidencia_normativa": "A legislacao exige revisao periodica e disciplina administrativa de suspensao e cessacao quando requisitos nao se mantem.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-06",
+      "id_risco_geral": "RG-03",
+      "titulo": "Risco de pagamento indevido apos obito do titular",
+      "descricao": "Ocorre quando eventos de obito nao sao refletidos tempestivamente no fluxo de manutencao e pagamento do BPC.",
+      "causa": "Deficiencia de cruzamento de bases de obito e atraso na cessacao administrativa.",
+      "efeito": "Pagamento sem base legal e aumento de valores a recuperar.",
+      "normativos_base": [
+        "Decreto 6.214/2007",
+        "Lei 8.742/1993 (LOAS)"
+      ],
+      "dispositivos": [
+        "Decreto 6.214/2007, art. 42 e seguintes",
+        "LOAS, art. 21"
+      ],
+      "evidencia_normativa": "As regras de revisao, suspensao e cessacao impõem interrupcao do beneficio quando cessam as condicoes legais de manutencao.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-07",
+      "id_risco_geral": "RG-03",
+      "titulo": "Risco de acumulacao indevida com beneficio inacumulavel",
+      "descricao": "Ocorre quando o sistema nao bloqueia acumulacao vedada e mantem pagamento concomitante incompatível.",
+      "causa": "Falha em cruzamentos de bases de beneficios e validacoes de regra de acumulacao.",
+      "efeito": "Pagamento indevido, glosa futura e litigio administrativo.",
+      "normativos_base": [
+        "Lei 8.742/1993 (LOAS)",
+        "Decreto 6.214/2007"
+      ],
+      "dispositivos": [
+        "LOAS, art. 20 (vedacoes de acumulacao aplicaveis)",
+        "Decreto 6.214/2007, regras de concessao/manutencao e cessacao"
+      ],
+      "evidencia_normativa": "O BPC possui restricao de acumulacao com beneficios incompatíveis, com repercussao direta na manutencao do pagamento.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-08",
+      "id_risco_geral": "RG-04",
+      "titulo": "Risco de nao conformidade com o Estatuto da Pessoa Idosa por erro no calculo da renda familiar em situacoes com outro beneficio no nucleo",
+      "descricao": "Ocorre quando a administracao aplica indevidamente regras de computo de renda em familias com outro beneficio, comprometendo a decisao sobre o BPC.",
+      "causa": "Baixa padronizacao da interpretacao normativa em casos de composicao familiar complexa.",
+      "efeito": "Indeferimento indevido ou concessao sem aderencia legal.",
+      "normativos_base": [
+        "Lei 10.741/2003",
+        "Lei 8.742/1993 (LOAS)"
+      ],
+      "dispositivos": [
+        "Lei 10.741/2003, art. 34 e paragrafo unico",
+        "LOAS, art. 20"
+      ],
+      "evidencia_normativa": "O Estatuto e a LOAS conectam a regra de renda do grupo familiar ao acesso do idoso ao BPC.",
+      "tipo": "especifico"
+    }
+  ],
+  "avaliacao_dvr": [
+    {
+      "id_risco_especifico": "RE-01",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "O criterio de renda e condicao central de elegibilidade e depende de dados sujeitos a variacao e inconsistencias cadastrais, com alto potencial de pagamento indevido."
+    },
+    {
+      "id_risco_especifico": "RE-02",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "justificativa": "A aplicacao dos parametros de vulnerabilidade demanda julgamento tecnico e uniformizacao; falhas tendem a produzir alto impacto em massa de decisoes."
+    },
+    {
+      "id_risco_especifico": "RE-03",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "Inconsistencias de identificacao cadastral sao recorrentes em programas de larga escala e comprometem diretamente a integridade do pagamento."
+    },
+    {
+      "id_risco_especifico": "RE-04",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "justificativa": "A instrucao documental e sensivel a qualidade de provas e, quando falha, gera erro material de elegibilidade com impacto financeiro relevante."
+    },
+    {
+      "id_risco_especifico": "RE-05",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "A revisao periodica e um controle estruturante; sua falha sistematica amplia acumulacao de pagamentos sem base legal ao longo do tempo."
+    },
+    {
+      "id_risco_especifico": "RE-06",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "justificativa": "Atraso na refletividade de obito em bases administrativas nao e incomum e causa pagamento indevido de alta criticidade reputacional e financeira."
+    },
+    {
+      "id_risco_especifico": "RE-07",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "justificativa": "Acumulacao indevida depende de interoperabilidade entre bases e regras automatizadas; quando ocorre, compromete focalizacao e conformidade do gasto."
+    },
+    {
+      "id_risco_especifico": "RE-08",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "justificativa": "Erros de interpretacao em casos de renda familiar com beneficios associados tendem a ocorrer em subconjunto especifico, com impacto relevante porem menos sistêmico."
+    }
+  ],
+  "matriz_risco": [
+    {
+      "ordem_prioridade": 1,
+      "id_risco_especifico": "RE-01",
+      "risco": "Risco de concessao indevida por validacao insuficiente da renda familiar per capita",
+      "categoria": "elegibilidade",
+      "normativo_chave": "LOAS, art. 20 e art. 20, par. 3o",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Cruzamento previo e continuo de renda e composicao familiar em bases oficiais com bloqueio de deferimento quando houver inconsistencias criticas.",
+      "teste_de_auditoria_sugerido": "Reprocessar amostra de beneficios concedidos recalculando renda per capita com dados cadastrais e bases externas para verificar aderencia ao criterio legal."
+    },
+    {
+      "ordem_prioridade": 2,
+      "id_risco_especifico": "RE-03",
+      "risco": "Risco de concessao indevida por identificacao cadastral invalida do titular",
+      "categoria": "integridade cadastral",
+      "normativo_chave": "Decreto 6.214/2007, art. 12 e art. 15",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Validacao automatizada de CPF e identificacao com tratamento obrigatorio de pendencias criticas antes da concessao e manutencao.",
+      "teste_de_auditoria_sugerido": "Cruzar beneficiarios ativos com situacao cadastral de identificacao e verificar se houve bloqueio, saneamento e decisao motivada nos casos inconsistentes."
+    },
+    {
+      "ordem_prioridade": 3,
+      "id_risco_especifico": "RE-05",
+      "risco": "Risco de manutencao indevida do beneficio por falha na revisao periodica",
+      "categoria": "pagamento e manutencao",
+      "normativo_chave": "LOAS, art. 21; Decreto 6.214/2007, art. 42 e seguintes",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Agenda de revisao periodica com rastreabilidade de notificacao, decisao e eventual suspensao ou cessacao.",
+      "teste_de_auditoria_sugerido": "Selecionar beneficiarios com revisao vencida e verificar execucao de notificacoes, reavaliacao de requisitos e medidas administrativas adotadas."
+    },
+    {
+      "ordem_prioridade": 4,
+      "id_risco_especifico": "RE-02",
+      "risco": "Risco de concessao ou indeferimento inconsistente por aplicacao incompleta dos parametros de vulnerabilidade",
+      "categoria": "conformidade",
+      "normativo_chave": "LOAS, art. 20-B (incluido pela Lei 14.176/2021)",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "controle_esperado": "Padronizacao da instrucao e da motivacao decisoria para aplicacao uniforme dos parametros adicionais de vulnerabilidade.",
+      "teste_de_auditoria_sugerido": "Comparar decisoes de casos semelhantes para verificar consistencia de aplicacao dos parametros de vulnerabilidade e justificativas registradas."
+    },
+    {
+      "ordem_prioridade": 5,
+      "id_risco_especifico": "RE-04",
+      "risco": "Risco de concessao indevida por documentacao de elegibilidade insuficiente ou inconsistente",
+      "categoria": "integridade cadastral",
+      "normativo_chave": "Decreto 6.214/2007, art. 8o e art. 15",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "controle_esperado": "Checklist documental minimo, validacao de consistencia e despacho motivado para aceitar, exigir complemento ou rejeitar prova.",
+      "teste_de_auditoria_sugerido": "Revisar amostra de processos deferidos para confirmar presenca de evidencias documentais suficientes e coerentes com os requisitos legais."
+    },
+    {
+      "ordem_prioridade": 6,
+      "id_risco_especifico": "RE-06",
+      "risco": "Risco de pagamento indevido apos obito do titular",
+      "categoria": "pagamento e manutencao",
+      "normativo_chave": "Decreto 6.214/2007, art. 42 e seguintes",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "controle_esperado": "Cruzamento frequente com base de obitos e cessacao imediata do pagamento apos confirmacao do evento.",
+      "teste_de_auditoria_sugerido": "Cruzar folha de pagamento do BPC com base de obitos e medir tempo entre evento e cessacao para identificar pagamentos apos obito."
+    },
+    {
+      "ordem_prioridade": 7,
+      "id_risco_especifico": "RE-07",
+      "risco": "Risco de acumulacao indevida com beneficio inacumulavel",
+      "categoria": "pagamento e manutencao",
+      "normativo_chave": "LOAS, art. 20; Decreto 6.214/2007 (regras de manutencao e cessacao)",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "controle_esperado": "Regra automatizada de bloqueio para beneficios inacumulaveis com reconfirmacao periodica em bases de beneficios.",
+      "teste_de_auditoria_sugerido": "Cruzar cadastro de beneficiarios do BPC com bases de beneficios potencialmente inacumulaveis e verificar ocorrencias nao bloqueadas."
+    },
+    {
+      "ordem_prioridade": 8,
+      "id_risco_especifico": "RE-08",
+      "risco": "Risco de nao conformidade com o Estatuto da Pessoa Idosa por erro no calculo da renda familiar em situacoes com outro beneficio no nucleo",
+      "categoria": "conformidade",
+      "normativo_chave": "Lei 10.741/2003, art. 34 e paragrafo unico",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "controle_esperado": "Regra de calculo de renda familiar com tratamento expresso para beneficios no nucleo e validacao por amostragem de qualidade.",
+      "teste_de_auditoria_sugerido": "Recalcular renda familiar em casos com outro beneficio no grupo e comparar com o resultado administrativo para detectar erro de aplicacao normativa."
+    }
+  ],
+  "referencias_metodologicas": [
+    "skills/analise-risco/references/metodologia/manual-auditoria-operacional-tcu.txt",
+    "skills/analise-risco/references/metodologia/swot-dvr-auditoria.txt"
+  ],
+  "lacunas": [
+    "A base normativa da politica ainda contem item sublegal marcado como pendente de validacao oficial, o que limita detalhamento fino de riscos operacionais infralegais.",
+    "Os textos utilizados na analise sao resumos normativos gerados previamente; a rastreabilidade por artigo foi mantida apenas para dispositivos explicitamente consolidados nesses artefatos."
+  ]
+}
