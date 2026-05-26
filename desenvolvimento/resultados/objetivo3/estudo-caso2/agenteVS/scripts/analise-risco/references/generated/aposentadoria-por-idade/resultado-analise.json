@@ -1,0 +1,536 @@
+{
+  "consulta": {
+    "politica_publica": "Aposentadoria por idade",
+    "max_results": 8
+  },
+  "status": "concluido_com_lacuna",
+  "resumo_executivo": "A base normativa localizada pela skill busca-legislacao permite estruturar riscos relevantes de reconhecimento de direito na aposentadoria por idade do RGPS, com foco em carencia, idade minima, qualidade de segurado, consistencia do CNIS, comprovacao documental e correta fixacao da data de inicio do beneficio. O conjunto tambem inclui a variante da aposentadoria por idade da pessoa com deficiencia da LC 142/2013, o que adiciona riscos especificos de avaliacao biopsicossocial, comprovacao do periodo com deficiencia e parametrizacao diferenciada. Nesta reaplicacao, foi incluida camada transversal explicita de riscos de identificacao do titular (CPF nulo/cancelado/suspenso/inconsistente), pagamento ou manutencao de beneficio apos obito e acumulacao indevida de beneficios inacumulaveis. Os riscos mais criticos concentram-se na concessao com CNIS inconsistente ou extemporaneo sem corroboracao documental, no reconhecimento indevido de tempo/carencia, na validacao deficiente da atividade rural e em falhas de cruzamentos cadastrais para bloqueio tempestivo de pagamentos indevidos. O resultado permaneceu como concluido_com_lacuna porque a base normativa original da busca registra uma portaria pendente de validacao oficial adicional.",
+  "normativos_utilizados": [
+    {
+      "normativo": "CF/88",
+      "arquivo": "skills/busca-legislacao/references/common/cf/cf88.txt",
+      "relevancia": "Base constitucional da previdencia social, cobertura de idade avancada e equilibrio financeiro e atuarial"
+    },
+    {
+      "normativo": "Lei Complementar 142/2013",
+      "arquivo": "skills/busca-legislacao/references/generated/aposentadoria-por-idade/02_lc_142-2013.txt",
+      "relevancia": "Regula a aposentadoria da pessoa com deficiencia segurada do RGPS, incluindo a aposentadoria por idade"
+    },
+    {
+      "normativo": "Lei 8.213/1991",
+      "arquivo": "skills/busca-legislacao/references/generated/aposentadoria-por-idade/03_lo_8213-1991.txt",
+      "relevancia": "Norma central dos requisitos, carencia, DIB e valor da aposentadoria por idade"
+    },
+    {
+      "normativo": "Lei 8.212/1991",
+      "arquivo": "skills/busca-legislacao/references/generated/aposentadoria-por-idade/03_lo_8212-1991.txt",
+      "relevancia": "Base do custeio e das contribuicoes usadas para validacao de tempo e carencia"
+    },
+    {
+      "normativo": "Decreto 3.048/1999",
+      "arquivo": "skills/busca-legislacao/references/generated/aposentadoria-por-idade/04_decreto_3048-1999.txt",
+      "relevancia": "Disciplina CNIS, comprovacao documental e regulamento operacional do RGPS"
+    },
+    {
+      "normativo": "IN PRES/INSS 128/2022",
+      "arquivo": "skills/busca-legislacao/references/generated/aposentadoria-por-idade/05_instrucao-normativa_128-2022.txt",
+      "relevancia": "Regras administrativas sobre documentos, acerto de CNIS, motivacao decisoria e instrucao do processo"
+    }
+  ],
+  "resumos_normativos": [
+    {
+      "normativo": "Lei 8.213/1991",
+      "dispositivos_relevantes": [
+        "art. 25: carencia de 180 contribuicoes mensais para aposentadoria por idade, ressalvadas regras transitorias",
+        "art. 27-A: disciplina os efeitos da perda da qualidade de segurado para carencia nos beneficios que especifica, relevante para nao extrapolar a regra a aposentadoria por idade",
+        "art. 48: define idade minima e reducao para trabalhadores rurais, alem da necessidade de comprovacao da atividade rural por periodo equivalente a carencia",
+        "art. 49: fixa a data de inicio do beneficio conforme categoria do segurado e momento do requerimento",
+        "art. 50: define o calculo da renda mensal na sistematica legal indicada",
+        "art. 102, para. 1o: a perda da qualidade de segurado nao prejudica o direito a aposentadoria para quem ja havia preenchido os requisitos"
+      ],
+      "implicacoes_de_risco": [
+        "reconhecimento indevido de carencia",
+        "erro na aplicacao das regras de perda da qualidade de segurado",
+        "concessao rural sem prova material suficiente",
+        "erro na fixacao da DIB e da renda mensal"
+      ]
+    },
+    {
+      "normativo": "Decreto 3.048/1999",
+      "dispositivos_relevantes": [
+        "art. 13 e 14: disciplina manutencao e perda da qualidade de segurado",
+        "art. 19 e 19-B: trata da confiabilidade do CNIS, extemporaneidade e necessidade de documentos contemporaneos",
+        "art. 19-B, paras. 1o a 6o: elenca documentos aptos, regras de copia simples e pesquisa complementar",
+        "arts. 19-A e 19-B: exigem CTC para tempo de servidor estatutario e disciplinam complementacao probatoria",
+        "regulamento da LC 142 no proprio RPS: incorpora avaliacao biopsicossocial e registro dos periodos com deficiencia no CNIS"
+      ],
+      "implicacoes_de_risco": [
+        "uso indevido de dados extemporaneos do CNIS sem prova corroborativa",
+        "reconhecimento de vinculos ou remuneracoes sem base documental contemporanea",
+        "erro na consideracao de tempo de RPPS sem CTC",
+        "falha no registro e uso de informacoes sobre deficiencia"
+      ]
+    },
+    {
+      "normativo": "IN PRES/INSS 128/2022",
+      "dispositivos_relevantes": [
+        "arts. 11 a 18: autorizam exigencia documental diante de divergencia, insuficiencia ou extemporaneidade no CNIS e exigem motivacao para desconsiderar CTPS",
+        "arts. 22 a 24: preveem carta de exigencia, pesquisa externa, justificacao administrativa e dever de motivacao da decisao",
+        "arts. 29 a 31: disciplinam uso de copias simples e documentos eletronicos, com avaliacao de autenticidade, integridade e contemporaneidade",
+        "arts. 48 e seguintes: detalham documentos para acerto de vinculos e atividade, inclusive contextos rurais e urbanos"
+      ],
+      "implicacoes_de_risco": [
+        "indeferimento ou deferimento mal instruido por falha no tratamento das pendencias do CNIS",
+        "aceitacao de documentos digitais sem verificacao adequada",
+        "desconsideracao indevida de CTPS sem despacho fundamentado",
+        "baixa rastreabilidade da motivacao administrativa"
+      ]
+    },
+    {
+      "normativo": "Lei Complementar 142/2013",
+      "dispositivos_relevantes": [
+        "art. 3o, IV: define a aposentadoria por idade da pessoa com deficiencia aos 60 anos homem e 55 mulher, com 15 anos de contribuicao e comprovacao da deficiencia por igual periodo",
+        "arts. 4o a 7o: exigem avaliacao medica e funcional, fixacao da data provavel do inicio da deficiencia e ajuste proporcional quando houver alteracao do grau",
+        "art. 8o, II: define calculo da renda mensal da aposentadoria por idade da pessoa com deficiencia"
+      ],
+      "implicacoes_de_risco": [
+        "reconhecimento indevido do requisito temporal da deficiencia",
+        "erro de classificacao do grau ou do marco inicial da deficiencia",
+        "calculo incorreto da renda mensal na regra especifica"
+      ]
+    }
+  ],
+  "riscos_gerais": [
+    {
+      "id_risco_geral": "RG-01",
+      "titulo": "Falhas na verificacao de requisitos de elegibilidade",
+      "descricao": "Riscos de concessao sem confirmacao adequada de idade minima, carencia, categoria do segurado e direito adquirido.",
+      "categoria": "elegibilidade",
+      "fundamento_resumido": "Lei 8.213/1991, arts. 25, 48, 49 e 102"
+    },
+    {
+      "id_risco_geral": "RG-02",
+      "titulo": "Fragilidade no CNIS e na prova documental",
+      "descricao": "Riscos de uso de informacoes cadastrais, vinculos, remuneracoes e contribuicoes sem validacao suficiente.",
+      "categoria": "base cadastral e documental",
+      "fundamento_resumido": "Decreto 3.048/1999, art. 19-B; IN 128/2022, arts. 11 a 18"
+    },
+    {
+      "id_risco_geral": "RG-03",
+      "titulo": "Erros na instrucao e motivacao do processo administrativo",
+      "descricao": "Riscos de decisoes concessorias ou denegatorias sem carta de exigencia, pesquisa, JA ou fundamentacao adequada.",
+      "categoria": "processo administrativo",
+      "fundamento_resumido": "IN 128/2022, arts. 22 a 24"
+    },
+    {
+      "id_risco_geral": "RG-04",
+      "titulo": "Riscos especificos da aposentadoria rural e da pessoa com deficiencia",
+      "descricao": "Riscos de aplicacao incorreta de regras especiais de idade, prova de atividade e avaliacao biopsicossocial.",
+      "categoria": "regras especiais",
+      "fundamento_resumido": "Lei 8.213/1991, art. 48, paras. 1o a 3o; LC 142/2013, arts. 3o a 7o"
+    },
+    {
+      "id_risco_geral": "RG-05",
+      "titulo": "Erros financeiros e de data de inicio do beneficio",
+      "descricao": "Riscos de DIB incorreta e calculo inadequado da renda mensal inicial.",
+      "categoria": "calculo e pagamento",
+      "fundamento_resumido": "Lei 8.213/1991, arts. 49 e 50; LC 142/2013, art. 8o"
+    },
+    {
+      "id_risco_geral": "RG-06",
+      "titulo": "Riscos transversais de integridade cadastral e manutencao",
+      "descricao": "Riscos comuns a diferentes beneficios, com foco em identificacao do titular, eventos de obito e bloqueios para acumulacao indevida.",
+      "categoria": "transversal cadastral e antifraude",
+      "fundamento_resumido": "Decreto 3.048/1999, arts. 19, 19-B e 69-A; IN 128/2022, arts. 11, 12, 17, 18 e 26"
+    }
+  ],
+  "riscos_especificos": [
+    {
+      "id_risco_especifico": "RE-01",
+      "id_risco_geral": "RG-01",
+      "titulo": "Risco de concessao indevida por contagem incorreta da carencia minima",
+      "descricao": "Ocorre quando o processo reconhece 180 contribuicoes ou periodo equivalente sem base idonea suficiente, ou mistura indevidamente competencias nao validas.",
+      "causa": "Falha na conferência das contribuicoes computadas, uso de CNIS inconsistente e baixa segregacao entre tempo, carencia e mera inscricao.",
+      "efeito": "Concessao indevida do beneficio ou indeferimento indevido de segurado elegivel.",
+      "normativos_base": ["Lei 8.213/1991", "Decreto 3.048/1999", "IN 128/2022"],
+      "dispositivos": ["Lei 8.213/1991, art. 25", "Decreto 3.048/1999, art. 19-B", "IN 128/2022, arts. 11, 18 e 24"],
+      "evidencia_normativa": "A carencia depende de contribuicoes validas e a base cadastral extemporanea so pode ser aceita quando corroborada por documentos regulares.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-02",
+      "id_risco_geral": "RG-02",
+      "titulo": "Risco de reconhecimento de vinculos ou remuneracoes extemporaneas no CNIS sem corroboracao documental contemporanea",
+      "descricao": "Ocorre quando o INSS admite informacoes inseridas tardiamente no CNIS sem os documentos exigidos para comprovar regularidade, inicio e termino do vinculo ou remuneracao.",
+      "causa": "Processamento automatico sem filtros suficientes ou analise humana insuficiente de extemporaneidade.",
+      "efeito": "Carencia e salario de beneficio artificiais, com impacto direto na concessao e no valor do beneficio.",
+      "normativos_base": ["Decreto 3.048/1999", "IN 128/2022"],
+      "dispositivos": ["Decreto 3.048/1999, art. 19, para. 2o e art. 19-B", "IN 128/2022, arts. 17 a 19"],
+      "evidencia_normativa": "O regulamento e a IN exigem expressamente que informacoes extemporaneas sejam corroboradas por documentos que comprovem sua regularidade.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-03",
+      "id_risco_geral": "RG-01",
+      "titulo": "Risco de aplicacao incorreta das regras de perda da qualidade de segurado e preservacao do direito a aposentadoria",
+      "descricao": "Ocorre quando a administracao exige requisitos adicionais de segurado a quem ja havia preenchido os requisitos da aposentadoria, ou quando aplica de modo indevido regras de recarencia a esse beneficio.",
+      "causa": "Interpretacao imprecisa dos arts. 27-A e 102 da Lei 8.213/1991 e dos dispositivos regulamentares sobre manutencao e perda da qualidade.",
+      "efeito": "Indeferimento indevido, litigiosidade e atraso na fruicao do direito.",
+      "normativos_base": ["Lei 8.213/1991", "Decreto 3.048/1999"],
+      "dispositivos": ["Lei 8.213/1991, art. 27-A e art. 102, para. 1o", "Decreto 3.048/1999, arts. 13 e 14"],
+      "evidencia_normativa": "A lei preserva o direito a aposentadoria para quem ja implementou todos os requisitos, ainda que haja perda posterior da qualidade de segurado.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-04",
+      "id_risco_geral": "RG-04",
+      "titulo": "Risco de concessao de aposentadoria rural por idade sem prova material suficiente do exercicio de atividade rural no periodo equivalente a carencia",
+      "descricao": "Ocorre quando a reducao etaria rural e aplicada sem que a prova material e complementar forme conviccao sobre a atividade no periodo imediatamente anterior ao requerimento.",
+      "causa": "Aceitacao de declaracoes ou documentos nao contemporaneos, ou uso indevido de JA sem inicio razoavel de prova material.",
+      "efeito": "Concessao indevida na regra rural ou indeferimento de segurado rural efetivamente elegivel.",
+      "normativos_base": ["Lei 8.213/1991", "IN 128/2022"],
+      "dispositivos": ["Lei 8.213/1991, art. 48, paras. 1o a 3o", "IN 128/2022, art. 48 e art. 323, para. 2o"],
+      "evidencia_normativa": "A lei exige comprovacao do efetivo exercicio da atividade rural por tempo igual ao numero de meses da carencia, e a IN condiciona a JA a inicio de prova material.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-05",
+      "id_risco_geral": "RG-03",
+      "titulo": "Risco de decisao administrativa mal fundamentada diante de pendencias documentais ou cadastrais",
+      "descricao": "Ocorre quando o INSS concede ou indefere o beneficio sem realizar todas as acoes instrutorias cabiveis e sem motivacao adequada da conclusao.",
+      "causa": "Nao emissao de carta de exigencia, pesquisa externa, JA ou despacho fundamentado para desconsiderar documentos como CTPS.",
+      "efeito": "Decisao fragil, revisao posterior, aumento de judicializacao e assimetria de tratamento entre segurados.",
+      "normativos_base": ["IN 128/2022"],
+      "dispositivos": ["IN 128/2022, arts. 16, 22, 23 e 24"],
+      "evidencia_normativa": "A IN exige despacho fundamentado para afastar CTPS e impõe a realizacao das acoes necessarias antes da decisao administrativa.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-06",
+      "id_risco_geral": "RG-05",
+      "titulo": "Risco de fixacao incorreta da data de inicio do beneficio por erro na identificacao da DER ou da categoria do segurado",
+      "descricao": "Ocorre quando a DIB nao observa as regras distintas aplicaveis a empregado, domestico e demais segurados.",
+      "causa": "Falha na leitura do historico funcional e do momento do desligamento, ou uso padronizado de DER sem aderencia ao caso concreto.",
+      "efeito": "Pagamento a menor ou a maior, atraso de implantacao e necessidade de revisao financeira.",
+      "normativos_base": ["Lei 8.213/1991"],
+      "dispositivos": ["Lei 8.213/1991, art. 49"],
+      "evidencia_normativa": "A lei distingue a data de inicio conforme exista desligamento e conforme a categoria do segurado.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-07",
+      "id_risco_geral": "RG-04",
+      "titulo": "Risco de reconhecimento indevido da aposentadoria por idade da pessoa com deficiencia sem comprovacao do periodo minimo de deficiencia e sem avaliacao biopsicossocial consistente",
+      "descricao": "Ocorre quando a regra da LC 142 e aplicada sem definicao confiavel da data de inicio da deficiencia, do grau ou do periodo de 15 anos exigido.",
+      "causa": "Avaliacao medica e funcional incompleta, registro insuficiente no CNIS e baixa integracao entre a pericia e a decisao administrativa.",
+      "efeito": "Concessao indevida ou negativa indevida da modalidade mais vantajosa, com impacto financeiro e de equidade.",
+      "normativos_base": ["Lei Complementar 142/2013", "Decreto 3.048/1999"],
+      "dispositivos": ["LC 142/2013, arts. 3o, IV, 4o, 5o, 6o e 7o", "Decreto 3.048/1999, art. 19, para. 8o"],
+      "evidencia_normativa": "A LC 142 exige 15 anos de contribuicao e comprovacao da existencia da deficiencia por igual periodo, com avaliacao medica e funcional propria do INSS.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-08",
+      "id_risco_geral": "RG-05",
+      "titulo": "Risco de calculo incorreto da renda mensal inicial na regra geral ou na variante da pessoa com deficiencia",
+      "descricao": "Ocorre quando o salario de beneficio ou o percentual aplicavel e definido de forma incompativel com a regra normativa incidente.",
+      "causa": "Erro de parametrizacao do beneficio, uso de base contributiva sem saneamento e falha em distinguir regra geral da LC 142.",
+      "efeito": "Pagamento indevido continuado, necessidade de revisao e passivo administrativo ou judicial.",
+      "normativos_base": ["Lei 8.213/1991", "LC 142/2013"],
+      "dispositivos": ["Lei 8.213/1991, art. 50", "LC 142/2013, art. 8o, II"],
+      "evidencia_normativa": "A regra geral e a aposentadoria por idade da pessoa com deficiencia possuem criterios proprios de calculo da renda mensal.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-09",
+      "id_risco_geral": "RG-02",
+      "titulo": "Risco de aceitacao indevida de documentos digitais sem validacao de autenticidade, integridade e contemporaneidade",
+      "descricao": "Ocorre quando documentos eletronicos ou arquivos impressos de origem digital sao aceitos como prova sem verificacao das chaves de autenticacao ou do carimbo do tempo quando exigivel.",
+      "causa": "Fragilidade nos controles documentais e no tratamento da prova digital no fluxo do beneficio.",
+      "efeito": "Acerto indevido de CNIS e reconhecimento improprio de tempo, atividade ou contribuicao.",
+      "normativos_base": ["IN 128/2022"],
+      "dispositivos": ["IN 128/2022, art. 31, paras. 1o a 4o"],
+      "evidencia_normativa": "A IN condiciona o uso probatorio de documentos eletronicos a verificacoes de autenticidade, integridade e contemporaneidade.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-10",
+      "id_risco_geral": "RG-06",
+      "titulo": "Risco de concessao ou manutencao indevida com identificacao do titular inconsistente (CPF nulo, cancelado, suspenso, duplicado ou divergente entre bases)",
+      "descricao": "Ocorre quando o processo nao bloqueia ou saneia inconsistencia relevante de identificacao civil/cadastral antes da concessao ou da manutencao do beneficio.",
+      "causa": "Falha de cruzamento entre bases de identificacao e seguridade, ou aceite de cadastro sem tratamento de pendencia critica.",
+      "efeito": "Concessao indevida, risco de fraude por homonimia/duplicidade e dificuldade de rastreabilidade do beneficiario.",
+      "normativos_base": ["Decreto 3.048/1999", "IN 128/2022"],
+      "dispositivos": ["Decreto 3.048/1999, art. 19 e art. 19-B", "IN 128/2022, arts. 11, 12, 17 e 26"],
+      "evidencia_normativa": "A base normativa exige confiabilidade cadastral e saneamento de divergencias para reconhecimento e manutencao de direitos.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-11",
+      "id_risco_geral": "RG-06",
+      "titulo": "Risco de pagamento de beneficio apos obito do titular por falha de atualizacao e bloqueio tempestivo",
+      "descricao": "Ocorre quando eventos de obito nao sao refletidos tempestivamente no fluxo de manutencao do beneficio, permitindo continuidade de pagamento indevido.",
+      "causa": "Deficiencia na integracao de bases de obito e ausencia de rotina de cessacao automatica ou revisao tempestiva.",
+      "efeito": "Pagamento indevido continuado, dano ao erario e necessidade de cobranca/restituicao posterior.",
+      "normativos_base": ["Lei 8.213/1991", "Decreto 3.048/1999", "IN 128/2022"],
+      "dispositivos": ["Lei 8.213/1991, art. 69", "Decreto 3.048/1999, art. 69-A", "IN 128/2022, arts. 26 e 28"],
+      "evidencia_normativa": "O arcabouco previdenciario exige manutencao regular dos beneficios e permite uso de bases oficiais para reconhecimento e manutencao de direitos.",
+      "tipo": "especifico"
+    },
+    {
+      "id_risco_especifico": "RE-12",
+      "id_risco_geral": "RG-06",
+      "titulo": "Risco de acumulacao indevida de aposentadoria por idade com beneficios inacumulaveis",
+      "descricao": "Ocorre quando o processo concessorio ou de manutencao nao executa validacao de acumulacao vedada para o caso concreto.",
+      "causa": "Insuficiencia de regras automatizadas e de revisao analitica em cruzamentos interbeneficios.",
+      "efeito": "Pagamento indevido e desconformidade normativa com potencial passivo de revisao e cobranca.",
+      "normativos_base": ["Lei 8.213/1991", "Decreto 3.048/1999"],
+      "dispositivos": ["Lei 8.213/1991, art. 124", "Decreto 3.048/1999, art. 167-A"],
+      "evidencia_normativa": "A legislacao previdenciaria disciplina hipoteses de vedacao e limitacao de acumulacao de beneficios.",
+      "tipo": "especifico"
+    }
+  ],
+  "avaliacao_dvr": [
+    {
+      "id_risco_especifico": "RE-01",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "Carencia e o nucleo do reconhecimento da aposentadoria por idade. Qualquer erro afeta diretamente a elegibilidade e tende a se repetir em grande escala quando a base cadastral esta suja."
+    },
+    {
+      "id_risco_especifico": "RE-02",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "O CNIS e a principal base operacional da concessao. Informacao extemporanea sem lastro documental contamina tanto a concessao quanto o calculo financeiro."
+    },
+    {
+      "id_risco_especifico": "RE-03",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "justificativa": "A regra sobre perda da qualidade de segurado e frequentemente mal interpretada no processamento dos beneficios programaveis, com potencial relevante de indeferimento indevido."
+    },
+    {
+      "id_risco_especifico": "RE-04",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "justificativa": "A regra rural depende de prova material e analise contextual mais complexa. Esse ponto e historicamente sensivel a falhas tanto por excesso quanto por falta de rigor."
+    },
+    {
+      "id_risco_especifico": "RE-05",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "justificativa": "Erros de instrucao e motivacao aumentam retrabalho e litigiosidade. O impacto financeiro direto costuma ser indireto, mas a relevancia de governanca e elevada."
+    },
+    {
+      "id_risco_especifico": "RE-06",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "justificativa": "A DIB afeta retroativos e cronologia do pagamento. Embora o impacto unitario possa ser menor que o da elegibilidade, o erro e recorrente e revisional."
+    },
+    {
+      "id_risco_especifico": "RE-07",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "justificativa": "A aposentadoria da pessoa com deficiencia depende de avaliacao tecnica especializada e registro temporal preciso. O universo pode ser menor, mas a sensibilidade juridica e financeira e alta."
+    },
+    {
+      "id_risco_especifico": "RE-08",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "justificativa": "Falhas no calculo da RMI se propagam ao longo do tempo e geram passivo acumulado. O risco cresce quando o CNIS ja entra no processo com inconsistencias."
+    },
+    {
+      "id_risco_especifico": "RE-09",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "justificativa": "A prova digital cresce no fluxo previdenciario e exige validacoes especificas. O impacto tende a ser relevante sobretudo quando o documento digital substitui prova material central."
+    },
+    {
+      "id_risco_especifico": "RE-10",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "justificativa": "Pendencias criticas de identificacao costumam ser pontuais, mas quando nao tratadas podem comprometer a legitimidade do pagamento e a rastreabilidade do titular."
+    },
+    {
+      "id_risco_especifico": "RE-11",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "justificativa": "Falhas de bloqueio por obito podem ocorrer por latencia de integracao e fragilidade de monitoramento. O impacto unitario e relevante e requer controle continuo."
+    },
+    {
+      "id_risco_especifico": "RE-12",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "justificativa": "A acumulacao indevida tende a concentrar-se em subconjuntos de casos, mas produz desconformidade e pagamento indevido quando nao ha validacao interbeneficios efetiva."
+    }
+  ],
+  "matriz_risco": [
+    {
+      "ordem_prioridade": 1,
+      "id_risco_especifico": "RE-02",
+      "risco": "Risco de reconhecimento de vinculos ou remuneracoes extemporaneas no CNIS sem corroboracao documental contemporanea",
+      "categoria": "base cadastral e documental",
+      "normativo_chave": "Decreto 3.048/1999, art. 19-B",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Marcacao sistemica de pendencias do CNIS, bloqueio de aproveitamento automatico de dados extemporaneos e exigencia de prova documental contemporanea.",
+      "teste_de_auditoria_sugerido": "Selecionar amostra de concessoes com acerto de CNIS e verificar se informacoes extemporaneas foram aceitas apenas quando acompanhadas de documentos contemporaneos e regulares."
+    },
+    {
+      "ordem_prioridade": 2,
+      "id_risco_especifico": "RE-01",
+      "risco": "Risco de concessao indevida por contagem incorreta da carencia minima",
+      "categoria": "elegibilidade",
+      "normativo_chave": "Lei 8.213/1991, art. 25",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Memoria de calculo rastreavel da carencia, segregando contribuicoes validas, competencias invalidadas e periodos apenas cadastrais.",
+      "teste_de_auditoria_sugerido": "Recalcular a carencia em amostra de beneficios concedidos, confrontando cada competencia utilizada com o CNIS saneado e a documentacao do processo."
+    },
+    {
+      "ordem_prioridade": 3,
+      "id_risco_especifico": "RE-04",
+      "risco": "Risco de concessao de aposentadoria rural por idade sem prova material suficiente do exercicio de atividade rural no periodo equivalente a carencia",
+      "categoria": "regras especiais",
+      "normativo_chave": "Lei 8.213/1991, art. 48, paras. 1o a 3o",
+      "probabilidade": "alta",
+      "impacto": "alto",
+      "quadrante_dvr": "critico",
+      "controle_esperado": "Checklist probatorio especifico para atividade rural, com avaliacao de contemporaneidade e coerencia temporal da prova material.",
+      "teste_de_auditoria_sugerido": "Examinar amostra de aposentadorias rurais por idade para verificar existencia de inicio de prova material e aderencia do periodo comprovado a carencia exigida."
+    },
+    {
+      "ordem_prioridade": 4,
+      "id_risco_especifico": "RE-07",
+      "risco": "Risco de reconhecimento indevido da aposentadoria por idade da pessoa com deficiencia sem comprovacao do periodo minimo de deficiencia e sem avaliacao biopsicossocial consistente",
+      "categoria": "regras especiais",
+      "normativo_chave": "LC 142/2013, art. 3o, IV",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "controle_esperado": "Integracao entre laudo biopsicossocial, registro do periodo com deficiencia no CNIS e memoria de enquadramento da regra especifica.",
+      "teste_de_auditoria_sugerido": "Verificar em amostra de concessoes da LC 142 se ha laudo, data provavel de inicio da deficiencia e demonstracao do periodo minimo de 15 anos com contribuicao e deficiencia."
+    },
+    {
+      "ordem_prioridade": 5,
+      "id_risco_especifico": "RE-03",
+      "risco": "Risco de aplicacao incorreta das regras de perda da qualidade de segurado e preservacao do direito a aposentadoria",
+      "categoria": "elegibilidade",
+      "normativo_chave": "Lei 8.213/1991, art. 102, para. 1o",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "controle_esperado": "Parametrizacao decisoria que distinga beneficios programaveis e preserve o direito quando os requisitos ja estiverem implementados.",
+      "teste_de_auditoria_sugerido": "Revisar amostra de indeferimentos por perda da qualidade de segurado para verificar se o requerente ja havia implementado idade e carencia antes da perda."
+    },
+    {
+      "ordem_prioridade": 6,
+      "id_risco_especifico": "RE-08",
+      "risco": "Risco de calculo incorreto da renda mensal inicial na regra geral ou na variante da pessoa com deficiencia",
+      "categoria": "calculo e pagamento",
+      "normativo_chave": "Lei 8.213/1991, art. 50; LC 142/2013, art. 8o",
+      "probabilidade": "media",
+      "impacto": "alto",
+      "quadrante_dvr": "alto",
+      "controle_esperado": "Rotina de validacao do salario de beneficio e do percentual aplicavel conforme a regra incidente.",
+      "teste_de_auditoria_sugerido": "Recalcular a RMI em amostra de beneficios concedidos e comparar com a regra normativa correta e com a base contributiva efetivamente validada."
+    },
+    {
+      "ordem_prioridade": 7,
+      "id_risco_especifico": "RE-06",
+      "risco": "Risco de fixacao incorreta da data de inicio do beneficio por erro na identificacao da DER ou da categoria do segurado",
+      "categoria": "calculo e pagamento",
+      "normativo_chave": "Lei 8.213/1991, art. 49",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "controle_esperado": "Regra sistemica diferenciada para empregado, domestico e demais segurados, com prova do desligamento quando pertinente.",
+      "teste_de_auditoria_sugerido": "Comparar a DIB atribuida em amostra de concessoes com a categoria do segurado, o desligamento e a data do requerimento."
+    },
+    {
+      "ordem_prioridade": 8,
+      "id_risco_especifico": "RE-05",
+      "risco": "Risco de decisao administrativa mal fundamentada diante de pendencias documentais ou cadastrais",
+      "categoria": "processo administrativo",
+      "normativo_chave": "IN 128/2022, arts. 22 a 24",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "controle_esperado": "Fluxo instrutorio obrigatorio com carta de exigencia, pesquisa externa, JA e despacho motivado antes da decisao.",
+      "teste_de_auditoria_sugerido": "Ler processos com divergencia documental e verificar se houve realizacao e registro das etapas instrutorias previstas na IN 128."
+    },
+    {
+      "ordem_prioridade": 9,
+      "id_risco_especifico": "RE-09",
+      "risco": "Risco de aceitacao indevida de documentos digitais sem validacao de autenticidade, integridade e contemporaneidade",
+      "categoria": "base cadastral e documental",
+      "normativo_chave": "IN 128/2022, art. 31",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "controle_esperado": "Validacao de chave de autenticacao, endereco eletronico de consulta e carimbo do tempo quando cabivel.",
+      "teste_de_auditoria_sugerido": "Examinar amostra de documentos digitais usados para acerto de CNIS e verificar se o processo evidencia autenticidade, integridade e contemporaneidade."
+    },
+    {
+      "ordem_prioridade": 10,
+      "id_risco_especifico": "RE-10",
+      "risco": "Risco de concessao ou manutencao indevida com identificacao do titular inconsistente (CPF nulo, cancelado, suspenso, duplicado ou divergente entre bases)",
+      "categoria": "transversal cadastral e antifraude",
+      "normativo_chave": "Decreto 3.048/1999, art. 19-B",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "controle_esperado": "Bloqueio sistemico de concessao/manutencao com pendencia critica de identificacao e trilha de saneamento cadastral antes da decisao final.",
+      "teste_de_auditoria_sugerido": "Cruzar amostra de beneficiarios com bases cadastrais oficiais e verificar tratamento de casos com CPF nulo, cancelado, suspenso, duplicado ou inconsistente entre sistemas."
+    },
+    {
+      "ordem_prioridade": 11,
+      "id_risco_especifico": "RE-11",
+      "risco": "Risco de pagamento de beneficio apos obito do titular por falha de atualizacao e bloqueio tempestivo",
+      "categoria": "transversal cadastral e antifraude",
+      "normativo_chave": "Decreto 3.048/1999, art. 69-A",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "controle_esperado": "Rotina de monitoramento e cessacao automatica de pagamento apos recepcao de evento de obito em bases oficiais.",
+      "teste_de_auditoria_sugerido": "Confrontar folha de pagamentos com base de obitos e verificar prazo de bloqueio, cessacao e eventual recuperacao de valores."
+    },
+    {
+      "ordem_prioridade": 12,
+      "id_risco_especifico": "RE-12",
+      "risco": "Risco de acumulacao indevida de aposentadoria por idade com beneficios inacumulaveis",
+      "categoria": "transversal cadastral e antifraude",
+      "normativo_chave": "Lei 8.213/1991, art. 124",
+      "probabilidade": "media",
+      "impacto": "medio",
+      "quadrante_dvr": "moderado",
+      "controle_esperado": "Verificacao automatizada e analitica de acumulacao vedada no deferimento e nas revisoes de manutencao.",
+      "teste_de_auditoria_sugerido": "Executar cruzamento interbeneficios em amostra de aposentadorias por idade para identificar acumulacoes vedadas e conferir tratamento administrativo adotado."
+    }
+  ],
+  "referencias_metodologicas": [
+    "skills/analise-risco/references/metodologia/manual-auditoria-operacional-tcu.txt",
+    "skills/analise-risco/references/metodologia/portaria-segecex-31-2010.txt",
+    "skills/analise-risco/references/metodologia/swot-dvr-auditoria.txt"
+  ],
+  "lacunas": [
+    "A base da skill busca-legislacao para aposentadoria por idade registra portaria especifica ainda pendente de validacao oficial adicional.",
+    "O corpus de busca mistura a regra geral da aposentadoria por idade com a variante da pessoa com deficiencia da LC 142/2013; em uso operacional, convem separar os cenarios quando o objetivo da auditoria for estritamente a regra geral.",
+    "Nao foi aprofundada nesta rodada a disciplina transitória completa de carencia e as particularidades de todos os filiados especiais alem dos pontos mais diretamente ligados ao reconhecimento do direito.",
+    "A verificacao de status civil/fiscal detalhado do CPF depende da disponibilidade e qualidade das bases cadastrais integradas no ambiente de execucao do controle."
+  ]
+}
