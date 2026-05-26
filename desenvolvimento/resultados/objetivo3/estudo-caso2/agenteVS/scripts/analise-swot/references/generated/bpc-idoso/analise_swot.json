@@ -1,0 +1,138 @@
+{
+  "status": "ok",
+  "politica_publica": "BPC Idoso",
+  "politica_slug": "bpc-idoso",
+  "analise_timestamp": "2026-05-25T00:00:00Z",
+  "forcas": [
+    {
+      "item": "Base constitucional solida: a CF/88 ancora a assistencia social e a garantia de beneficio ao idoso em situacao de vulnerabilidade.",
+      "fonte": "normativos_utilizados[0]"
+    },
+    {
+      "item": "Marco normativo central consolidado: a Lei 8.742/1993 (LOAS) define criterios de elegibilidade, renda, concessao e revisao do BPC.",
+      "fonte": "normativos_utilizados[1]"
+    },
+    {
+      "item": "Protecao juridica especifica a pessoa idosa: a Lei 10.741/2003 conecta expressamente o direito do idoso ao beneficio assistencial nos termos da LOAS.",
+      "fonte": "normativos_utilizados[2]"
+    },
+    {
+      "item": "Atualizacao legal de vulnerabilidade: a Lei 14.176/2021 ajusta criterios de miserabilidade e reforca parametros para analise de elegibilidade.",
+      "fonte": "normativos_utilizados[3]"
+    },
+    {
+      "item": "Regulamentacao operacional detalhada: o Decreto 6.214/2007 disciplina habilitacao, concessao, revisao, suspensao e cessacao do BPC.",
+      "fonte": "normativos_utilizados[4]"
+    }
+  ],
+  "fraquezas": [
+    {
+      "item": "Falha no confronto de dados declarados no cadastro com bases oficiais e registros atualizados para validacao da renda familiar per capita.",
+      "fonte": "riscos_especificos[RE-01].causa"
+    },
+    {
+      "item": "Interpretacao desigual de criterios de miserabilidade e vulnerabilidade social entre unidades decisorias.",
+      "fonte": "riscos_especificos[RE-02].causa"
+    },
+    {
+      "item": "Falha de validacao de identificacao e baixa consistencia na atualizacao cadastral obrigatoria.",
+      "fonte": "riscos_especificos[RE-03].causa"
+    },
+    {
+      "item": "Controles documentais insuficientes e baixa rastreabilidade da instrucao processual.",
+      "fonte": "riscos_especificos[RE-04].causa"
+    },
+    {
+      "item": "Execucao incompleta das rotinas de revisao e baixa tempestividade no tratamento de pendencias.",
+      "fonte": "riscos_especificos[RE-05].causa"
+    },
+    {
+      "item": "Deficiencia de cruzamento de bases de obito e atraso na cessacao administrativa.",
+      "fonte": "riscos_especificos[RE-06].causa"
+    },
+    {
+      "item": "Falha em cruzamentos de bases de beneficios e validacoes de regra de acumulacao.",
+      "fonte": "riscos_especificos[RE-07].causa"
+    },
+    {
+      "item": "Baixa padronizacao da interpretacao normativa em casos de composicao familiar complexa.",
+      "fonte": "riscos_especificos[RE-08].causa"
+    }
+  ],
+  "oportunidades": [
+    {
+      "item": "Cruzamento previo e continuo de renda e composicao familiar em bases oficiais com bloqueio de deferimento quando houver inconsistencias criticas.",
+      "fonte": "matriz_risco[RE-01].controle_esperado"
+    },
+    {
+      "item": "Validacao automatizada de CPF e identificacao com tratamento obrigatorio de pendencias criticas antes da concessao e manutencao.",
+      "fonte": "matriz_risco[RE-03].controle_esperado"
+    },
+    {
+      "item": "Agenda de revisao periodica com rastreabilidade de notificacao, decisao e eventual suspensao ou cessacao.",
+      "fonte": "matriz_risco[RE-05].controle_esperado"
+    },
+    {
+      "item": "Padronizacao da instrucao e da motivacao decisoria para aplicacao uniforme dos parametros adicionais de vulnerabilidade.",
+      "fonte": "matriz_risco[RE-02].controle_esperado"
+    },
+    {
+      "item": "Checklist documental minimo, validacao de consistencia e despacho motivado para aceitar, exigir complemento ou rejeitar prova.",
+      "fonte": "matriz_risco[RE-04].controle_esperado"
+    },
+    {
+      "item": "Cruzamento frequente com base de obitos e cessacao imediata do pagamento apos confirmacao do evento.",
+      "fonte": "matriz_risco[RE-06].controle_esperado"
+    },
+    {
+      "item": "Regra automatizada de bloqueio para beneficios inacumulaveis com reconfirmacao periodica em bases de beneficios.",
+      "fonte": "matriz_risco[RE-07].controle_esperado"
+    },
+    {
+      "item": "Regra de calculo de renda familiar com tratamento expresso para beneficios no nucleo e validacao por amostragem de qualidade.",
+      "fonte": "matriz_risco[RE-08].controle_esperado"
+    }
+  ],
+  "ameacas": [
+    {
+      "item": "Ocorre quando o processo defere BPC Idoso sem validacao robusta do criterio de renda e da composicao familiar utilizada no calculo.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-01].descricao"
+    },
+    {
+      "item": "Ocorre quando a decisao administrativa nao considera adequadamente os elementos adicionais de vulnerabilidade previstos na LOAS apos alteracoes legais.",
+      "quadrante_dvr": "alto",
+      "fonte": "riscos_especificos[RE-02].descricao"
+    },
+    {
+      "item": "Ocorre quando o beneficio e concedido ou mantido com CPF inconsistente, cadastro desatualizado ou divergencia de identificacao entre bases.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-03].descricao"
+    },
+    {
+      "item": "Ocorre quando documentos e informacoes usados na instrucao nao sustentam de forma confiavel os requisitos do beneficio.",
+      "quadrante_dvr": "alto",
+      "fonte": "riscos_especificos[RE-04].descricao"
+    },
+    {
+      "item": "Ocorre quando o beneficio continua ativo sem reavaliacao efetiva da permanencia dos requisitos de elegibilidade.",
+      "quadrante_dvr": "critico",
+      "fonte": "riscos_especificos[RE-05].descricao"
+    },
+    {
+      "item": "Ocorre quando eventos de obito nao sao refletidos tempestivamente no fluxo de manutencao e pagamento do BPC.",
+      "quadrante_dvr": "alto",
+      "fonte": "riscos_especificos[RE-06].descricao"
+    },
+    {
+      "item": "Ocorre quando o sistema nao bloqueia acumulacao vedada e mantem pagamento concomitante incompatível.",
+      "quadrante_dvr": "alto",
+      "fonte": "riscos_especificos[RE-07].descricao"
+    }
+  ],
+  "lacunas": [],
+  "referencias": {
+    "analise_risco": "skills/analise-risco/references/generated/bpc-idoso/resultado-analise.json",
+    "generated": "skills/analise-swot/references/generated/bpc-idoso/analise_swot.json"
+  }
+}
