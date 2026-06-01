@@ -1,0 +1,325 @@
+﻿{
+    "$schema":  "http://json-schema.org/draft-07/schema#",
+    "title":  "PESSOA",
+    "description":  "Schema da tabela PESSOA extraido via documenta-base.",
+    "type":  "object",
+    "properties":  {
+                       "NOME_ARQUIVO_CARGA":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Nome do arquivo que originou a carga do registro.",
+                                                  "maxLength":  258
+                                              },
+                       "COD_PREFEITURA":  {
+                                              "type":  [
+                                                           "string",
+                                                           "null"
+                                                       ],
+                                              "description":  "Identificador da prefeitura ou ente local responsavel pelo cadastro.",
+                                              "maxLength":  13
+                                          },
+                       "COD_FAMILIA":  {
+                                           "type":  [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                           "description":  "Identificador da familia no Cadastro Unico.",
+                                           "maxLength":  11
+                                       },
+                       "COD_PESSOA":  {
+                                          "type":  [
+                                                       "string",
+                                                       "null"
+                                                   ],
+                                          "description":  "Identificador da pessoa no Cadastro Unico.",
+                                          "maxLength":  11
+                                      },
+                       "DTA_CADASTRAMENTO_MEMB":  {
+                                                      "type":  [
+                                                                   "string",
+                                                                   "null"
+                                                               ],
+                                                      "description":  "Data em que a pessoa foi incluida no cadastro da familia.",
+                                                      "maxLength":  3,
+                                                      "format":  "date"
+                                                  },
+                       "DTA_ATUAL_MEMB":  {
+                                              "type":  [
+                                                           "string",
+                                                           "null"
+                                                       ],
+                                              "description":  "Data da ultima atualizacao cadastral da pessoa.",
+                                              "maxLength":  3,
+                                              "format":  "date"
+                                          },
+                       "COD_EST_CADASTRAL_MEMB":  {
+                                                      "type":  [
+                                                                   "string",
+                                                                   "null"
+                                                               ],
+                                                      "description":  "Codigo do estado cadastral da pessoa dentro do Cadastro Unico.",
+                                                      "maxLength":  1
+                                                  },
+                       "IND_TRABALHO_INFANTIL_PESSOA":  {
+                                                            "type":  [
+                                                                         "number",
+                                                                         "null"
+                                                                     ],
+                                                            "description":  "Indica ocorrencia de trabalho infantil para a pessoa cadastrada."
+                                                        },
+                       "NUM_ORDEM_PESSOA":  {
+                                                "type":  [
+                                                             "string",
+                                                             "null"
+                                                         ],
+                                                "description":  "Posicao ordinal da pessoa dentro da composicao familiar.",
+                                                "maxLength":  2
+                                            },
+                       "NOM_PESSOA":  {
+                                          "type":  [
+                                                       "string",
+                                                       "null"
+                                                   ],
+                                          "description":  "Nome completo da pessoa cadastrada.",
+                                          "maxLength":  70
+                                      },
+                       "NUM_NIS_PESSOA_ATUAL":  {
+                                                    "type":  [
+                                                                 "string",
+                                                                 "null"
+                                                             ],
+                                                    "description":  "Numero do NIS atualmente vinculado a pessoa.",
+                                                    "maxLength":  11
+                                                },
+                       "NOM_APELIDO_PESSOA":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Apelido ou nome social/apelido registrado para a pessoa.",
+                                                  "maxLength":  34
+                                              },
+                       "COD_SEXO_PESSOA":  {
+                                               "type":  [
+                                                            "string",
+                                                            "null"
+                                                        ],
+                                               "description":  "Codigo do sexo da pessoa.",
+                                               "maxLength":  1
+                                           },
+                       "DTA_NASC_PESSOA":  {
+                                               "type":  [
+                                                            "string",
+                                                            "null"
+                                                        ],
+                                               "description":  "Data de nascimento da pessoa.",
+                                               "maxLength":  3,
+                                               "format":  "date"
+                                           },
+                       "COD_PARENTESCO_RF_PESSOA":  {
+                                                        "type":  [
+                                                                     "string",
+                                                                     "null"
+                                                                 ],
+                                                        "description":  "Codigo do parentesco da pessoa em relacao ao responsavel familiar.",
+                                                        "maxLength":  2
+                                                    },
+                       "COD_RACA_COR_PESSOA":  {
+                                                   "type":  [
+                                                                "string",
+                                                                "null"
+                                                            ],
+                                                   "description":  "Codigo de raca/cor declarado para a pessoa.",
+                                                   "maxLength":  1
+                                               },
+                       "NOM_COMPLETO_MAE_PESSOA":  {
+                                                       "type":  [
+                                                                    "string",
+                                                                    "null"
+                                                                ],
+                                                       "description":  "Nome completo da mae da pessoa.",
+                                                       "maxLength":  70
+                                                   },
+                       "IND_NOM_COMPLETO_MAE_PESSOA":  {
+                                                           "type":  [
+                                                                        "number",
+                                                                        "null"
+                                                                    ],
+                                                           "description":  "Indica se a informacao sobre o nome completo da mae foi declarada."
+                                                       },
+                       "NOM_COMPLETO_PAI_PESSOA":  {
+                                                       "type":  [
+                                                                    "string",
+                                                                    "null"
+                                                                ],
+                                                       "description":  "Nome completo do pai da pessoa.",
+                                                       "maxLength":  70
+                                                   },
+                       "IND_NOM_COMPLETO_PAI_PESSOA":  {
+                                                           "type":  [
+                                                                        "number",
+                                                                        "null"
+                                                                    ],
+                                                           "description":  "Indica se a informacao sobre o nome completo do pai foi declarada."
+                                                       },
+                       "COD_LOCAL_NASCIMENTO_PESSOA":  {
+                                                           "type":  [
+                                                                        "string",
+                                                                        "null"
+                                                                    ],
+                                                           "description":  "Codigo do tipo de local de nascimento da pessoa, no Brasil ou exterior.",
+                                                           "maxLength":  1
+                                                       },
+                       "SIG_UF_MUNIC_NASC_PESSOA":  {
+                                                        "type":  [
+                                                                     "string",
+                                                                     "null"
+                                                                 ],
+                                                        "description":  "Sigla da UF do municipio de nascimento da pessoa.",
+                                                        "maxLength":  2
+                                                    },
+                       "IND_UF_MUNIC_NASC_PESSOA":  {
+                                                        "type":  [
+                                                                     "number",
+                                                                     "null"
+                                                                 ],
+                                                        "description":  "Indica se a UF do municipio de nascimento foi informada."
+                                                    },
+                       "NOM_IBGE_MUNIC_NASC_PESSOA":  {
+                                                          "type":  [
+                                                                       "string",
+                                                                       "null"
+                                                                   ],
+                                                          "description":  "Nome do municipio de nascimento da pessoa segundo referencia IBGE.",
+                                                          "maxLength":  35
+                                                      },
+                       "COD_IBGE_MUNIC_NASC_PESSOA":  {
+                                                          "type":  [
+                                                                       "string",
+                                                                       "null"
+                                                                   ],
+                                                          "description":  "Codigo IBGE do municipio de nascimento da pessoa.",
+                                                          "maxLength":  7
+                                                      },
+                       "IND_IBGE_MUNIC_NASC_PESSOA":  {
+                                                          "type":  [
+                                                                       "number",
+                                                                       "null"
+                                                                   ],
+                                                          "description":  "Indica se o codigo IBGE do municipio de nascimento foi informado."
+                                                      },
+                       "NOM_PAIS_ORIGEM_PESSOA":  {
+                                                      "type":  [
+                                                                   "string",
+                                                                   "null"
+                                                               ],
+                                                      "description":  "Nome do pais de origem da pessoa, quando aplicavel.",
+                                                      "maxLength":  40
+                                                  },
+                       "COD_PAIS_ORIGEM_PESSOA":  {
+                                                      "type":  [
+                                                                   "string",
+                                                                   "null"
+                                                               ],
+                                                      "description":  "Codigo do pais de origem da pessoa.",
+                                                      "maxLength":  2
+                                                  },
+                       "IND_PAIS_ORIGEM_PESSOA":  {
+                                                      "type":  [
+                                                                   "number",
+                                                                   "null"
+                                                               ],
+                                                      "description":  "Indica se o pais de origem foi informado."
+                                                  },
+                       "COD_CERTIDAO_REGISTRADA_PESSOA":  {
+                                                              "type":  [
+                                                                           "string",
+                                                                           "null"
+                                                                       ],
+                                                              "description":  "Codigo do tipo de certidao civil registrada para a pessoa.",
+                                                              "maxLength":  1
+                                                          },
+                       "COD_ORIGEM_PREFEITURA_PESSOA":  {
+                                                            "type":  [
+                                                                         "string",
+                                                                         "null"
+                                                                     ],
+                                                            "description":  "Identificador da prefeitura de origem da pessoa em casos de transferencia.",
+                                                            "maxLength":  13
+                                                        },
+                       "COD_ORIGEM_FAMILIA_PESSOA":  {
+                                                         "type":  [
+                                                                      "string",
+                                                                      "null"
+                                                                  ],
+                                                         "description":  "Codigo da familia de origem da pessoa em casos de transferencia.",
+                                                         "maxLength":  11
+                                                     },
+                       "IND_TRANSFERENCIA_PESSOA":  {
+                                                        "type":  [
+                                                                     "number",
+                                                                     "null"
+                                                                 ],
+                                                        "description":  "Indica se o registro da pessoa foi transferido de outro cadastro/localidade."
+                                                    },
+                       "NOM_ORIGEM_ALTERACAO_PESSOA":  {
+                                                           "type":  [
+                                                                        "string",
+                                                                        "null"
+                                                                    ],
+                                                           "description":  "Nome da origem ou sistema que motivou a alteracao do registro da pessoa.",
+                                                           "maxLength":  60
+                                                       },
+                       "CHV_NAT_PES_ATUAL":  {
+                                                 "type":  [
+                                                              "string",
+                                                              "null"
+                                                          ],
+                                                 "description":  "Chave natural atual da pessoa no sistema do Cadastro Unico.",
+                                                 "maxLength":  13
+                                             },
+                       "CHV_NAT_PES_ORIGINAL":  {
+                                                    "type":  [
+                                                                 "string",
+                                                                 "null"
+                                                             ],
+                                                    "description":  "Chave natural original da pessoa antes de ajustes ou migracoes.",
+                                                    "maxLength":  13
+                                                },
+                       "NU_NIS_ORIGINAL":  {
+                                               "type":  [
+                                                            "string",
+                                                            "null"
+                                                        ],
+                                               "description":  "Numero do NIS originalmente associado a pessoa.",
+                                               "maxLength":  11
+                                           },
+                       "ANO_MES_CARGA":  {
+                                             "type":  [
+                                                          "string",
+                                                          "null"
+                                                      ],
+                                             "description":  "Competencia da carga no formato AAAAMM.",
+                                             "maxLength":  6
+                                         },
+                       "DT_ATUALIZACAO_ETL":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Timestamp de atualizacao do processo ETL.",
+                                                  "maxLength":  8,
+                                                  "format":  "date-time"
+                                              },
+                       "DS_ERRO":  {
+                                       "type":  [
+                                                    "string",
+                                                    "null"
+                                                ],
+                                       "description":  "Descricao do erro ou alerta de qualidade identificado durante a carga.",
+                                       "maxLength":  1024
+                                   }
+                   }
+}

@@ -1,0 +1,368 @@
+﻿{
+    "$schema":  "http://json-schema.org/draft-07/schema#",
+    "title":  "FAMILIA",
+    "description":  "Schema da tabela FAMILIA extraido via documenta-base.",
+    "type":  "object",
+    "properties":  {
+                       "NOME_ARQUIVO_CARGA":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Nome do arquivo que originou a carga do registro.",
+                                                  "maxLength":  258
+                                              },
+                       "COD_PREFEITURA":  {
+                                              "type":  [
+                                                           "string",
+                                                           "null"
+                                                       ],
+                                              "description":  "Identificador da prefeitura ou ente local responsavel pelo cadastro.",
+                                              "maxLength":  13
+                                          },
+                       "COD_FAMILIA":  {
+                                           "type":  [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                           "description":  "Identificador da familia no Cadastro Unico.",
+                                           "maxLength":  11
+                                       },
+                       "DAT_CADASTRAMENTO_FAM":  {
+                                                     "type":  [
+                                                                  "string",
+                                                                  "null"
+                                                              ],
+                                                     "description":  "Data em que a familia foi cadastrada no Cadastro Unico.",
+                                                     "maxLength":  3,
+                                                     "format":  "date"
+                                                 },
+                       "DAT_ATUAL_FAM":  {
+                                             "type":  [
+                                                          "string",
+                                                          "null"
+                                                      ],
+                                             "description":  "Data da ultima atualizacao cadastral da familia.",
+                                             "maxLength":  3,
+                                             "format":  "date"
+                                         },
+                       "COD_EST_CADASTRAL_FAM":  {
+                                                     "type":  [
+                                                                  "string",
+                                                                  "null"
+                                                              ],
+                                                     "description":  "Codigo do estado cadastral da familia, como cadastrada ou excluida.",
+                                                     "maxLength":  1
+                                                 },
+                       "IND_CADASTRO_VALIDO_FAM":  {
+                                                       "type":  [
+                                                                    "string",
+                                                                    "null"
+                                                                ],
+                                                       "description":  "Indica se o cadastro da familia esta valido para uso pelos programas.",
+                                                       "maxLength":  1
+                                                   },
+                       "COD_CONDICAO_CADASTRO_FAM":  {
+                                                         "type":  [
+                                                                      "string",
+                                                                      "null"
+                                                                  ],
+                                                         "description":  "Codigo que informa se o cadastro da familia esta atualizado ou desatualizado.",
+                                                         "maxLength":  1
+                                                     },
+                       "VLR_RENDA_MEDIA_FAM":  {
+                                                   "type":  [
+                                                                "number",
+                                                                "null"
+                                                            ],
+                                                   "description":  "Valor da renda media familiar apurada no cadastro."
+                                               },
+                       "IND_TRABALHO_INFANTIL_FAM":  {
+                                                         "type":  [
+                                                                      "string",
+                                                                      "null"
+                                                                  ],
+                                                         "description":  "Indica ocorrencia de trabalho infantil associada a integrantes da familia.",
+                                                         "maxLength":  1
+                                                     },
+                       "COD_MUNIC_IBGE_2_FAM":  {
+                                                    "type":  [
+                                                                 "string",
+                                                                 "null"
+                                                             ],
+                                                    "description":  "Codigo IBGE resumido do municipio associado ao cadastro da familia.",
+                                                    "maxLength":  2
+                                                },
+                       "COD_MUNIC_IBGE_5_FAM":  {
+                                                    "type":  [
+                                                                 "string",
+                                                                 "null"
+                                                             ],
+                                                    "description":  "Codigo IBGE do municipio associado ao cadastro da familia.",
+                                                    "maxLength":  5
+                                                },
+                       "COD_IBGE_DISTRITO_FAM":  {
+                                                     "type":  [
+                                                                  "string",
+                                                                  "null"
+                                                              ],
+                                                     "description":  "Codigo IBGE do distrito do domicilio da familia.",
+                                                     "maxLength":  2
+                                                 },
+                       "COD_IBGE_SUBDISTR_FAM":  {
+                                                     "type":  [
+                                                                  "string",
+                                                                  "null"
+                                                              ],
+                                                     "description":  "Codigo IBGE do subdistrito do domicilio da familia.",
+                                                     "maxLength":  2
+                                                 },
+                       "COD_IBGE_SETOR_CENSO_FAM":  {
+                                                        "type":  [
+                                                                     "string",
+                                                                     "null"
+                                                                 ],
+                                                        "description":  "Codigo do setor censitario do domicilio da familia.",
+                                                        "maxLength":  4
+                                                    },
+                       "COD_MODALIDADE_FAM":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Codigo da modalidade cadastral ou perfil territorial da familia.",
+                                                  "maxLength":  1
+                                              },
+                       "COD_FORMA_COLETA_FAM":  {
+                                                    "type":  [
+                                                                 "string",
+                                                                 "null"
+                                                             ],
+                                                    "description":  "Codigo da forma de coleta do cadastro da familia, com ou sem visita domiciliar.",
+                                                    "maxLength":  1
+                                                },
+                       "IND_FORMULARIO_0_FAM":  {
+                                                    "type":  [
+                                                                 "integer",
+                                                                 "null"
+                                                             ],
+                                                    "description":  "Indica utilizacao do formulario principal 0 no cadastro da familia."
+                                                },
+                       "IND_FORMULARIO_1_FAM":  {
+                                                    "type":  [
+                                                                 "integer",
+                                                                 "null"
+                                                             ],
+                                                    "description":  "Indica utilizacao do formulario complementar 1 no cadastro da familia."
+                                                },
+                       "IND_FORMULARIO_2_FAM":  {
+                                                    "type":  [
+                                                                 "integer",
+                                                                 "null"
+                                                             ],
+                                                    "description":  "Indica utilizacao do formulario complementar 2 no cadastro da familia."
+                                                },
+                       "IND_FORMULARIO_SUP1_FAM":  {
+                                                       "type":  [
+                                                                    "integer",
+                                                                    "null"
+                                                                ],
+                                                       "description":  "Indica utilizacao do formulario suplementar 1 no cadastro da familia."
+                                                   },
+                       "IND_FORMULARIO_SUP2_FAM":  {
+                                                       "type":  [
+                                                                    "integer",
+                                                                    "null"
+                                                                ],
+                                                       "description":  "Indica utilizacao do formulario suplementar 2 no cadastro da familia."
+                                                   },
+                       "DTA_ENTREVISTA_FAM":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Data da entrevista de cadastramento ou atualizacao da familia.",
+                                                  "maxLength":  3,
+                                                  "format":  "date"
+                                              },
+                       "NOM_LOCALIDADE_FAM":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Nome da localidade informada para a familia.",
+                                                  "maxLength":  76
+                                              },
+                       "NOM_TIP_LOGRADOURO_FAM":  {
+                                                      "type":  [
+                                                                   "string",
+                                                                   "null"
+                                                               ],
+                                                      "description":  "Tipo do logradouro do endereco da familia, como rua ou avenida.",
+                                                      "maxLength":  38
+                                                  },
+                       "NOM_TITULO_LOGRADOURO_FAM":  {
+                                                         "type":  [
+                                                                      "string",
+                                                                      "null"
+                                                                  ],
+                                                         "description":  "Titulo do logradouro do endereco da familia, quando existente.",
+                                                         "maxLength":  38
+                                                     },
+                       "NOM_LOGRADOURO_FAM":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Nome do logradouro do endereco da familia.",
+                                                  "maxLength":  76
+                                              },
+                       "NUM_LOGRADOURO_FAM":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Numero do logradouro do endereco da familia.",
+                                                  "maxLength":  16
+                                              },
+                       "DES_COMPLEMENTO_FAM":  {
+                                                   "type":  [
+                                                                "string",
+                                                                "null"
+                                                            ],
+                                                   "description":  "Complemento principal do endereco da familia.",
+                                                   "maxLength":  22
+                                               },
+                       "DES_COMPLEMENTO_ADIC_FAM":  {
+                                                        "type":  [
+                                                                     "string",
+                                                                     "null"
+                                                                 ],
+                                                        "description":  "Informacao complementar adicional do endereco da familia.",
+                                                        "maxLength":  75
+                                                    },
+                       "NUM_CEP_LOGRADOURO_FAM":  {
+                                                      "type":  [
+                                                                   "string",
+                                                                   "null"
+                                                               ],
+                                                      "description":  "CEP do endereco da familia.",
+                                                      "maxLength":  8
+                                                  },
+                       "COD_UNIDADE_TERRITORIAL_FAM":  {
+                                                           "type":  [
+                                                                        "string",
+                                                                        "null"
+                                                                    ],
+                                                           "description":  "Codigo da unidade territorial associada ao domicilio da familia.",
+                                                           "maxLength":  10
+                                                       },
+                       "NOM_UNIDADE_TERRITORIAL_FAM":  {
+                                                           "type":  [
+                                                                        "string",
+                                                                        "null"
+                                                                    ],
+                                                           "description":  "Nome da unidade territorial associada ao domicilio da familia.",
+                                                           "maxLength":  33
+                                                       },
+                       "TXT_REFERENCIA_LOCAL_FAM":  {
+                                                        "type":  [
+                                                                     "string",
+                                                                     "null"
+                                                                 ],
+                                                        "description":  "Ponto de referencia textual para localizacao do domicilio da familia.",
+                                                        "maxLength":  256
+                                                    },
+                       "NOM_ENTREVISTADOR_FAM":  {
+                                                     "type":  [
+                                                                  "string",
+                                                                  "null"
+                                                              ],
+                                                     "description":  "Nome do entrevistador responsavel pelo atendimento da familia.",
+                                                     "maxLength":  70
+                                                 },
+                       "NUM_CPF_ENTREVISTADOR_FAM":  {
+                                                         "type":  [
+                                                                      "string",
+                                                                      "null"
+                                                                  ],
+                                                         "description":  "CPF do entrevistador responsavel pelo atendimento da familia.",
+                                                         "maxLength":  11
+                                                     },
+                       "TXT_OBS_ENTREVISTADOR_FAM":  {
+                                                         "type":  [
+                                                                      "string",
+                                                                      "null"
+                                                                  ],
+                                                         "description":  "Observacoes registradas pelo entrevistador sobre o cadastro da familia.",
+                                                         "maxLength":  256
+                                                     },
+                       "COD_ORIGEM_PREFEITURA_FAM":  {
+                                                         "type":  [
+                                                                      "string",
+                                                                      "null"
+                                                                  ],
+                                                         "description":  "Identificador da prefeitura de origem em casos de transferencia ou migracao do cadastro da familia.",
+                                                         "maxLength":  13
+                                                     },
+                       "COD_ORIGEM_FAMILIA_FAM":  {
+                                                      "type":  [
+                                                                   "string",
+                                                                   "null"
+                                                               ],
+                                                      "description":  "Codigo da familia no cadastro de origem, quando houver transferencia.",
+                                                      "maxLength":  11
+                                                  },
+                       "ANO_MES_CARGA":  {
+                                             "type":  [
+                                                          "string",
+                                                          "null"
+                                                      ],
+                                             "description":  "Competencia da carga no formato AAAAMM.",
+                                             "maxLength":  6
+                                         },
+                       "DT_ATUALIZACAO_ETL":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Timestamp de atualizacao do processo ETL.",
+                                                  "maxLength":  8,
+                                                  "format":  "date-time"
+                                              },
+                       "DT_CDSTR_ATUAL_FMLA":  {
+                                                   "type":  [
+                                                                "string",
+                                                                "null"
+                                                            ],
+                                                   "description":  "Data limite ou data prevista para nova atualizacao cadastral da familia.",
+                                                   "maxLength":  3,
+                                                   "format":  "date"
+                                               },
+                       "FLAG_FAM_ALTERADA_V7":  {
+                                                    "type":  [
+                                                                 "string",
+                                                                 "null"
+                                                             ],
+                                                    "description":  "Indica se a familia sofreu alteracao relevante na migracao para a versao 7 do sistema.",
+                                                    "maxLength":  1
+                                                },
+                       "DS_ERRO":  {
+                                       "type":  [
+                                                    "string",
+                                                    "null"
+                                                ],
+                                       "description":  "Descricao do erro ou alerta de qualidade identificado durante a carga.",
+                                       "maxLength":  1024
+                                   },
+                       "DT_ATUALIZACAO_FAM":  {
+                                                  "type":  [
+                                                               "string",
+                                                               "null"
+                                                           ],
+                                                  "description":  "Data efetiva de atualizacao mais recente do cadastro da familia.",
+                                                  "maxLength":  3,
+                                                  "format":  "date"
+                                              }
+                   }
+}

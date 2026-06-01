@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CONCESSAO_2",
+  "description": "Registro de cessação/alteração de situação de benefício previdenciário do INSS. Arquivo CON2. Tabela complementar a CONCESSAO_1 e CONCESSAO_3.",
+  "type": "object",
+  "properties": {
+    "NU_NB":              { "type": ["string","null"], "maxLength": 10, "pattern": "^[0-9]{10}$", "description": "Número do Benefício. FK: CONCESSAO_1.NU_NB / CONCESSAO_3.NU_NB." },
+    "D2_DCB":             { "type": ["string","null"], "maxLength": 20, "description": "Data de Cessação do Benefício. Formato DDMMAAAA." },
+    "CS_SITUACAO_BENEF":  { "type": ["integer","null"], "description": "Código da nova situação (ex: 5=Suspenso, 35=Cessado). FK: COD_SITUACAO." },
+    "CS_MOTIVO":          { "type": ["integer","null"], "description": "Código do motivo da cessação/alteração. FK: COD_MOTIVO_CONCESSAO2 (99 valores)." },
+    "ID_OL_MANUTENCAO":   { "type": ["integer","null"], "description": "Identificador On-Line da transação de manutenção." },
+    "DS_ERRO":            { "type": ["string","null"], "maxLength": 1024, "description": "Descrição de erro ETL. Vazio=sem erro." },
+    "DT_ATUALIZACAO_ETL": { "type": ["string","null"], "format": "date-time", "description": "Timestamp da carga no data warehouse." },
+    "NM_ARQUIVO":         { "type": ["string","null"], "maxLength": 256, "description": "Nome do arquivo origem. Padrão: D.SUB.APE.000.CON2.AAAAMM.NN." },
+    "ANO_MES_REF":        { "type": ["integer","null"], "description": "Competência de referência. Formato AAAAMM." }
+  },
+  "required": ["NU_NB", "ANO_MES_REF"]
+}
