@@ -1,15 +1,19 @@
-SURVEY WGBD – ANALYSIS OF BIG DATA
-Introduction Block
+# SURVEY WGBD – ANALYSIS OF BIG DATA
+
+## Introduction Block
+
 •	Welcome to the "Big Data in Social Security and Health Services" questionnaire. This survey aims to gather valuable insights from Supreme Audit Institutions (SAIs) around the world on the application of Big Data in the areas of social security and health services. Your participation is crucial in capturing a wide range of perspectives and experiences, contributing significantly to our collective understanding and research efforts. We encourage you to share this survey with relevant departments within your institution that are engaged in or have an interest in Big Data applications. 
 •	Please complete the survey by August 9th, 2024, to ensure your contributions are included in our analysis and findings. Your feedback and insights are invaluable to us.
 
-General Information
+## General Information
+
 •	Name of the SAI:
 •	Country:
 •	Contact person:
 •	E-mail:
 
-Structural and Organizational Overview
+## Structural and Organizational Overview
+
 1.	How is your country's social security policy structured? (Checkboxes: Centralized, Decentralized, Public-private partnership, Other - please specify)
 2.	How is your country's health services policy structured? (Checkboxes: Centralized, Decentralized, Public-private partnership, Other - please specify)
 3.	What is the organizational structure of your Supreme Audit Institution (SAI)? (Checkboxes: Court of Accounts, Comptroller's Office, Body linked to the legislature, Other - please specify)
@@ -44,7 +48,8 @@ Desired Products and Resources
 Additional Feedback
 23.	Please provide any additional comments or suggestions that could help improve the use of big data in auditing social security and health services. (Open-ended)
  
-Glossary
+## Glossary
+
 •	Access Control: The selective restriction of access to data, which is a fundamental concept in security that minimizes risk to the business or organization.
 •	Anonymizing Personal Data: The process of either encrypting or removing personally identifiable information from data sets.
 •	API (Application Programming Interface): A set of protocols and tools for building software applications, allowing different systems to communicate and share data or functionalities.
