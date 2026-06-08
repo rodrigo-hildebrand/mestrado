@@ -13,6 +13,7 @@ A análise dos resultados produzidos nos três casos passará por algumas quest�
 Sobre a matriz a ser entregue, ela deve ser desenvolvida conforme o Diagrama de Verificação de Riscos, técnica sugerida pela Portaria-Segecex 31, de 9/12/2010 ou pelo Manual de Gestão de Riscos do TCU (2020), ilustrada na Figura 7.
 
 **Figura 7 – exemplo de Diagrama de Verificação de Riscos**
+<img width="802" height="586" alt="image" src="https://github.com/user-attachments/assets/699502f6-5d5e-4ae0-954c-fcf14a923ad7" />
 
 *Fonte: Portaria-Segecex 31, de 9/12/2010*
 
