@@ -138,6 +138,7 @@ O agente criado foi o “Agente de Fiscalização Contínua – Riscos”, criad
 Os parâmetros anteriores foram traduzidos em um pequeno texto de Instruções e quatro Tópicos detalhados: Planejar Investigação (ReWOO / Plan); Executar Recuperação (RAG / Busca) (ReWOO / Execute – ferramentas); Gerar Matriz de Riscos + Tipologias / Alertas (ReWOO / Synthesize); e Especificação de Testes + SQL / Python (com safe execution). Cada uma delas foi construída com o uso de interface de IAGen, que traduzia instruções em linguagem natural para o formato de fluxo de atividades, como ilustrado na Figura 8.
 
 **Figura 8 – exemplo de Tópico desenvolvido no Copilot Studio**
+<img width="369" height="578" alt="image" src="https://github.com/user-attachments/assets/2e88b76e-187e-432a-8f4a-66c81347e36c" />
 
 *Fonte: elaboração própria*
 
@@ -186,6 +187,7 @@ Em termos de criatividade e alucinação, não se detectou nível significativo 
 O terceiro teste do agente, para a política pública do BPC Idoso, trouxe uma dinâmica diferente dos primeiros testes. Ao receber o mesmo tipo de insumo dos testes anteriores – qual seja um prompt simples e direto pedindo a análise da política –, ao invés de utilizar apenas as ferramentas e “Pesquisar fontes”, ele decidiu mesclar essas ferramentas com o uso dos Tópicos 1 a 3, conforme ilustrado na Figura 9.
 
 **Figura 9 – resposta de agente com interação com usuário**
+<img width="945" height="594" alt="image" src="https://github.com/user-attachments/assets/f1895610-3755-4b82-88cc-d1b42cc9581d" />
 
 *Fonte: elaboração própria*
 
