@@ -39,13 +39,11 @@ Arquivo identificado:
 
 ## Objetivo 2
 
-A pasta `objetivo2` contém dados estruturados associados à coleta empírica da pesquisa.
+A pasta `objetivo2` contém dados estruturados associados à coleta empírica da pesquisa, com ênfase em experiências do TCU, dos TCEs e TCMs.
 
 Arquivo identificado:
 
-- `Respostas 2026 03 15.xlsx`: planilha com respostas coletadas ou consolidadas em 15 de março de 2026.
-
-Recomenda-se complementar esta pasta com um dicionário de dados, indicando o significado de cada coluna, o tipo de dado, a forma de tratamento e eventuais limitações da base.
+- `Respostas 2026 03 15.xlsx`: planilha com respostas coletadas em 15 de março de 2026, gerada por IA, com uma linha para cada TCE/TCM investigado.
 
 ## Objetivo 3
 
@@ -58,7 +56,7 @@ Contém duas abordagens comparáveis:
 - `assistente/`
 - `copilot/`
 
-Essa estrutura sugere comparação entre o uso de assistente conversacional e o uso do GitHub Copilot.
+Estudo de caso de documentação de bases de dados, utilizando comparação entre o uso de assistente conversacional e o uso do GitHub Copilot.
 
 ### Estudo de caso 2
 
@@ -69,11 +67,11 @@ Contém materiais relacionados a agentes, assistentes e análise detalhada:
 - `assistente/`
 - `analise-detalhada.md`
 
-Essa estrutura sugere experimento mais técnico, com agentes, scripts e avaliação analítica.
+Estudo de caso focao em desenvolver um agente que analise uma política pública, apontando riscos, alertas e tipologias. Estrutura mais técnica, com agentes, scripts e avaliação analítica.
 
 ### Estudo de caso 3
 
-Contém documentação e script associados ao ContasClaras-AI, assistente voltado à transformação de achados de fiscalizações contínuas em textos claros, acessíveis e adequados à comunicação pública.
+Contém documentação e script associados ao ContasClaras-AI, assistente voltado à transformação de achados de fiscalizações contínuas em textos claros, acessíveis e adequados à comunicação pública, utilizando conceitos de Linguagem Simples.
 
 Arquivos identificados:
 
@@ -101,20 +99,10 @@ A pasta combina três tipos principais de artefatos:
 4. Verifique os scripts Python e subpastas de agentes como artefatos computacionais de apoio.
 5. Registre qualquer alteração relevante por meio de commits claros e mensagens descritivas.
 
-## Recomendações de melhoria
-
-Para aumentar a reprodutibilidade e a clareza do repositório, recomenda-se:
-
-- criar um dicionário de dados para a planilha do objetivo 2;
-- padronizar nomes de arquivos sem espaços;
-- incluir instruções de execução para scripts;
-- criar ou atualizar um `requirements.txt`, quando houver dependências Python;
-- indicar, quando aplicável, quais arquivos foram efetivamente utilizados na dissertação.
-
 ## Observação sobre reprodutibilidade
 
 Os arquivos desta pasta devem ser compreendidos como artefatos de pesquisa. Alguns documentos registram análises e configurações; outros armazenam dados ou scripts. A reprodução integral dos resultados pode depender de contexto adicional, versões de ferramentas, parâmetros de execução e bases externas não necessariamente armazenadas no repositório.
 
 ## Referência sugerida
 
-HILDEBRAND, Rodrigo. *Mestrado*. GitHub, 2026. Disponível em: <https://github.com/rodrigo-hildebrand/mestrado>. Acesso em: 12 jun. 2026.
+HILDEBRAND, Rodrigo O C. *Inteligência Artificial Generativa no Controle Externo: Aplicações em Fiscalizações Contínuas*. Mestrado Profissional em Controle da Administração Pública, Instituto Serzedello Corrêa (ISC). GitHub, 2026. Disponível em: <https://github.com/rodrigo-hildebrand/mestrado>. Acesso em: 12 jun. 2026.
