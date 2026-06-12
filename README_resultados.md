@@ -1,6 +1,6 @@
 # Resultados da Pesquisa
 
-Esta pasta reúne os principais artefatos digitais produzidos no desenvolvimento da pesquisa de mestrado sobre o uso de inteligência artificial generativa em fiscalizações e auditorias governamentais.
+Esta pasta reúne os principais artefatos digitais produzidos no desenvolvimento da pesquisa de mestrado sobre o uso de inteligência artificial generativa em fiscalizações contínuas governamentais.
 
 Os arquivos estão organizados por objetivo de pesquisa, de modo a facilitar a rastreabilidade entre método, evidência empírica, análise realizada e resultados apresentados na dissertação.
 
