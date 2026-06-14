@@ -276,7 +276,9 @@ Esse risco foi considerado como o quarto em prioridade, com o controle esperado 
 Sobre a skill de buscar as bases de dados no LabContas, destaca-se a interação entre orquestrador e skills criou uma nova etapa de verificação humana, quando se mostrou necessário. Um teste realizado de ponta a ponta foi com a política pública do Bolsa Família. Ao acessar os dados, identificando diferentes tabelas e bancos de dados, houve uma solicitação específica quanto ao recorte temporal da análise, conforme ilustrado na Figura abaixo.
 
 **Figura – exemplo de interação com usuário**
+
 <img width="447" height="392" alt="image" src="https://github.com/user-attachments/assets/050e0d32-980d-4b50-b7f3-d67184dcec24" />
+
 
 *Fonte: elaboração própria*
 
