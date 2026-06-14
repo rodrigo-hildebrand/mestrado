@@ -273,6 +273,13 @@ Cada um desses riscos gerais foi avaliado em aspectos de probabilidade, impacto 
 
 Esse risco foi considerado como o quarto em prioridade, com o controle esperado “Consulta obrigatória a bases tributarias, trabalhistas e previdenciárias antes do deferimento e em revisões periódicas” e o teste de auditoria sugerido “Cruzar amostra de beneficiários com bases de vínculo laboral, renda e benefícios continuados para confirmar ausência de fonte de renda incompatível”.
 
+Sobre a skill de buscar as bases de dados no LabContas, destaca-se a interação entre orquestrador e skills criou uma nova etapa de verificação humana, quando se mostrou necessário. Um teste realizado de ponta a ponta foi com a política pública do Bolsa Família. Ao acessar os dados, identificando diferentes tabelas e bancos de dados, houve uma solicitação específica quanto ao recorte temporal da análise, conforme ilustrado na Figura abaixo.
+
+**Figura – exemplo de interação com usuário**
+<img width="447" height="392" alt="image" src="https://github.com/user-attachments/assets/050e0d32-980d-4b50-b7f3-d67184dcec24" />
+
+*Fonte: elaboração própria*
+
 Cabe uma breve observação sobre a skill de avaliar a qualidade das bases de dados. Ela está apenas sugerindo scripts a serem rodados. Em sua primeira versão ela realizou diretamente as consultas, mas seu tempo de processamento foi muito alto, o que impossibilitou seu uso em produção (mas sinalizou para a possibilidade).
 
 Dada a quantidade de informações distintas trazidas pelo agente, não foi possível a criação de apenas um quadro com cada risco. O Quadro 17 traz os riscos específicos gerados, com causa, efeito e possível teste de auditoria a se aplicar.
