@@ -56,42 +56,14 @@ O sistema foi projetado para o contexto de controle externo (Tribunal de Contas)
 
 O projeto tem **duas camadas complementares**:
 
-1. **Camada de definição do agente** (`Claude.md`) — descreve, em linguagem natural, o comportamento do orquestrador, os critérios de acionamento de cada *skill* e as regras de qualidade. É consumida por um agente de IA (por exemplo, no VS Code).
+1. **Camada de definição do agente** (`orquestrador-fiscalizacao.agent.md`) — descreve, em linguagem natural, o comportamento do orquestrador, os critérios de acionamento de cada *skill* e as regras de qualidade. É consumida por um agente de IA (por exemplo, no VS Code).
 2. **Camada de execução em Python** (`app/`) — um *scaffold* que planeja, executa, encadeia e persiste os passos de forma determinística, servindo tanto como motor operacional quanto como referência de contrato entre *skills*.
-
-```mermaid
-flowchart TD
-    U[Usuário: política pública + demanda] --> AG[Agente Orquestrador]
-    AG --> PL[Skill planejador]
-    PL --> PLAN[Plano ReWOO em JSON]
-    PLAN --> EX[PlanExecutor]
-    EX -->|resolve refs #E1, #E2...| SK[Skills especializadas]
-    SK --> ART[(Artefatos JSON por etapa)]
-    EX --> RS[RunState + run_state.json]
-    SK --> REL[prepara-relatorio .docx]
-    REL --> GOV[Skill governanca]
-    GOV --> OUT[Produto auditável validado]
-```
-
-### Componentes de execução (`app/`)
-
-| Módulo | Responsabilidade |
-|---|---|
-| [app/agent.py](app/agent.py) | *Entry point* CLI: parsing de argumentos e montagem do orquestrador |
-| [app/orchestrator.py](app/orchestrator.py) | Orquestra o ciclo: pede o plano, valida o contrato e dispara a execução |
-| [app/plan_executor.py](app/plan_executor.py) | Executa os passos respeitando dependências e resolvendo referências `#E1` |
-| [app/skill_registry.py](app/skill_registry.py) | Registro das *skills*, entradas obrigatórias e nomes de artefatos |
-| [app/adapters.py](app/adapters.py) | Adaptadores de execução (`real` e `dry-run`) e persistência de artefatos |
-| [app/planner_client.py](app/planner_client.py) | *Parser* do plano, inferência do objeto e plano *fallback* |
-| [app/run_state.py](app/run_state.py) | Estado da execução (plano, saídas, avisos, pausas) |
-| [app/models.py](app/models.py) | Modelos de dados (`PlanStep`, `StepResult`, `UserQuestion`, etc.) |
-| [app/interaction.py](app/interaction.py) | Pontos de interação (autorizações e confirmações) |
 
 ---
 
 ## 3. O agente orquestrador
 
-A definição do agente está em [Claude.md](Claude.md). Sua **regra central**:
+A definição do agente está em [orquestrador-fiscalizacao.agent.md](orquestrador-fiscalizacao.agent.md). Sua **regra central**:
 
 > A primeira capacidade a ser utilizada deve ser sempre a *skill* `planejador`, salvo quando o usuário pedir explicitamente apenas a criação, revisão ou ajuste de uma *skill*.
 
@@ -109,7 +81,7 @@ O `planejador` produz: entendimento da demanda, produto esperado, informações 
 
 ## 4. Catálogo de skills
 
-As *skills* residem em `.claude/skills/<nome>/SKILL.md`, cada uma com *frontmatter* (`name`, `description`, `compatibility`), critérios de acionamento, entradas e saídas esperadas. Algumas possuem `main.py` (executável), pastas `references/` (insumos e artefatos gerados) e `evals/` (testes de acionamento).
+As *skills* residem em `.orquestrador-fiscalizacao.agent.md/skills/<nome>/SKILL.md`, cada uma com *frontmatter* (`name`, `description`, `compatibility`), critérios de acionamento, entradas e saídas esperadas. Algumas possuem `main.py` (executável), pastas `references/` (insumos e artefatos gerados) e `evals/` (testes de acionamento).
 
 | Skill | Função | Entrada principal | Saída |
 |---|---|---|---|
@@ -150,15 +122,6 @@ O agente segue o padrão **ReWOO** (*Reasoning WithOut Observation*): o planejad
 9. `prepara-relatorio` *(produto textual final)*
 10. `governanca` *(riscos de acesso, IA, dados, LGPD, rastreabilidade)*
 
-### Contrato de plano validado pelo orquestrador
-
-O [orchestrator.py](app/orchestrator.py) emite *warnings* quando o plano não atende ao contrato esperado:
-
-- deve **iniciar** com `busca-legislacao` e `analise-swot2`;
-- deve **finalizar** com `governanca`;
-- toda `tool` referenciada deve estar registrada no [skill_registry.py](app/skill_registry.py);
-- planos com **mais de 20 etapas** exigem autorização explícita do usuário.
-
 ### Exemplo de passo do plano (JSON)
 
 ```json
@@ -181,7 +144,7 @@ O executor resolve `#E1` para a saída da etapa `E1` antes de invocar a *skill*.
 
 ```
 audit-agent/
-├─ Claude.md                     # Definição do agente orquestrador (linguagem natural)
+├─ Claude.md                     # orquestrador-fiscalizacao.agent.md
 ├─ main.py                       # Atalho para app.agent:main
 ├─ requirements.txt
 ├─ app/                          # Motor de execução (scaffold)
@@ -274,10 +237,6 @@ Quando uma *skill* precisa de dados que ainda não existem, ela retorna o *statu
 python main.py "..." --answers-json .\respostas.json
 ```
 
-### Confirmações
-
-Planos com mais de 20 etapas exigem autorização interativa (`[s/N]`) antes de prosseguir, conforme [interaction.py](app/interaction.py).
-
 ---
 
 ## 9. Artefatos, rastreabilidade e persistência
@@ -334,7 +293,7 @@ O agente foi desenhado para operar sob restrições institucionais de controle e
 
 ---
 
-## 12. Reprodutibilidade, licença e citação
+## 12. Reprodutibilidade e citação
 
 ### Reprodutibilidade
 
@@ -344,22 +303,16 @@ Os exemplos em `runs/` (ex.: `aposentadoria-incapacidade-permanente/`, `bolsa-fa
 
 Este artefato tem finalidade **acadêmica e demonstrativa**. As saídas geradas (riscos, tipologias, alertas) **não constituem achados de auditoria** e exigem validação por auditor humano. Nenhum dado sensível ou base restrita é distribuído neste repositório.
 
-### Licença
-
-Defina uma licença explícita antes da publicação (sugestões: **MIT** para o código e **CC BY 4.0** para a documentação). Enquanto não houver arquivo `LICENSE`, presume-se "todos os direitos reservados".
-
 ### Como citar
 
 ```bibtex
 @mastersthesis{hildebrand_agentevs,
-  author = {Hildebrand, Rodrigo},
-  title  = {Audit Agent — Orquestrador de Fiscalizações Contínuas},
+  author = {Hildebrand, Rodrigo O. C.},
+  title  = {Inteligência Artificial Generativa no Controle Externo: Aplicações em Fiscalizações Contínuas},
   school = {Instituto Serzedello Corrêa (ISC/TCU)},
   note   = {Estudo de Caso 2, Objetivo 3. Disponível em: https://github.com/rodrigo-hildebrand/mestrado/tree/main/desenvolvimento/resultados/objetivo3/estudo-caso2/agenteVS}
 }
 ```
-
-> Ajuste autor, título e ano conforme os metadados finais da dissertação.
 
 ---
 
