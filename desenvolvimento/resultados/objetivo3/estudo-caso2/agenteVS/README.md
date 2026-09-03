@@ -2,9 +2,9 @@
 
 Agente orientado a *skills* para apoio a **auditorias governamentais, fiscalizações contínuas e avaliações de políticas públicas** com base em dados. O projeto combina um **agente orquestrador** (definição em linguagem natural) com um **motor de execução em Python** que planeja, executa e rastreia um fluxo completo de trabalho auditável, fundamentado e reprodutível.
 
-> **Contexto acadêmico.** Este repositório integra a dissertação de Mestrado Profissional em Efetividade e Controle das Políticas Públicas (ISC/TCU), como parte do **Objetivo 3 — Estudo de Caso 2 (`agenteVS`)**. Constitui um artefato de pesquisa aplicada (*design science*): um agente de IA para apoio ao controle externo. Destina-se a fins acadêmicos e de demonstração — não é um produto de produção.
+> **Contexto acadêmico.** Este repositório integra a dissertação de Mestrado Profissional Controle das Políticas Públicas (ISC/TCU), como parte do **Objetivo 3 — Estudo de Caso 2 (`GitHub Copilot`)**. Constitui um artefato de pesquisa aplicada (*design science*): um agente de IA para apoio ao controle externo. Destina-se a fins acadêmicos e de demonstração — não é um produto de produção.
 
-> **Como navegar.** Este README é o ponto de entrada. A definição do agente está em [Claude.md](Claude.md); o motor de execução, em [app/](app/); as capacidades, em [.claude/skills/](.claude/skills/). Os diagramas são renderizados nativamente pelo GitHub (Mermaid).
+> **Como navegar.** Este README é o ponto de entrada. A definição do agente está em `orquestrador-fiscalizacao.agent.md`; as skils podem ser verificadas nas respectivas pastas dentro de `scripts`.
 
 ---
 
